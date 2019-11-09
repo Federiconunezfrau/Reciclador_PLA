@@ -1,0 +1,11 @@
+GeneratorModel for yakindu::c {
+
+	statechart prefix {
+
+		feature Outlet {
+			targetProject = "firmware_v2"
+			targetFolder = "projects/Reciclador_PLA/gen"
+			libraryTargetFolder = "projects/Reciclador_PLA/gen"
+		}
+	}
+}
