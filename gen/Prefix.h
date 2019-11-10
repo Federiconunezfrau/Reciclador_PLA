@@ -28,13 +28,19 @@ typedef enum
 	Prefix_LCD_MENU_PRINCIPAL_MEMSAJE_MOSTRADO_EN_DISPLAY_MENU_PRINCIPAL_EXTRUSION,
 	Prefix_LCD_MENU_CONF_TEMP,
 	Prefix_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_CANCELAR,
+	Prefix_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_SETEAR_TEMP,
+	Prefix_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_ENFRIAR,
 	Prefix_LCD_MENU_CONF_MOTORES,
 	Prefix_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_CANCELAR,
-	Prefix_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_ROTAR_MOTOR_EXTRUSION,
-	Prefix_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_STOP_MOTOR_EXTRUSION,
+	Prefix_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_START_EXTRUSION,
+	Prefix_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_STOP_EXTRUSION,
+	Prefix_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_START_RETRACT,
+	Prefix_LCD_MENU_SET_TEMP,
+	Prefix_LCD_MENU_SET_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_SET_TEMP_SELEC_TEMP,
 	Prefix_PUENTE_H_STOP,
 	Prefix_PUENTE_H_H_ROTACION_HORARIO,
 	Prefix_PUENTE_H_CONFIGURAR,
+	Prefix_PUENTE_H_H_RETRACT,
 	Prefix_last_state
 } PrefixStates;
 
@@ -67,6 +73,10 @@ extern const sc_string PREFIX_PREFIXIFACE_MSJ_MENU_CONF_TEMP;
 extern const sc_string PREFIX_PREFIXIFACE_MSJ_MENU_CANCELAR;
 extern const sc_string PREFIX_PREFIXIFACE_MSJ_MENU_MOTOR_EXTRUSION;
 extern const sc_string PREFIX_PREFIXIFACE_MSJ_MENU_MOTOR_EXTRUSION_STOP;
+extern const sc_string PREFIX_PREFIXIFACE_MSJ_MENU_MOTOR_EXTRUSION_RETRACT;
+extern const sc_string PREFIX_PREFIXIFACE_MSJ_MENU_SETEAR_TEMP;
+extern const sc_string PREFIX_PREFIXIFACE_MSJ_MENU_ENFRIAR;
+extern const sc_string PREFIX_PREFIXIFACE_MSJ_MENU_SET_TEMP;
 
 /*! Type definition of the data structure for the PrefixInternal interface scope. */
 typedef struct
@@ -78,8 +88,10 @@ typedef struct
 	sc_boolean siDespl_derecha_raised;
 	sc_boolean siDespl_izquierda_raised;
 	sc_boolean siEntrar_raised;
+	sc_integer viSet_temp_lcd;
 	sc_boolean siStop_puente_h_raised;
 	sc_boolean siStart_puente_h_raised;
+	sc_boolean siRetract_puente_h_raised;
 } PrefixInternal;
 
 /*! Type definition of the data structure for the PrefixTimeEvents interface scope. */
@@ -176,6 +188,14 @@ extern const sc_string prefixIface_get_msj_menu_cancelar(const Prefix* handle);
 extern const sc_string prefixIface_get_msj_menu_motor_extrusion(const Prefix* handle);
 /*! Gets the value of the variable 'Msj_menu_motor_extrusion_stop' that is defined in the default interface scope. */ 
 extern const sc_string prefixIface_get_msj_menu_motor_extrusion_stop(const Prefix* handle);
+/*! Gets the value of the variable 'Msj_menu_motor_extrusion_retract' that is defined in the default interface scope. */ 
+extern const sc_string prefixIface_get_msj_menu_motor_extrusion_retract(const Prefix* handle);
+/*! Gets the value of the variable 'Msj_menu_setear_temp' that is defined in the default interface scope. */ 
+extern const sc_string prefixIface_get_msj_menu_setear_temp(const Prefix* handle);
+/*! Gets the value of the variable 'Msj_menu_enfriar' that is defined in the default interface scope. */ 
+extern const sc_string prefixIface_get_msj_menu_enfriar(const Prefix* handle);
+/*! Gets the value of the variable 'Msj_menu_set_temp' that is defined in the default interface scope. */ 
+extern const sc_string prefixIface_get_msj_menu_set_temp(const Prefix* handle);
 
 /*!
  * Checks whether the state machine is active (until 2.4.1 this method was used for states).

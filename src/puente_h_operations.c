@@ -21,6 +21,15 @@ extern void prefixIface_opStart_puente_h(const Prefix* handle)
 
 }
 
+extern void prefixIface_opRetract_puente_h(const Prefix* handle)
+{
+	/* Esta función se encarga de hacer girar el motor del extrusor */
+
+	gpioWrite(PIN_PUENTE_1, FALSE);
+	gpioWrite(PIN_PUENTE_2, TRUE);
+
+}
+
 extern void prefixIface_opStop_puente_h(const Prefix* handle)
 {
 	/* Esta función se encarga de detener el motor del extrusor */

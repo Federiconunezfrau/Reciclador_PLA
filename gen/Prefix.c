@@ -30,18 +30,36 @@ static sc_boolean prefix_check_LCD_MENU_PRINCIPAL_MEMSAJE_MOSTRADO_EN_DISPLAY_ME
 static sc_boolean prefix_check_LCD_MENU_PRINCIPAL_MEMSAJE_MOSTRADO_EN_DISPLAY_MENU_PRINCIPAL_EXTRUSION_tr0_tr0(const Prefix* handle);
 static sc_boolean prefix_check_LCD_MENU_PRINCIPAL_MEMSAJE_MOSTRADO_EN_DISPLAY_MENU_PRINCIPAL_EXTRUSION_tr1_tr1(const Prefix* handle);
 static sc_boolean prefix_check_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_CANCELAR_tr0_tr0(const Prefix* handle);
+static sc_boolean prefix_check_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_CANCELAR_tr1_tr1(const Prefix* handle);
+static sc_boolean prefix_check_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_CANCELAR_tr2_tr2(const Prefix* handle);
+static sc_boolean prefix_check_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_SETEAR_TEMP_tr0_tr0(const Prefix* handle);
+static sc_boolean prefix_check_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_SETEAR_TEMP_tr1_tr1(const Prefix* handle);
+static sc_boolean prefix_check_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_SETEAR_TEMP_tr2_tr2(const Prefix* handle);
+static sc_boolean prefix_check_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_ENFRIAR_tr0_tr0(const Prefix* handle);
+static sc_boolean prefix_check_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_ENFRIAR_tr1_tr1(const Prefix* handle);
+static sc_boolean prefix_check_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_ENFRIAR_tr2_tr2(const Prefix* handle);
 static sc_boolean prefix_check_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_CANCELAR_tr0_tr0(const Prefix* handle);
 static sc_boolean prefix_check_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_CANCELAR_tr1_tr1(const Prefix* handle);
 static sc_boolean prefix_check_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_CANCELAR_tr2_tr2(const Prefix* handle);
-static sc_boolean prefix_check_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_ROTAR_MOTOR_EXTRUSION_tr0_tr0(const Prefix* handle);
-static sc_boolean prefix_check_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_ROTAR_MOTOR_EXTRUSION_tr1_tr1(const Prefix* handle);
-static sc_boolean prefix_check_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_ROTAR_MOTOR_EXTRUSION_tr2_tr2(const Prefix* handle);
-static sc_boolean prefix_check_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_STOP_MOTOR_EXTRUSION_tr0_tr0(const Prefix* handle);
-static sc_boolean prefix_check_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_STOP_MOTOR_EXTRUSION_tr1_tr1(const Prefix* handle);
-static sc_boolean prefix_check_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_STOP_MOTOR_EXTRUSION_tr2_tr2(const Prefix* handle);
+static sc_boolean prefix_check_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_START_EXTRUSION_tr0_tr0(const Prefix* handle);
+static sc_boolean prefix_check_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_START_EXTRUSION_tr1_tr1(const Prefix* handle);
+static sc_boolean prefix_check_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_START_EXTRUSION_tr2_tr2(const Prefix* handle);
+static sc_boolean prefix_check_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_STOP_EXTRUSION_tr0_tr0(const Prefix* handle);
+static sc_boolean prefix_check_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_STOP_EXTRUSION_tr1_tr1(const Prefix* handle);
+static sc_boolean prefix_check_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_STOP_EXTRUSION_tr2_tr2(const Prefix* handle);
+static sc_boolean prefix_check_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_START_RETRACT_tr0_tr0(const Prefix* handle);
+static sc_boolean prefix_check_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_START_RETRACT_tr1_tr1(const Prefix* handle);
+static sc_boolean prefix_check_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_START_RETRACT_tr2_tr2(const Prefix* handle);
+static sc_boolean prefix_check_LCD_MENU_SET_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_SET_TEMP_SELEC_TEMP_tr0_tr0(const Prefix* handle);
+static sc_boolean prefix_check_LCD_MENU_SET_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_SET_TEMP_SELEC_TEMP_tr1_tr1(const Prefix* handle);
+static sc_boolean prefix_check_LCD_MENU_SET_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_SET_TEMP_SELEC_TEMP_tr2_tr2(const Prefix* handle);
 static sc_boolean prefix_check_PUENTE_H_STOP_tr0_tr0(const Prefix* handle);
+static sc_boolean prefix_check_PUENTE_H_STOP_tr1_tr1(const Prefix* handle);
 static sc_boolean prefix_check_PUENTE_H_H_ROTACION_HORARIO_tr0_tr0(const Prefix* handle);
+static sc_boolean prefix_check_PUENTE_H_H_ROTACION_HORARIO_tr1_tr1(const Prefix* handle);
 static sc_boolean prefix_check_PUENTE_H_CONFIGURAR_tr0_tr0(const Prefix* handle);
+static sc_boolean prefix_check_PUENTE_H_H_RETRACT_tr0_tr0(const Prefix* handle);
+static sc_boolean prefix_check_PUENTE_H_H_RETRACT_tr1_tr1(const Prefix* handle);
 static void prefix_effect_BOTON_DEL_ENCODER_DEBOUNCE_tr0(Prefix* handle);
 static void prefix_effect_BOTON_DEL_ENCODER_NO_OPRIMIDO_tr0(Prefix* handle);
 static void prefix_effect_BOTON_DEL_ENCODER_OPRIMIDO_tr0(Prefix* handle);
@@ -64,18 +82,36 @@ static void prefix_effect_LCD_MENU_PRINCIPAL_MEMSAJE_MOSTRADO_EN_DISPLAY_MENU_PR
 static void prefix_effect_LCD_MENU_PRINCIPAL_MEMSAJE_MOSTRADO_EN_DISPLAY_MENU_PRINCIPAL_EXTRUSION_tr0(Prefix* handle);
 static void prefix_effect_LCD_MENU_PRINCIPAL_MEMSAJE_MOSTRADO_EN_DISPLAY_MENU_PRINCIPAL_EXTRUSION_tr1(Prefix* handle);
 static void prefix_effect_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_CANCELAR_tr0(Prefix* handle);
+static void prefix_effect_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_CANCELAR_tr1(Prefix* handle);
+static void prefix_effect_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_CANCELAR_tr2(Prefix* handle);
+static void prefix_effect_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_SETEAR_TEMP_tr0(Prefix* handle);
+static void prefix_effect_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_SETEAR_TEMP_tr1(Prefix* handle);
+static void prefix_effect_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_SETEAR_TEMP_tr2(Prefix* handle);
+static void prefix_effect_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_ENFRIAR_tr0(Prefix* handle);
+static void prefix_effect_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_ENFRIAR_tr1(Prefix* handle);
+static void prefix_effect_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_ENFRIAR_tr2(Prefix* handle);
 static void prefix_effect_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_CANCELAR_tr0(Prefix* handle);
 static void prefix_effect_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_CANCELAR_tr1(Prefix* handle);
 static void prefix_effect_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_CANCELAR_tr2(Prefix* handle);
-static void prefix_effect_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_ROTAR_MOTOR_EXTRUSION_tr0(Prefix* handle);
-static void prefix_effect_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_ROTAR_MOTOR_EXTRUSION_tr1(Prefix* handle);
-static void prefix_effect_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_ROTAR_MOTOR_EXTRUSION_tr2(Prefix* handle);
-static void prefix_effect_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_STOP_MOTOR_EXTRUSION_tr0(Prefix* handle);
-static void prefix_effect_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_STOP_MOTOR_EXTRUSION_tr1(Prefix* handle);
-static void prefix_effect_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_STOP_MOTOR_EXTRUSION_tr2(Prefix* handle);
+static void prefix_effect_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_START_EXTRUSION_tr0(Prefix* handle);
+static void prefix_effect_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_START_EXTRUSION_tr1(Prefix* handle);
+static void prefix_effect_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_START_EXTRUSION_tr2(Prefix* handle);
+static void prefix_effect_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_STOP_EXTRUSION_tr0(Prefix* handle);
+static void prefix_effect_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_STOP_EXTRUSION_tr1(Prefix* handle);
+static void prefix_effect_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_STOP_EXTRUSION_tr2(Prefix* handle);
+static void prefix_effect_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_START_RETRACT_tr0(Prefix* handle);
+static void prefix_effect_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_START_RETRACT_tr1(Prefix* handle);
+static void prefix_effect_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_START_RETRACT_tr2(Prefix* handle);
+static void prefix_effect_LCD_MENU_SET_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_SET_TEMP_SELEC_TEMP_tr0(Prefix* handle);
+static void prefix_effect_LCD_MENU_SET_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_SET_TEMP_SELEC_TEMP_tr1(Prefix* handle);
+static void prefix_effect_LCD_MENU_SET_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_SET_TEMP_SELEC_TEMP_tr2(Prefix* handle);
 static void prefix_effect_PUENTE_H_STOP_tr0(Prefix* handle);
+static void prefix_effect_PUENTE_H_STOP_tr1(Prefix* handle);
 static void prefix_effect_PUENTE_H_H_ROTACION_HORARIO_tr0(Prefix* handle);
+static void prefix_effect_PUENTE_H_H_ROTACION_HORARIO_tr1(Prefix* handle);
 static void prefix_effect_PUENTE_H_CONFIGURAR_tr0(Prefix* handle);
+static void prefix_effect_PUENTE_H_H_RETRACT_tr0(Prefix* handle);
+static void prefix_effect_PUENTE_H_H_RETRACT_tr1(Prefix* handle);
 static void prefix_enact_BOTON_DEL_ENCODER_DEBOUNCE(Prefix* handle);
 static void prefix_enact_BOTON_DEL_ENCODER_OPRIMIDO(Prefix* handle);
 static void prefix_enact_ENCODER_REPOSO(Prefix* handle);
@@ -88,13 +124,19 @@ static void prefix_enact_LCD_MENU_PRINCIPAL_MEMSAJE_MOSTRADO_EN_DISPLAY_MENU_PRI
 static void prefix_enact_LCD_MENU_PRINCIPAL_MEMSAJE_MOSTRADO_EN_DISPLAY_MENU_PRINCIPAL_EXTRUSION(Prefix* handle);
 static void prefix_enact_LCD_MENU_CONF_TEMP(Prefix* handle);
 static void prefix_enact_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_CANCELAR(Prefix* handle);
+static void prefix_enact_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_SETEAR_TEMP(Prefix* handle);
+static void prefix_enact_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_ENFRIAR(Prefix* handle);
 static void prefix_enact_LCD_MENU_CONF_MOTORES(Prefix* handle);
 static void prefix_enact_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_CANCELAR(Prefix* handle);
-static void prefix_enact_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_ROTAR_MOTOR_EXTRUSION(Prefix* handle);
-static void prefix_enact_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_STOP_MOTOR_EXTRUSION(Prefix* handle);
+static void prefix_enact_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_START_EXTRUSION(Prefix* handle);
+static void prefix_enact_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_STOP_EXTRUSION(Prefix* handle);
+static void prefix_enact_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_START_RETRACT(Prefix* handle);
+static void prefix_enact_LCD_MENU_SET_TEMP(Prefix* handle);
+static void prefix_enact_LCD_MENU_SET_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_SET_TEMP_SELEC_TEMP(Prefix* handle);
 static void prefix_enact_PUENTE_H_STOP(Prefix* handle);
 static void prefix_enact_PUENTE_H_H_ROTACION_HORARIO(Prefix* handle);
 static void prefix_enact_PUENTE_H_CONFIGURAR(Prefix* handle);
+static void prefix_enact_PUENTE_H_H_RETRACT(Prefix* handle);
 static void prefix_exact_BOTON_DEL_ENCODER_DEBOUNCE(Prefix* handle);
 static void prefix_enseq_BOTON_DEL_ENCODER_DEBOUNCE_default(Prefix* handle);
 static void prefix_enseq_BOTON_DEL_ENCODER_NO_OPRIMIDO_default(Prefix* handle);
@@ -110,19 +152,26 @@ static void prefix_enseq_LCD_MENU_PRINCIPAL_MEMSAJE_MOSTRADO_EN_DISPLAY_MENU_PRI
 static void prefix_enseq_LCD_MENU_PRINCIPAL_MEMSAJE_MOSTRADO_EN_DISPLAY_MENU_PRINCIPAL_EXTRUSION_default(Prefix* handle);
 static void prefix_enseq_LCD_MENU_CONF_TEMP_default(Prefix* handle);
 static void prefix_enseq_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_CANCELAR_default(Prefix* handle);
+static void prefix_enseq_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_SETEAR_TEMP_default(Prefix* handle);
+static void prefix_enseq_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_ENFRIAR_default(Prefix* handle);
 static void prefix_enseq_LCD_MENU_CONF_MOTORES_default(Prefix* handle);
 static void prefix_enseq_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_CANCELAR_default(Prefix* handle);
-static void prefix_enseq_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_ROTAR_MOTOR_EXTRUSION_default(Prefix* handle);
-static void prefix_enseq_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_STOP_MOTOR_EXTRUSION_default(Prefix* handle);
+static void prefix_enseq_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_START_EXTRUSION_default(Prefix* handle);
+static void prefix_enseq_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_STOP_EXTRUSION_default(Prefix* handle);
+static void prefix_enseq_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_START_RETRACT_default(Prefix* handle);
+static void prefix_enseq_LCD_MENU_SET_TEMP_default(Prefix* handle);
+static void prefix_enseq_LCD_MENU_SET_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_SET_TEMP_SELEC_TEMP_default(Prefix* handle);
 static void prefix_enseq_PUENTE_H_STOP_default(Prefix* handle);
 static void prefix_enseq_PUENTE_H_H_ROTACION_HORARIO_default(Prefix* handle);
 static void prefix_enseq_PUENTE_H_CONFIGURAR_default(Prefix* handle);
+static void prefix_enseq_PUENTE_H_H_RETRACT_default(Prefix* handle);
 static void prefix_enseq_BOTON_DEL_ENCODER_default(Prefix* handle);
 static void prefix_enseq_ENCODER_default(Prefix* handle);
 static void prefix_enseq_LCD_default(Prefix* handle);
 static void prefix_enseq_LCD_MENU_PRINCIPAL_MEMSAJE_MOSTRADO_EN_DISPLAY_MENU_PRINCIPAL_default(Prefix* handle);
 static void prefix_enseq_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_default(Prefix* handle);
 static void prefix_enseq_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_default(Prefix* handle);
+static void prefix_enseq_LCD_MENU_SET_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_SET_TEMP_default(Prefix* handle);
 static void prefix_enseq_PUENTE_H_default(Prefix* handle);
 static void prefix_exseq_BOTON_DEL_ENCODER_DEBOUNCE(Prefix* handle);
 static void prefix_exseq_BOTON_DEL_ENCODER_NO_OPRIMIDO(Prefix* handle);
@@ -138,19 +187,26 @@ static void prefix_exseq_LCD_MENU_PRINCIPAL_MEMSAJE_MOSTRADO_EN_DISPLAY_MENU_PRI
 static void prefix_exseq_LCD_MENU_PRINCIPAL_MEMSAJE_MOSTRADO_EN_DISPLAY_MENU_PRINCIPAL_EXTRUSION(Prefix* handle);
 static void prefix_exseq_LCD_MENU_CONF_TEMP(Prefix* handle);
 static void prefix_exseq_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_CANCELAR(Prefix* handle);
+static void prefix_exseq_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_SETEAR_TEMP(Prefix* handle);
+static void prefix_exseq_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_ENFRIAR(Prefix* handle);
 static void prefix_exseq_LCD_MENU_CONF_MOTORES(Prefix* handle);
 static void prefix_exseq_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_CANCELAR(Prefix* handle);
-static void prefix_exseq_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_ROTAR_MOTOR_EXTRUSION(Prefix* handle);
-static void prefix_exseq_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_STOP_MOTOR_EXTRUSION(Prefix* handle);
+static void prefix_exseq_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_START_EXTRUSION(Prefix* handle);
+static void prefix_exseq_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_STOP_EXTRUSION(Prefix* handle);
+static void prefix_exseq_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_START_RETRACT(Prefix* handle);
+static void prefix_exseq_LCD_MENU_SET_TEMP(Prefix* handle);
+static void prefix_exseq_LCD_MENU_SET_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_SET_TEMP_SELEC_TEMP(Prefix* handle);
 static void prefix_exseq_PUENTE_H_STOP(Prefix* handle);
 static void prefix_exseq_PUENTE_H_H_ROTACION_HORARIO(Prefix* handle);
 static void prefix_exseq_PUENTE_H_CONFIGURAR(Prefix* handle);
+static void prefix_exseq_PUENTE_H_H_RETRACT(Prefix* handle);
 static void prefix_exseq_BOTON_DEL_ENCODER(Prefix* handle);
 static void prefix_exseq_ENCODER(Prefix* handle);
 static void prefix_exseq_LCD(Prefix* handle);
 static void prefix_exseq_LCD_MENU_PRINCIPAL_MEMSAJE_MOSTRADO_EN_DISPLAY_MENU_PRINCIPAL(Prefix* handle);
 static void prefix_exseq_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP(Prefix* handle);
 static void prefix_exseq_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES(Prefix* handle);
+static void prefix_exseq_LCD_MENU_SET_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_SET_TEMP(Prefix* handle);
 static void prefix_exseq_PUENTE_H(Prefix* handle);
 static void prefix_react_BOTON_DEL_ENCODER_DEBOUNCE(Prefix* handle);
 static void prefix_react_BOTON_DEL_ENCODER_NO_OPRIMIDO(Prefix* handle);
@@ -164,18 +220,24 @@ static void prefix_react_LCD_MENU_PRINCIPAL_MEMSAJE_MOSTRADO_EN_DISPLAY_MENU_PRI
 static void prefix_react_LCD_MENU_PRINCIPAL_MEMSAJE_MOSTRADO_EN_DISPLAY_MENU_PRINCIPAL_CONF_WI_FI(Prefix* handle);
 static void prefix_react_LCD_MENU_PRINCIPAL_MEMSAJE_MOSTRADO_EN_DISPLAY_MENU_PRINCIPAL_EXTRUSION(Prefix* handle);
 static void prefix_react_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_CANCELAR(Prefix* handle);
+static void prefix_react_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_SETEAR_TEMP(Prefix* handle);
+static void prefix_react_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_ENFRIAR(Prefix* handle);
 static void prefix_react_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_CANCELAR(Prefix* handle);
-static void prefix_react_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_ROTAR_MOTOR_EXTRUSION(Prefix* handle);
-static void prefix_react_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_STOP_MOTOR_EXTRUSION(Prefix* handle);
+static void prefix_react_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_START_EXTRUSION(Prefix* handle);
+static void prefix_react_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_STOP_EXTRUSION(Prefix* handle);
+static void prefix_react_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_START_RETRACT(Prefix* handle);
+static void prefix_react_LCD_MENU_SET_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_SET_TEMP_SELEC_TEMP(Prefix* handle);
 static void prefix_react_PUENTE_H_STOP(Prefix* handle);
 static void prefix_react_PUENTE_H_H_ROTACION_HORARIO(Prefix* handle);
 static void prefix_react_PUENTE_H_CONFIGURAR(Prefix* handle);
+static void prefix_react_PUENTE_H_H_RETRACT(Prefix* handle);
 static void prefix_react_BOTON_DEL_ENCODER__entry_Default(Prefix* handle);
 static void prefix_react_ENCODER__entry_Default(Prefix* handle);
 static void prefix_react_LCD__entry_Default(Prefix* handle);
 static void prefix_react_LCD_MENU_PRINCIPAL_MEMSAJE_MOSTRADO_EN_DISPLAY_MENU_PRINCIPAL__entry_Default(Prefix* handle);
 static void prefix_react_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP__entry_Default(Prefix* handle);
 static void prefix_react_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES__entry_Default(Prefix* handle);
+static void prefix_react_LCD_MENU_SET_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_SET_TEMP__entry_Default(Prefix* handle);
 static void prefix_react_PUENTE_H__entry_Default(Prefix* handle);
 static void prefix_clearInEvents(Prefix* handle);
 static void prefix_clearOutEvents(Prefix* handle);
@@ -192,8 +254,12 @@ const sc_string PREFIX_PREFIXIFACE_MSJ_MENU_CONF_WI_FI = "Conf Wi-Fi";
 const sc_string PREFIX_PREFIXIFACE_MSJ_MENU_EXTRUIR = "Extrusion";
 const sc_string PREFIX_PREFIXIFACE_MSJ_MENU_CONF_TEMP = "Conf temp";
 const sc_string PREFIX_PREFIXIFACE_MSJ_MENU_CANCELAR = "Cancelar";
-const sc_string PREFIX_PREFIXIFACE_MSJ_MENU_MOTOR_EXTRUSION = "Motor de ext ON";
-const sc_string PREFIX_PREFIXIFACE_MSJ_MENU_MOTOR_EXTRUSION_STOP = "STOP motor de ext";
+const sc_string PREFIX_PREFIXIFACE_MSJ_MENU_MOTOR_EXTRUSION = "Start extrusión";
+const sc_string PREFIX_PREFIXIFACE_MSJ_MENU_MOTOR_EXTRUSION_STOP = "Stop extrusion/retract";
+const sc_string PREFIX_PREFIXIFACE_MSJ_MENU_MOTOR_EXTRUSION_RETRACT = "Start retract";
+const sc_string PREFIX_PREFIXIFACE_MSJ_MENU_SETEAR_TEMP = "Set temp";
+const sc_string PREFIX_PREFIXIFACE_MSJ_MENU_ENFRIAR = "Off temp";
+const sc_string PREFIX_PREFIXIFACE_MSJ_MENU_SET_TEMP = "Temperature ? [°C]";
 
 void prefix_init(Prefix* handle)
 {
@@ -215,6 +281,7 @@ void prefix_init(Prefix* handle)
 	handle->internal.viEnc_count_izq = 0;
 	handle->internal.viEnc_volver = 0;
 	handle->internal.viTecla = 0;
+	handle->internal.viSet_temp_lcd = 0;
 
 }
 
@@ -274,6 +341,7 @@ static void prefix_clearInEvents(Prefix* handle)
 	handle->internal.siEntrar_raised = bool_false;
 	handle->internal.siStop_puente_h_raised = bool_false;
 	handle->internal.siStart_puente_h_raised = bool_false;
+	handle->internal.siRetract_puente_h_raised = bool_false;
 	handle->timeEvents.prefix_BOTON_DEL_ENCODER_DEBOUNCE_tev0_raised = bool_false;
 }
 
@@ -353,19 +421,39 @@ void prefix_runCycle(Prefix* handle)
 			prefix_react_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_CANCELAR(handle);
 			break;
 		}
+		case Prefix_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_SETEAR_TEMP :
+		{
+			prefix_react_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_SETEAR_TEMP(handle);
+			break;
+		}
+		case Prefix_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_ENFRIAR :
+		{
+			prefix_react_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_ENFRIAR(handle);
+			break;
+		}
 		case Prefix_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_CANCELAR :
 		{
 			prefix_react_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_CANCELAR(handle);
 			break;
 		}
-		case Prefix_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_ROTAR_MOTOR_EXTRUSION :
+		case Prefix_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_START_EXTRUSION :
 		{
-			prefix_react_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_ROTAR_MOTOR_EXTRUSION(handle);
+			prefix_react_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_START_EXTRUSION(handle);
 			break;
 		}
-		case Prefix_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_STOP_MOTOR_EXTRUSION :
+		case Prefix_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_STOP_EXTRUSION :
 		{
-			prefix_react_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_STOP_MOTOR_EXTRUSION(handle);
+			prefix_react_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_STOP_EXTRUSION(handle);
+			break;
+		}
+		case Prefix_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_START_RETRACT :
+		{
+			prefix_react_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_START_RETRACT(handle);
+			break;
+		}
+		case Prefix_LCD_MENU_SET_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_SET_TEMP_SELEC_TEMP :
+		{
+			prefix_react_LCD_MENU_SET_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_SET_TEMP_SELEC_TEMP(handle);
 			break;
 		}
 		case Prefix_PUENTE_H_STOP :
@@ -381,6 +469,11 @@ void prefix_runCycle(Prefix* handle)
 		case Prefix_PUENTE_H_CONFIGURAR :
 		{
 			prefix_react_PUENTE_H_CONFIGURAR(handle);
+			break;
+		}
+		case Prefix_PUENTE_H_H_RETRACT :
+		{
+			prefix_react_PUENTE_H_H_RETRACT(handle);
 			break;
 		}
 		default:
@@ -455,26 +548,46 @@ sc_boolean prefix_isStateActive(const Prefix* handle, PrefixStates state)
 			break;
 		case Prefix_LCD_MENU_CONF_TEMP :
 			result = (sc_boolean) (handle->stateConfVector[2] >= Prefix_LCD_MENU_CONF_TEMP
-				&& handle->stateConfVector[2] <= Prefix_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_CANCELAR);
+				&& handle->stateConfVector[2] <= Prefix_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_ENFRIAR);
 			break;
 		case Prefix_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_CANCELAR :
 			result = (sc_boolean) (handle->stateConfVector[2] == Prefix_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_CANCELAR
 			);
 			break;
+		case Prefix_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_SETEAR_TEMP :
+			result = (sc_boolean) (handle->stateConfVector[2] == Prefix_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_SETEAR_TEMP
+			);
+			break;
+		case Prefix_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_ENFRIAR :
+			result = (sc_boolean) (handle->stateConfVector[2] == Prefix_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_ENFRIAR
+			);
+			break;
 		case Prefix_LCD_MENU_CONF_MOTORES :
 			result = (sc_boolean) (handle->stateConfVector[2] >= Prefix_LCD_MENU_CONF_MOTORES
-				&& handle->stateConfVector[2] <= Prefix_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_STOP_MOTOR_EXTRUSION);
+				&& handle->stateConfVector[2] <= Prefix_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_START_RETRACT);
 			break;
 		case Prefix_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_CANCELAR :
 			result = (sc_boolean) (handle->stateConfVector[2] == Prefix_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_CANCELAR
 			);
 			break;
-		case Prefix_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_ROTAR_MOTOR_EXTRUSION :
-			result = (sc_boolean) (handle->stateConfVector[2] == Prefix_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_ROTAR_MOTOR_EXTRUSION
+		case Prefix_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_START_EXTRUSION :
+			result = (sc_boolean) (handle->stateConfVector[2] == Prefix_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_START_EXTRUSION
 			);
 			break;
-		case Prefix_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_STOP_MOTOR_EXTRUSION :
-			result = (sc_boolean) (handle->stateConfVector[2] == Prefix_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_STOP_MOTOR_EXTRUSION
+		case Prefix_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_STOP_EXTRUSION :
+			result = (sc_boolean) (handle->stateConfVector[2] == Prefix_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_STOP_EXTRUSION
+			);
+			break;
+		case Prefix_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_START_RETRACT :
+			result = (sc_boolean) (handle->stateConfVector[2] == Prefix_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_START_RETRACT
+			);
+			break;
+		case Prefix_LCD_MENU_SET_TEMP :
+			result = (sc_boolean) (handle->stateConfVector[2] >= Prefix_LCD_MENU_SET_TEMP
+				&& handle->stateConfVector[2] <= Prefix_LCD_MENU_SET_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_SET_TEMP_SELEC_TEMP);
+			break;
+		case Prefix_LCD_MENU_SET_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_SET_TEMP_SELEC_TEMP :
+			result = (sc_boolean) (handle->stateConfVector[2] == Prefix_LCD_MENU_SET_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_SET_TEMP_SELEC_TEMP
 			);
 			break;
 		case Prefix_PUENTE_H_STOP :
@@ -487,6 +600,10 @@ sc_boolean prefix_isStateActive(const Prefix* handle, PrefixStates state)
 			break;
 		case Prefix_PUENTE_H_CONFIGURAR :
 			result = (sc_boolean) (handle->stateConfVector[3] == Prefix_PUENTE_H_CONFIGURAR
+			);
+			break;
+		case Prefix_PUENTE_H_H_RETRACT :
+			result = (sc_boolean) (handle->stateConfVector[3] == Prefix_PUENTE_H_H_RETRACT
 			);
 			break;
 		default:
@@ -589,6 +706,22 @@ const sc_string prefixIface_get_msj_menu_motor_extrusion(const Prefix* handle)
 const sc_string prefixIface_get_msj_menu_motor_extrusion_stop(const Prefix* handle)
 {
 	return PREFIX_PREFIXIFACE_MSJ_MENU_MOTOR_EXTRUSION_STOP;
+}
+const sc_string prefixIface_get_msj_menu_motor_extrusion_retract(const Prefix* handle)
+{
+	return PREFIX_PREFIXIFACE_MSJ_MENU_MOTOR_EXTRUSION_RETRACT;
+}
+const sc_string prefixIface_get_msj_menu_setear_temp(const Prefix* handle)
+{
+	return PREFIX_PREFIXIFACE_MSJ_MENU_SETEAR_TEMP;
+}
+const sc_string prefixIface_get_msj_menu_enfriar(const Prefix* handle)
+{
+	return PREFIX_PREFIXIFACE_MSJ_MENU_ENFRIAR;
+}
+const sc_string prefixIface_get_msj_menu_set_temp(const Prefix* handle)
+{
+	return PREFIX_PREFIXIFACE_MSJ_MENU_SET_TEMP;
 }
 
 /* implementations of all internal functions */
@@ -703,6 +836,46 @@ static sc_boolean prefix_check_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CO
 	return handle->internal.siEntrar_raised;
 }
 
+static sc_boolean prefix_check_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_CANCELAR_tr1_tr1(const Prefix* handle)
+{
+	return handle->internal.siDespl_derecha_raised;
+}
+
+static sc_boolean prefix_check_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_CANCELAR_tr2_tr2(const Prefix* handle)
+{
+	return handle->internal.siDespl_izquierda_raised;
+}
+
+static sc_boolean prefix_check_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_SETEAR_TEMP_tr0_tr0(const Prefix* handle)
+{
+	return handle->internal.siDespl_izquierda_raised;
+}
+
+static sc_boolean prefix_check_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_SETEAR_TEMP_tr1_tr1(const Prefix* handle)
+{
+	return handle->internal.siDespl_derecha_raised;
+}
+
+static sc_boolean prefix_check_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_SETEAR_TEMP_tr2_tr2(const Prefix* handle)
+{
+	return handle->internal.siEntrar_raised;
+}
+
+static sc_boolean prefix_check_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_ENFRIAR_tr0_tr0(const Prefix* handle)
+{
+	return handle->internal.siDespl_izquierda_raised;
+}
+
+static sc_boolean prefix_check_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_ENFRIAR_tr1_tr1(const Prefix* handle)
+{
+	return handle->internal.siDespl_derecha_raised;
+}
+
+static sc_boolean prefix_check_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_ENFRIAR_tr2_tr2(const Prefix* handle)
+{
+	return handle->internal.siEntrar_raised;
+}
+
 static sc_boolean prefix_check_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_CANCELAR_tr0_tr0(const Prefix* handle)
 {
 	return handle->internal.siEntrar_raised;
@@ -718,34 +891,64 @@ static sc_boolean prefix_check_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY
 	return handle->internal.siDespl_izquierda_raised;
 }
 
-static sc_boolean prefix_check_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_ROTAR_MOTOR_EXTRUSION_tr0_tr0(const Prefix* handle)
+static sc_boolean prefix_check_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_START_EXTRUSION_tr0_tr0(const Prefix* handle)
 {
 	return handle->internal.siDespl_izquierda_raised;
 }
 
-static sc_boolean prefix_check_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_ROTAR_MOTOR_EXTRUSION_tr1_tr1(const Prefix* handle)
+static sc_boolean prefix_check_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_START_EXTRUSION_tr1_tr1(const Prefix* handle)
 {
 	return handle->internal.siDespl_derecha_raised;
 }
 
-static sc_boolean prefix_check_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_ROTAR_MOTOR_EXTRUSION_tr2_tr2(const Prefix* handle)
+static sc_boolean prefix_check_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_START_EXTRUSION_tr2_tr2(const Prefix* handle)
 {
 	return handle->internal.siEntrar_raised;
 }
 
-static sc_boolean prefix_check_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_STOP_MOTOR_EXTRUSION_tr0_tr0(const Prefix* handle)
+static sc_boolean prefix_check_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_STOP_EXTRUSION_tr0_tr0(const Prefix* handle)
 {
 	return handle->internal.siDespl_izquierda_raised;
 }
 
-static sc_boolean prefix_check_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_STOP_MOTOR_EXTRUSION_tr1_tr1(const Prefix* handle)
+static sc_boolean prefix_check_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_STOP_EXTRUSION_tr1_tr1(const Prefix* handle)
 {
 	return handle->internal.siEntrar_raised;
 }
 
-static sc_boolean prefix_check_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_STOP_MOTOR_EXTRUSION_tr2_tr2(const Prefix* handle)
+static sc_boolean prefix_check_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_STOP_EXTRUSION_tr2_tr2(const Prefix* handle)
 {
 	return handle->internal.siDespl_derecha_raised;
+}
+
+static sc_boolean prefix_check_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_START_RETRACT_tr0_tr0(const Prefix* handle)
+{
+	return handle->internal.siDespl_izquierda_raised;
+}
+
+static sc_boolean prefix_check_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_START_RETRACT_tr1_tr1(const Prefix* handle)
+{
+	return handle->internal.siDespl_derecha_raised;
+}
+
+static sc_boolean prefix_check_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_START_RETRACT_tr2_tr2(const Prefix* handle)
+{
+	return handle->internal.siEntrar_raised;
+}
+
+static sc_boolean prefix_check_LCD_MENU_SET_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_SET_TEMP_SELEC_TEMP_tr0_tr0(const Prefix* handle)
+{
+	return handle->internal.siDespl_derecha_raised;
+}
+
+static sc_boolean prefix_check_LCD_MENU_SET_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_SET_TEMP_SELEC_TEMP_tr1_tr1(const Prefix* handle)
+{
+	return ((handle->internal.siDespl_izquierda_raised) && (handle->internal.viSet_temp_lcd > 0)) ? bool_true : bool_false;
+}
+
+static sc_boolean prefix_check_LCD_MENU_SET_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_SET_TEMP_SELEC_TEMP_tr2_tr2(const Prefix* handle)
+{
+	return handle->internal.siEntrar_raised;
 }
 
 static sc_boolean prefix_check_PUENTE_H_STOP_tr0_tr0(const Prefix* handle)
@@ -753,14 +956,34 @@ static sc_boolean prefix_check_PUENTE_H_STOP_tr0_tr0(const Prefix* handle)
 	return handle->internal.siStart_puente_h_raised;
 }
 
+static sc_boolean prefix_check_PUENTE_H_STOP_tr1_tr1(const Prefix* handle)
+{
+	return handle->internal.siRetract_puente_h_raised;
+}
+
 static sc_boolean prefix_check_PUENTE_H_H_ROTACION_HORARIO_tr0_tr0(const Prefix* handle)
 {
 	return handle->internal.siStop_puente_h_raised;
 }
 
+static sc_boolean prefix_check_PUENTE_H_H_ROTACION_HORARIO_tr1_tr1(const Prefix* handle)
+{
+	return handle->internal.siRetract_puente_h_raised;
+}
+
 static sc_boolean prefix_check_PUENTE_H_CONFIGURAR_tr0_tr0(const Prefix* handle)
 {
 	return handle->iface.evConf_Ready_raised;
+}
+
+static sc_boolean prefix_check_PUENTE_H_H_RETRACT_tr0_tr0(const Prefix* handle)
+{
+	return handle->internal.siStart_puente_h_raised;
+}
+
+static sc_boolean prefix_check_PUENTE_H_H_RETRACT_tr1_tr1(const Prefix* handle)
+{
+	return handle->internal.siStop_puente_h_raised;
 }
 
 static void prefix_effect_BOTON_DEL_ENCODER_DEBOUNCE_tr0(Prefix* handle)
@@ -899,6 +1122,54 @@ static void prefix_effect_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TE
 	prefix_enseq_LCD_MENU_PRINCIPAL_default(handle);
 }
 
+static void prefix_effect_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_CANCELAR_tr1(Prefix* handle)
+{
+	prefix_exseq_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_CANCELAR(handle);
+	prefix_enseq_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_SETEAR_TEMP_default(handle);
+}
+
+static void prefix_effect_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_CANCELAR_tr2(Prefix* handle)
+{
+	prefix_exseq_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_CANCELAR(handle);
+	prefix_enseq_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_ENFRIAR_default(handle);
+}
+
+static void prefix_effect_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_SETEAR_TEMP_tr0(Prefix* handle)
+{
+	prefix_exseq_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_SETEAR_TEMP(handle);
+	prefix_enseq_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_CANCELAR_default(handle);
+}
+
+static void prefix_effect_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_SETEAR_TEMP_tr1(Prefix* handle)
+{
+	prefix_exseq_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_SETEAR_TEMP(handle);
+	prefix_enseq_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_ENFRIAR_default(handle);
+}
+
+static void prefix_effect_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_SETEAR_TEMP_tr2(Prefix* handle)
+{
+	prefix_exseq_LCD_MENU_CONF_TEMP(handle);
+	prefix_enseq_LCD_MENU_SET_TEMP_default(handle);
+}
+
+static void prefix_effect_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_ENFRIAR_tr0(Prefix* handle)
+{
+	prefix_exseq_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_ENFRIAR(handle);
+	prefix_enseq_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_SETEAR_TEMP_default(handle);
+}
+
+static void prefix_effect_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_ENFRIAR_tr1(Prefix* handle)
+{
+	prefix_exseq_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_ENFRIAR(handle);
+	prefix_enseq_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_CANCELAR_default(handle);
+}
+
+static void prefix_effect_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_ENFRIAR_tr2(Prefix* handle)
+{
+	prefix_exseq_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_ENFRIAR(handle);
+	prefix_enseq_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_ENFRIAR_default(handle);
+}
+
 static void prefix_effect_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_CANCELAR_tr0(Prefix* handle)
 {
 	prefix_exseq_LCD_MENU_CONF_MOTORES(handle);
@@ -908,51 +1179,90 @@ static void prefix_effect_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF
 static void prefix_effect_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_CANCELAR_tr1(Prefix* handle)
 {
 	prefix_exseq_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_CANCELAR(handle);
-	prefix_enseq_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_ROTAR_MOTOR_EXTRUSION_default(handle);
+	prefix_enseq_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_START_EXTRUSION_default(handle);
 }
 
 static void prefix_effect_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_CANCELAR_tr2(Prefix* handle)
 {
 	prefix_exseq_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_CANCELAR(handle);
-	prefix_enseq_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_STOP_MOTOR_EXTRUSION_default(handle);
+	prefix_enseq_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_START_RETRACT_default(handle);
 }
 
-static void prefix_effect_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_ROTAR_MOTOR_EXTRUSION_tr0(Prefix* handle)
+static void prefix_effect_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_START_EXTRUSION_tr0(Prefix* handle)
 {
-	prefix_exseq_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_ROTAR_MOTOR_EXTRUSION(handle);
+	prefix_exseq_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_START_EXTRUSION(handle);
 	prefix_enseq_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_CANCELAR_default(handle);
 }
 
-static void prefix_effect_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_ROTAR_MOTOR_EXTRUSION_tr1(Prefix* handle)
+static void prefix_effect_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_START_EXTRUSION_tr1(Prefix* handle)
 {
-	prefix_exseq_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_ROTAR_MOTOR_EXTRUSION(handle);
-	prefix_enseq_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_STOP_MOTOR_EXTRUSION_default(handle);
+	prefix_exseq_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_START_EXTRUSION(handle);
+	prefix_enseq_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_STOP_EXTRUSION_default(handle);
 }
 
-static void prefix_effect_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_ROTAR_MOTOR_EXTRUSION_tr2(Prefix* handle)
+static void prefix_effect_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_START_EXTRUSION_tr2(Prefix* handle)
 {
-	prefix_exseq_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_ROTAR_MOTOR_EXTRUSION(handle);
+	prefix_exseq_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_START_EXTRUSION(handle);
 	handle->internal.siStart_puente_h_raised = bool_true;
-	prefix_enseq_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_ROTAR_MOTOR_EXTRUSION_default(handle);
+	prefix_enseq_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_START_EXTRUSION_default(handle);
 }
 
-static void prefix_effect_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_STOP_MOTOR_EXTRUSION_tr0(Prefix* handle)
+static void prefix_effect_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_STOP_EXTRUSION_tr0(Prefix* handle)
 {
-	prefix_exseq_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_STOP_MOTOR_EXTRUSION(handle);
-	prefix_enseq_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_ROTAR_MOTOR_EXTRUSION_default(handle);
+	prefix_exseq_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_STOP_EXTRUSION(handle);
+	prefix_enseq_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_START_EXTRUSION_default(handle);
 }
 
-static void prefix_effect_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_STOP_MOTOR_EXTRUSION_tr1(Prefix* handle)
+static void prefix_effect_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_STOP_EXTRUSION_tr1(Prefix* handle)
 {
-	prefix_exseq_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_STOP_MOTOR_EXTRUSION(handle);
+	prefix_exseq_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_STOP_EXTRUSION(handle);
 	handle->internal.siStop_puente_h_raised = bool_true;
-	prefix_enseq_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_STOP_MOTOR_EXTRUSION_default(handle);
+	prefix_enseq_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_STOP_EXTRUSION_default(handle);
 }
 
-static void prefix_effect_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_STOP_MOTOR_EXTRUSION_tr2(Prefix* handle)
+static void prefix_effect_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_STOP_EXTRUSION_tr2(Prefix* handle)
 {
-	prefix_exseq_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_STOP_MOTOR_EXTRUSION(handle);
+	prefix_exseq_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_STOP_EXTRUSION(handle);
+	prefix_enseq_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_START_RETRACT_default(handle);
+}
+
+static void prefix_effect_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_START_RETRACT_tr0(Prefix* handle)
+{
+	prefix_exseq_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_START_RETRACT(handle);
+	prefix_enseq_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_STOP_EXTRUSION_default(handle);
+}
+
+static void prefix_effect_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_START_RETRACT_tr1(Prefix* handle)
+{
+	prefix_exseq_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_START_RETRACT(handle);
 	prefix_enseq_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_CANCELAR_default(handle);
+}
+
+static void prefix_effect_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_START_RETRACT_tr2(Prefix* handle)
+{
+	prefix_exseq_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_START_RETRACT(handle);
+	handle->internal.siRetract_puente_h_raised = bool_true;
+	prefix_enseq_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_START_RETRACT_default(handle);
+}
+
+static void prefix_effect_LCD_MENU_SET_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_SET_TEMP_SELEC_TEMP_tr0(Prefix* handle)
+{
+	prefix_exseq_LCD_MENU_SET_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_SET_TEMP_SELEC_TEMP(handle);
+	handle->internal.viSet_temp_lcd += 1;
+	prefix_enseq_LCD_MENU_SET_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_SET_TEMP_SELEC_TEMP_default(handle);
+}
+
+static void prefix_effect_LCD_MENU_SET_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_SET_TEMP_SELEC_TEMP_tr1(Prefix* handle)
+{
+	prefix_exseq_LCD_MENU_SET_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_SET_TEMP_SELEC_TEMP(handle);
+	handle->internal.viSet_temp_lcd -= 1;
+	prefix_enseq_LCD_MENU_SET_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_SET_TEMP_SELEC_TEMP_default(handle);
+}
+
+static void prefix_effect_LCD_MENU_SET_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_SET_TEMP_SELEC_TEMP_tr2(Prefix* handle)
+{
+	prefix_exseq_LCD_MENU_SET_TEMP(handle);
+	prefix_enseq_LCD_MENU_CONF_TEMP_default(handle);
 }
 
 static void prefix_effect_PUENTE_H_STOP_tr0(Prefix* handle)
@@ -961,15 +1271,41 @@ static void prefix_effect_PUENTE_H_STOP_tr0(Prefix* handle)
 	prefix_enseq_PUENTE_H_H_ROTACION_HORARIO_default(handle);
 }
 
+static void prefix_effect_PUENTE_H_STOP_tr1(Prefix* handle)
+{
+	prefix_exseq_PUENTE_H_STOP(handle);
+	prefix_enseq_PUENTE_H_H_RETRACT_default(handle);
+}
+
 static void prefix_effect_PUENTE_H_H_ROTACION_HORARIO_tr0(Prefix* handle)
 {
 	prefix_exseq_PUENTE_H_H_ROTACION_HORARIO(handle);
 	prefix_enseq_PUENTE_H_STOP_default(handle);
 }
 
+static void prefix_effect_PUENTE_H_H_ROTACION_HORARIO_tr1(Prefix* handle)
+{
+	prefix_exseq_PUENTE_H_H_ROTACION_HORARIO(handle);
+	prefixIface_opStop_puente_h(handle);
+	prefix_enseq_PUENTE_H_H_RETRACT_default(handle);
+}
+
 static void prefix_effect_PUENTE_H_CONFIGURAR_tr0(Prefix* handle)
 {
 	prefix_exseq_PUENTE_H_CONFIGURAR(handle);
+	prefix_enseq_PUENTE_H_STOP_default(handle);
+}
+
+static void prefix_effect_PUENTE_H_H_RETRACT_tr0(Prefix* handle)
+{
+	prefix_exseq_PUENTE_H_H_RETRACT(handle);
+	prefixIface_opStop_puente_h(handle);
+	prefix_enseq_PUENTE_H_H_ROTACION_HORARIO_default(handle);
+}
+
+static void prefix_effect_PUENTE_H_H_RETRACT_tr1(Prefix* handle)
+{
+	prefix_exseq_PUENTE_H_H_RETRACT(handle);
 	prefix_enseq_PUENTE_H_STOP_default(handle);
 }
 
@@ -1063,6 +1399,20 @@ static void prefix_enact_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEM
 	prefixIface_opMostrar_msj(handle, PREFIX_PREFIXIFACE_MSJ_MENU_CANCELAR, 1, 2);
 }
 
+/* Entry action for state 'SETEAR_TEMP'. */
+static void prefix_enact_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_SETEAR_TEMP(Prefix* handle)
+{
+	/* Entry action for state 'SETEAR_TEMP'. */
+	prefixIface_opMostrar_msj(handle, PREFIX_PREFIXIFACE_MSJ_MENU_SETEAR_TEMP, 1, 2);
+}
+
+/* Entry action for state 'ENFRIAR'. */
+static void prefix_enact_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_ENFRIAR(Prefix* handle)
+{
+	/* Entry action for state 'ENFRIAR'. */
+	prefixIface_opMostrar_msj(handle, PREFIX_PREFIXIFACE_MSJ_MENU_ENFRIAR, 1, 2);
+}
+
 /* Entry action for state 'MENU_CONF_MOTORES'. */
 static void prefix_enact_LCD_MENU_CONF_MOTORES(Prefix* handle)
 {
@@ -1077,18 +1427,39 @@ static void prefix_enact_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_
 	prefixIface_opMostrar_msj(handle, PREFIX_PREFIXIFACE_MSJ_MENU_CANCELAR, 1, 2);
 }
 
-/* Entry action for state 'ROTAR_MOTOR_EXTRUSION'. */
-static void prefix_enact_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_ROTAR_MOTOR_EXTRUSION(Prefix* handle)
+/* Entry action for state 'START_EXTRUSION'. */
+static void prefix_enact_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_START_EXTRUSION(Prefix* handle)
 {
-	/* Entry action for state 'ROTAR_MOTOR_EXTRUSION'. */
+	/* Entry action for state 'START_EXTRUSION'. */
 	prefixIface_opMostrar_msj(handle, PREFIX_PREFIXIFACE_MSJ_MENU_MOTOR_EXTRUSION, 1, 2);
 }
 
-/* Entry action for state 'STOP_MOTOR_EXTRUSION'. */
-static void prefix_enact_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_STOP_MOTOR_EXTRUSION(Prefix* handle)
+/* Entry action for state 'STOP_EXTRUSION'. */
+static void prefix_enact_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_STOP_EXTRUSION(Prefix* handle)
 {
-	/* Entry action for state 'STOP_MOTOR_EXTRUSION'. */
+	/* Entry action for state 'STOP_EXTRUSION'. */
 	prefixIface_opMostrar_msj(handle, PREFIX_PREFIXIFACE_MSJ_MENU_MOTOR_EXTRUSION_STOP, 1, 2);
+}
+
+/* Entry action for state 'START_RETRACT'. */
+static void prefix_enact_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_START_RETRACT(Prefix* handle)
+{
+	/* Entry action for state 'START_RETRACT'. */
+	prefixIface_opMostrar_msj(handle, PREFIX_PREFIXIFACE_MSJ_MENU_MOTOR_EXTRUSION_RETRACT, 1, 2);
+}
+
+/* Entry action for state 'MENU_SET_TEMP'. */
+static void prefix_enact_LCD_MENU_SET_TEMP(Prefix* handle)
+{
+	/* Entry action for state 'MENU_SET_TEMP'. */
+	prefixIface_opMostrar_msj(handle, PREFIX_PREFIXIFACE_MSJ_MENU_SET_TEMP, 1, 1);
+}
+
+/* Entry action for state 'SELEC_TEMP'. */
+static void prefix_enact_LCD_MENU_SET_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_SET_TEMP_SELEC_TEMP(Prefix* handle)
+{
+	/* Entry action for state 'SELEC_TEMP'. */
+	prefixIface_opMostrar_num(handle, handle->internal.viSet_temp_lcd, 1, 2);
 }
 
 /* Entry action for state 'STOP'. */
@@ -1111,6 +1482,13 @@ static void prefix_enact_PUENTE_H_CONFIGURAR(Prefix* handle)
 	/* Entry action for state 'CONFIGURAR'. */
 	prefixIface_opConfig_puente_h(handle);
 	handle->iface.evConf_Ready_raised = bool_true;
+}
+
+/* Entry action for state 'H_RETRACT'. */
+static void prefix_enact_PUENTE_H_H_RETRACT(Prefix* handle)
+{
+	/* Entry action for state 'H_RETRACT'. */
+	prefixIface_opRetract_puente_h(handle);
 }
 
 /* Exit action for state 'DEBOUNCE'. */
@@ -1242,6 +1620,24 @@ static void prefix_enseq_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEM
 	handle->stateConfVectorPosition = 2;
 }
 
+/* 'default' enter sequence for state SETEAR_TEMP */
+static void prefix_enseq_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_SETEAR_TEMP_default(Prefix* handle)
+{
+	/* 'default' enter sequence for state SETEAR_TEMP */
+	prefix_enact_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_SETEAR_TEMP(handle);
+	handle->stateConfVector[2] = Prefix_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_SETEAR_TEMP;
+	handle->stateConfVectorPosition = 2;
+}
+
+/* 'default' enter sequence for state ENFRIAR */
+static void prefix_enseq_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_ENFRIAR_default(Prefix* handle)
+{
+	/* 'default' enter sequence for state ENFRIAR */
+	prefix_enact_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_ENFRIAR(handle);
+	handle->stateConfVector[2] = Prefix_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_ENFRIAR;
+	handle->stateConfVectorPosition = 2;
+}
+
 /* 'default' enter sequence for state MENU_CONF_MOTORES */
 static void prefix_enseq_LCD_MENU_CONF_MOTORES_default(Prefix* handle)
 {
@@ -1259,21 +1655,47 @@ static void prefix_enseq_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_
 	handle->stateConfVectorPosition = 2;
 }
 
-/* 'default' enter sequence for state ROTAR_MOTOR_EXTRUSION */
-static void prefix_enseq_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_ROTAR_MOTOR_EXTRUSION_default(Prefix* handle)
+/* 'default' enter sequence for state START_EXTRUSION */
+static void prefix_enseq_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_START_EXTRUSION_default(Prefix* handle)
 {
-	/* 'default' enter sequence for state ROTAR_MOTOR_EXTRUSION */
-	prefix_enact_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_ROTAR_MOTOR_EXTRUSION(handle);
-	handle->stateConfVector[2] = Prefix_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_ROTAR_MOTOR_EXTRUSION;
+	/* 'default' enter sequence for state START_EXTRUSION */
+	prefix_enact_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_START_EXTRUSION(handle);
+	handle->stateConfVector[2] = Prefix_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_START_EXTRUSION;
 	handle->stateConfVectorPosition = 2;
 }
 
-/* 'default' enter sequence for state STOP_MOTOR_EXTRUSION */
-static void prefix_enseq_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_STOP_MOTOR_EXTRUSION_default(Prefix* handle)
+/* 'default' enter sequence for state STOP_EXTRUSION */
+static void prefix_enseq_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_STOP_EXTRUSION_default(Prefix* handle)
 {
-	/* 'default' enter sequence for state STOP_MOTOR_EXTRUSION */
-	prefix_enact_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_STOP_MOTOR_EXTRUSION(handle);
-	handle->stateConfVector[2] = Prefix_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_STOP_MOTOR_EXTRUSION;
+	/* 'default' enter sequence for state STOP_EXTRUSION */
+	prefix_enact_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_STOP_EXTRUSION(handle);
+	handle->stateConfVector[2] = Prefix_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_STOP_EXTRUSION;
+	handle->stateConfVectorPosition = 2;
+}
+
+/* 'default' enter sequence for state START_RETRACT */
+static void prefix_enseq_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_START_RETRACT_default(Prefix* handle)
+{
+	/* 'default' enter sequence for state START_RETRACT */
+	prefix_enact_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_START_RETRACT(handle);
+	handle->stateConfVector[2] = Prefix_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_START_RETRACT;
+	handle->stateConfVectorPosition = 2;
+}
+
+/* 'default' enter sequence for state MENU_SET_TEMP */
+static void prefix_enseq_LCD_MENU_SET_TEMP_default(Prefix* handle)
+{
+	/* 'default' enter sequence for state MENU_SET_TEMP */
+	prefix_enact_LCD_MENU_SET_TEMP(handle);
+	prefix_enseq_LCD_MENU_SET_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_SET_TEMP_default(handle);
+}
+
+/* 'default' enter sequence for state SELEC_TEMP */
+static void prefix_enseq_LCD_MENU_SET_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_SET_TEMP_SELEC_TEMP_default(Prefix* handle)
+{
+	/* 'default' enter sequence for state SELEC_TEMP */
+	prefix_enact_LCD_MENU_SET_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_SET_TEMP_SELEC_TEMP(handle);
+	handle->stateConfVector[2] = Prefix_LCD_MENU_SET_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_SET_TEMP_SELEC_TEMP;
 	handle->stateConfVectorPosition = 2;
 }
 
@@ -1301,6 +1723,15 @@ static void prefix_enseq_PUENTE_H_CONFIGURAR_default(Prefix* handle)
 	/* 'default' enter sequence for state CONFIGURAR */
 	prefix_enact_PUENTE_H_CONFIGURAR(handle);
 	handle->stateConfVector[3] = Prefix_PUENTE_H_CONFIGURAR;
+	handle->stateConfVectorPosition = 3;
+}
+
+/* 'default' enter sequence for state H_RETRACT */
+static void prefix_enseq_PUENTE_H_H_RETRACT_default(Prefix* handle)
+{
+	/* 'default' enter sequence for state H_RETRACT */
+	prefix_enact_PUENTE_H_H_RETRACT(handle);
+	handle->stateConfVector[3] = Prefix_PUENTE_H_H_RETRACT;
 	handle->stateConfVectorPosition = 3;
 }
 
@@ -1344,6 +1775,13 @@ static void prefix_enseq_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_
 {
 	/* 'default' enter sequence for region MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES */
 	prefix_react_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES__entry_Default(handle);
+}
+
+/* 'default' enter sequence for region MENSAJE_MOSTRADO_EN_DISPLAY_SET_TEMP */
+static void prefix_enseq_LCD_MENU_SET_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_SET_TEMP_default(Prefix* handle)
+{
+	/* 'default' enter sequence for region MENSAJE_MOSTRADO_EN_DISPLAY_SET_TEMP */
+	prefix_react_LCD_MENU_SET_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_SET_TEMP__entry_Default(handle);
 }
 
 /* 'default' enter sequence for region PUENTE_H */
@@ -1464,6 +1902,22 @@ static void prefix_exseq_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEM
 	handle->stateConfVectorPosition = 2;
 }
 
+/* Default exit sequence for state SETEAR_TEMP */
+static void prefix_exseq_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_SETEAR_TEMP(Prefix* handle)
+{
+	/* Default exit sequence for state SETEAR_TEMP */
+	handle->stateConfVector[2] = Prefix_last_state;
+	handle->stateConfVectorPosition = 2;
+}
+
+/* Default exit sequence for state ENFRIAR */
+static void prefix_exseq_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_ENFRIAR(Prefix* handle)
+{
+	/* Default exit sequence for state ENFRIAR */
+	handle->stateConfVector[2] = Prefix_last_state;
+	handle->stateConfVectorPosition = 2;
+}
+
 /* Default exit sequence for state MENU_CONF_MOTORES */
 static void prefix_exseq_LCD_MENU_CONF_MOTORES(Prefix* handle)
 {
@@ -1479,18 +1933,41 @@ static void prefix_exseq_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_
 	handle->stateConfVectorPosition = 2;
 }
 
-/* Default exit sequence for state ROTAR_MOTOR_EXTRUSION */
-static void prefix_exseq_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_ROTAR_MOTOR_EXTRUSION(Prefix* handle)
+/* Default exit sequence for state START_EXTRUSION */
+static void prefix_exseq_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_START_EXTRUSION(Prefix* handle)
 {
-	/* Default exit sequence for state ROTAR_MOTOR_EXTRUSION */
+	/* Default exit sequence for state START_EXTRUSION */
 	handle->stateConfVector[2] = Prefix_last_state;
 	handle->stateConfVectorPosition = 2;
 }
 
-/* Default exit sequence for state STOP_MOTOR_EXTRUSION */
-static void prefix_exseq_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_STOP_MOTOR_EXTRUSION(Prefix* handle)
+/* Default exit sequence for state STOP_EXTRUSION */
+static void prefix_exseq_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_STOP_EXTRUSION(Prefix* handle)
 {
-	/* Default exit sequence for state STOP_MOTOR_EXTRUSION */
+	/* Default exit sequence for state STOP_EXTRUSION */
+	handle->stateConfVector[2] = Prefix_last_state;
+	handle->stateConfVectorPosition = 2;
+}
+
+/* Default exit sequence for state START_RETRACT */
+static void prefix_exseq_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_START_RETRACT(Prefix* handle)
+{
+	/* Default exit sequence for state START_RETRACT */
+	handle->stateConfVector[2] = Prefix_last_state;
+	handle->stateConfVectorPosition = 2;
+}
+
+/* Default exit sequence for state MENU_SET_TEMP */
+static void prefix_exseq_LCD_MENU_SET_TEMP(Prefix* handle)
+{
+	/* Default exit sequence for state MENU_SET_TEMP */
+	prefix_exseq_LCD_MENU_SET_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_SET_TEMP(handle);
+}
+
+/* Default exit sequence for state SELEC_TEMP */
+static void prefix_exseq_LCD_MENU_SET_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_SET_TEMP_SELEC_TEMP(Prefix* handle)
+{
+	/* Default exit sequence for state SELEC_TEMP */
 	handle->stateConfVector[2] = Prefix_last_state;
 	handle->stateConfVectorPosition = 2;
 }
@@ -1515,6 +1992,14 @@ static void prefix_exseq_PUENTE_H_H_ROTACION_HORARIO(Prefix* handle)
 static void prefix_exseq_PUENTE_H_CONFIGURAR(Prefix* handle)
 {
 	/* Default exit sequence for state CONFIGURAR */
+	handle->stateConfVector[3] = Prefix_last_state;
+	handle->stateConfVectorPosition = 3;
+}
+
+/* Default exit sequence for state H_RETRACT */
+static void prefix_exseq_PUENTE_H_H_RETRACT(Prefix* handle)
+{
+	/* Default exit sequence for state H_RETRACT */
 	handle->stateConfVector[3] = Prefix_last_state;
 	handle->stateConfVectorPosition = 3;
 }
@@ -1608,19 +2093,39 @@ static void prefix_exseq_LCD(Prefix* handle)
 			prefix_exseq_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_CANCELAR(handle);
 			break;
 		}
+		case Prefix_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_SETEAR_TEMP :
+		{
+			prefix_exseq_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_SETEAR_TEMP(handle);
+			break;
+		}
+		case Prefix_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_ENFRIAR :
+		{
+			prefix_exseq_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_ENFRIAR(handle);
+			break;
+		}
 		case Prefix_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_CANCELAR :
 		{
 			prefix_exseq_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_CANCELAR(handle);
 			break;
 		}
-		case Prefix_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_ROTAR_MOTOR_EXTRUSION :
+		case Prefix_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_START_EXTRUSION :
 		{
-			prefix_exseq_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_ROTAR_MOTOR_EXTRUSION(handle);
+			prefix_exseq_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_START_EXTRUSION(handle);
 			break;
 		}
-		case Prefix_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_STOP_MOTOR_EXTRUSION :
+		case Prefix_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_STOP_EXTRUSION :
 		{
-			prefix_exseq_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_STOP_MOTOR_EXTRUSION(handle);
+			prefix_exseq_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_STOP_EXTRUSION(handle);
+			break;
+		}
+		case Prefix_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_START_RETRACT :
+		{
+			prefix_exseq_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_START_RETRACT(handle);
+			break;
+		}
+		case Prefix_LCD_MENU_SET_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_SET_TEMP_SELEC_TEMP :
+		{
+			prefix_exseq_LCD_MENU_SET_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_SET_TEMP_SELEC_TEMP(handle);
 			break;
 		}
 		default: break;
@@ -1670,6 +2175,16 @@ static void prefix_exseq_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEM
 			prefix_exseq_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_CANCELAR(handle);
 			break;
 		}
+		case Prefix_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_SETEAR_TEMP :
+		{
+			prefix_exseq_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_SETEAR_TEMP(handle);
+			break;
+		}
+		case Prefix_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_ENFRIAR :
+		{
+			prefix_exseq_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_ENFRIAR(handle);
+			break;
+		}
 		default: break;
 	}
 }
@@ -1686,14 +2201,35 @@ static void prefix_exseq_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_
 			prefix_exseq_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_CANCELAR(handle);
 			break;
 		}
-		case Prefix_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_ROTAR_MOTOR_EXTRUSION :
+		case Prefix_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_START_EXTRUSION :
 		{
-			prefix_exseq_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_ROTAR_MOTOR_EXTRUSION(handle);
+			prefix_exseq_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_START_EXTRUSION(handle);
 			break;
 		}
-		case Prefix_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_STOP_MOTOR_EXTRUSION :
+		case Prefix_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_STOP_EXTRUSION :
 		{
-			prefix_exseq_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_STOP_MOTOR_EXTRUSION(handle);
+			prefix_exseq_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_STOP_EXTRUSION(handle);
+			break;
+		}
+		case Prefix_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_START_RETRACT :
+		{
+			prefix_exseq_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_START_RETRACT(handle);
+			break;
+		}
+		default: break;
+	}
+}
+
+/* Default exit sequence for region MENSAJE_MOSTRADO_EN_DISPLAY_SET_TEMP */
+static void prefix_exseq_LCD_MENU_SET_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_SET_TEMP(Prefix* handle)
+{
+	/* Default exit sequence for region MENSAJE_MOSTRADO_EN_DISPLAY_SET_TEMP */
+	/* Handle exit of all possible states (of prefix.LCD.MENU_SET_TEMP.MENSAJE_MOSTRADO_EN_DISPLAY_SET_TEMP) at position 2... */
+	switch(handle->stateConfVector[ 2 ])
+	{
+		case Prefix_LCD_MENU_SET_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_SET_TEMP_SELEC_TEMP :
+		{
+			prefix_exseq_LCD_MENU_SET_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_SET_TEMP_SELEC_TEMP(handle);
 			break;
 		}
 		default: break;
@@ -1720,6 +2256,11 @@ static void prefix_exseq_PUENTE_H(Prefix* handle)
 		case Prefix_PUENTE_H_CONFIGURAR :
 		{
 			prefix_exseq_PUENTE_H_CONFIGURAR(handle);
+			break;
+		}
+		case Prefix_PUENTE_H_H_RETRACT :
+		{
+			prefix_exseq_PUENTE_H_H_RETRACT(handle);
 			break;
 		}
 		default: break;
@@ -1903,7 +2444,63 @@ static void prefix_react_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEM
 	if (prefix_check_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_CANCELAR_tr0_tr0(handle) == bool_true)
 	{ 
 		prefix_effect_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_CANCELAR_tr0(handle);
-	} 
+	}  else
+	{
+		if (prefix_check_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_CANCELAR_tr1_tr1(handle) == bool_true)
+		{ 
+			prefix_effect_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_CANCELAR_tr1(handle);
+		}  else
+		{
+			if (prefix_check_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_CANCELAR_tr2_tr2(handle) == bool_true)
+			{ 
+				prefix_effect_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_CANCELAR_tr2(handle);
+			} 
+		}
+	}
+}
+
+/* The reactions of state SETEAR_TEMP. */
+static void prefix_react_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_SETEAR_TEMP(Prefix* handle)
+{
+	/* The reactions of state SETEAR_TEMP. */
+	if (prefix_check_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_SETEAR_TEMP_tr0_tr0(handle) == bool_true)
+	{ 
+		prefix_effect_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_SETEAR_TEMP_tr0(handle);
+	}  else
+	{
+		if (prefix_check_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_SETEAR_TEMP_tr1_tr1(handle) == bool_true)
+		{ 
+			prefix_effect_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_SETEAR_TEMP_tr1(handle);
+		}  else
+		{
+			if (prefix_check_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_SETEAR_TEMP_tr2_tr2(handle) == bool_true)
+			{ 
+				prefix_effect_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_SETEAR_TEMP_tr2(handle);
+			} 
+		}
+	}
+}
+
+/* The reactions of state ENFRIAR. */
+static void prefix_react_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_ENFRIAR(Prefix* handle)
+{
+	/* The reactions of state ENFRIAR. */
+	if (prefix_check_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_ENFRIAR_tr0_tr0(handle) == bool_true)
+	{ 
+		prefix_effect_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_ENFRIAR_tr0(handle);
+	}  else
+	{
+		if (prefix_check_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_ENFRIAR_tr1_tr1(handle) == bool_true)
+		{ 
+			prefix_effect_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_ENFRIAR_tr1(handle);
+		}  else
+		{
+			if (prefix_check_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_ENFRIAR_tr2_tr2(handle) == bool_true)
+			{ 
+				prefix_effect_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_ENFRIAR_tr2(handle);
+			} 
+		}
+	}
 }
 
 /* The reactions of state CANCELAR. */
@@ -1928,45 +2525,89 @@ static void prefix_react_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_
 	}
 }
 
-/* The reactions of state ROTAR_MOTOR_EXTRUSION. */
-static void prefix_react_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_ROTAR_MOTOR_EXTRUSION(Prefix* handle)
+/* The reactions of state START_EXTRUSION. */
+static void prefix_react_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_START_EXTRUSION(Prefix* handle)
 {
-	/* The reactions of state ROTAR_MOTOR_EXTRUSION. */
-	if (prefix_check_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_ROTAR_MOTOR_EXTRUSION_tr0_tr0(handle) == bool_true)
+	/* The reactions of state START_EXTRUSION. */
+	if (prefix_check_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_START_EXTRUSION_tr0_tr0(handle) == bool_true)
 	{ 
-		prefix_effect_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_ROTAR_MOTOR_EXTRUSION_tr0(handle);
+		prefix_effect_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_START_EXTRUSION_tr0(handle);
 	}  else
 	{
-		if (prefix_check_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_ROTAR_MOTOR_EXTRUSION_tr1_tr1(handle) == bool_true)
+		if (prefix_check_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_START_EXTRUSION_tr1_tr1(handle) == bool_true)
 		{ 
-			prefix_effect_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_ROTAR_MOTOR_EXTRUSION_tr1(handle);
+			prefix_effect_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_START_EXTRUSION_tr1(handle);
 		}  else
 		{
-			if (prefix_check_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_ROTAR_MOTOR_EXTRUSION_tr2_tr2(handle) == bool_true)
+			if (prefix_check_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_START_EXTRUSION_tr2_tr2(handle) == bool_true)
 			{ 
-				prefix_effect_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_ROTAR_MOTOR_EXTRUSION_tr2(handle);
+				prefix_effect_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_START_EXTRUSION_tr2(handle);
 			} 
 		}
 	}
 }
 
-/* The reactions of state STOP_MOTOR_EXTRUSION. */
-static void prefix_react_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_STOP_MOTOR_EXTRUSION(Prefix* handle)
+/* The reactions of state STOP_EXTRUSION. */
+static void prefix_react_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_STOP_EXTRUSION(Prefix* handle)
 {
-	/* The reactions of state STOP_MOTOR_EXTRUSION. */
-	if (prefix_check_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_STOP_MOTOR_EXTRUSION_tr0_tr0(handle) == bool_true)
+	/* The reactions of state STOP_EXTRUSION. */
+	if (prefix_check_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_STOP_EXTRUSION_tr0_tr0(handle) == bool_true)
 	{ 
-		prefix_effect_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_STOP_MOTOR_EXTRUSION_tr0(handle);
+		prefix_effect_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_STOP_EXTRUSION_tr0(handle);
 	}  else
 	{
-		if (prefix_check_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_STOP_MOTOR_EXTRUSION_tr1_tr1(handle) == bool_true)
+		if (prefix_check_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_STOP_EXTRUSION_tr1_tr1(handle) == bool_true)
 		{ 
-			prefix_effect_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_STOP_MOTOR_EXTRUSION_tr1(handle);
+			prefix_effect_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_STOP_EXTRUSION_tr1(handle);
 		}  else
 		{
-			if (prefix_check_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_STOP_MOTOR_EXTRUSION_tr2_tr2(handle) == bool_true)
+			if (prefix_check_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_STOP_EXTRUSION_tr2_tr2(handle) == bool_true)
 			{ 
-				prefix_effect_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_STOP_MOTOR_EXTRUSION_tr2(handle);
+				prefix_effect_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_STOP_EXTRUSION_tr2(handle);
+			} 
+		}
+	}
+}
+
+/* The reactions of state START_RETRACT. */
+static void prefix_react_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_START_RETRACT(Prefix* handle)
+{
+	/* The reactions of state START_RETRACT. */
+	if (prefix_check_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_START_RETRACT_tr0_tr0(handle) == bool_true)
+	{ 
+		prefix_effect_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_START_RETRACT_tr0(handle);
+	}  else
+	{
+		if (prefix_check_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_START_RETRACT_tr1_tr1(handle) == bool_true)
+		{ 
+			prefix_effect_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_START_RETRACT_tr1(handle);
+		}  else
+		{
+			if (prefix_check_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_START_RETRACT_tr2_tr2(handle) == bool_true)
+			{ 
+				prefix_effect_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_START_RETRACT_tr2(handle);
+			} 
+		}
+	}
+}
+
+/* The reactions of state SELEC_TEMP. */
+static void prefix_react_LCD_MENU_SET_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_SET_TEMP_SELEC_TEMP(Prefix* handle)
+{
+	/* The reactions of state SELEC_TEMP. */
+	if (prefix_check_LCD_MENU_SET_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_SET_TEMP_SELEC_TEMP_tr0_tr0(handle) == bool_true)
+	{ 
+		prefix_effect_LCD_MENU_SET_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_SET_TEMP_SELEC_TEMP_tr0(handle);
+	}  else
+	{
+		if (prefix_check_LCD_MENU_SET_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_SET_TEMP_SELEC_TEMP_tr1_tr1(handle) == bool_true)
+		{ 
+			prefix_effect_LCD_MENU_SET_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_SET_TEMP_SELEC_TEMP_tr1(handle);
+		}  else
+		{
+			if (prefix_check_LCD_MENU_SET_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_SET_TEMP_SELEC_TEMP_tr2_tr2(handle) == bool_true)
+			{ 
+				prefix_effect_LCD_MENU_SET_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_SET_TEMP_SELEC_TEMP_tr2(handle);
 			} 
 		}
 	}
@@ -1979,7 +2620,13 @@ static void prefix_react_PUENTE_H_STOP(Prefix* handle)
 	if (prefix_check_PUENTE_H_STOP_tr0_tr0(handle) == bool_true)
 	{ 
 		prefix_effect_PUENTE_H_STOP_tr0(handle);
-	} 
+	}  else
+	{
+		if (prefix_check_PUENTE_H_STOP_tr1_tr1(handle) == bool_true)
+		{ 
+			prefix_effect_PUENTE_H_STOP_tr1(handle);
+		} 
+	}
 }
 
 /* The reactions of state H_ROTACION_HORARIO. */
@@ -1989,7 +2636,13 @@ static void prefix_react_PUENTE_H_H_ROTACION_HORARIO(Prefix* handle)
 	if (prefix_check_PUENTE_H_H_ROTACION_HORARIO_tr0_tr0(handle) == bool_true)
 	{ 
 		prefix_effect_PUENTE_H_H_ROTACION_HORARIO_tr0(handle);
-	} 
+	}  else
+	{
+		if (prefix_check_PUENTE_H_H_ROTACION_HORARIO_tr1_tr1(handle) == bool_true)
+		{ 
+			prefix_effect_PUENTE_H_H_ROTACION_HORARIO_tr1(handle);
+		} 
+	}
 }
 
 /* The reactions of state CONFIGURAR. */
@@ -2000,6 +2653,22 @@ static void prefix_react_PUENTE_H_CONFIGURAR(Prefix* handle)
 	{ 
 		prefix_effect_PUENTE_H_CONFIGURAR_tr0(handle);
 	} 
+}
+
+/* The reactions of state H_RETRACT. */
+static void prefix_react_PUENTE_H_H_RETRACT(Prefix* handle)
+{
+	/* The reactions of state H_RETRACT. */
+	if (prefix_check_PUENTE_H_H_RETRACT_tr0_tr0(handle) == bool_true)
+	{ 
+		prefix_effect_PUENTE_H_H_RETRACT_tr0(handle);
+	}  else
+	{
+		if (prefix_check_PUENTE_H_H_RETRACT_tr1_tr1(handle) == bool_true)
+		{ 
+			prefix_effect_PUENTE_H_H_RETRACT_tr1(handle);
+		} 
+	}
 }
 
 /* Default react sequence for initial entry  */
@@ -2034,14 +2703,21 @@ static void prefix_react_LCD_MENU_PRINCIPAL_MEMSAJE_MOSTRADO_EN_DISPLAY_MENU_PRI
 static void prefix_react_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP__entry_Default(Prefix* handle)
 {
 	/* Default react sequence for initial entry  */
-	prefix_enseq_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_CANCELAR_default(handle);
+	prefix_enseq_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_ENFRIAR_default(handle);
 }
 
 /* Default react sequence for initial entry  */
 static void prefix_react_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES__entry_Default(Prefix* handle)
 {
 	/* Default react sequence for initial entry  */
-	prefix_enseq_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_STOP_MOTOR_EXTRUSION_default(handle);
+	prefix_enseq_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_STOP_EXTRUSION_default(handle);
+}
+
+/* Default react sequence for initial entry  */
+static void prefix_react_LCD_MENU_SET_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_SET_TEMP__entry_Default(Prefix* handle)
+{
+	/* Default react sequence for initial entry  */
+	prefix_enseq_LCD_MENU_SET_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_SET_TEMP_SELEC_TEMP_default(handle);
 }
 
 /* Default react sequence for initial entry  */
