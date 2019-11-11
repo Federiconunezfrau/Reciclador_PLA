@@ -11,9 +11,9 @@
 //=================================================================
 //Rotary Encoder
 
-#define PIN_CANAL_1 (GPIO0)
+#define PIN_CANAL_1 (GPIO2)
 #define PIN_CANAL_2 (GPIO1)
-#define PIN_PULSADOR (GPIO2)
+#define PIN_PULSADOR (GPIO0)
 
 //=================================================================
 //Puente H l298n
