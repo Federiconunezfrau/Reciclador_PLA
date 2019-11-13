@@ -1,0 +1,92 @@
+Circuit: * C:\users\federico\Mis Documentos\UBA\Sistemas_Embebidos\TP_FINAL\Termistor.asc
+
+WARNING: Less than two connections to node VREF.  This node is used by V2.
+Direct Newton iteration failed to find .op point.  (Use ".option noopiter" to skip.)
+Starting Gmin stepping
+Gmin = 10
+Gmin = 1.07374
+Gmin = 0.115292
+Gmin = 0.0123794
+Gmin = 0.00132923
+Gmin = 0.000142725
+vernier = 0.5
+vernier = 0.25
+vernier = 0.125
+vernier = 0.0625
+vernier = 0.03125
+Gmin = 0.000158583
+vernier = 0.015625
+vernier = 0.0078125
+Gmin = 0.000155826
+vernier = 0.0104167
+vernier = 0.0138889
+Gmin = 0.000151301
+vernier = 0.0185185
+vernier = 0.0246913
+Gmin = 0.000144361
+vernier = 0.0329218
+Gmin = 0.000134091
+vernier = 0.0438957
+vernier = 0.0585276
+Gmin = 0.000118502
+vernier = 0.0780367
+vernier = 0.104049
+Gmin = 9.73774e-005
+vernier = 0.138732
+Gmin = 7.1615e-005
+vernier = 0.184976
+vernier = 0.246634
+Gmin = 4.298e-005
+vernier = 0.328846
+vernier = 0.438461
+Gmin = 1.92788e-005
+vernier = 0.584614
+Gmin = 5.60961e-006
+vernier = 0.779486
+vernier = 1
+Gmin = 7.89525e-007
+Gmin = 8.47746e-008
+Gmin = 9.1026e-009
+Gmin = 9.77385e-010
+Gmin = 1.04946e-010
+Gmin = 1.12685e-011
+Gmin = 1.20994e-012
+Gmin = 1.29917e-013
+Gmin = 0
+Gmin stepping succeeded in finding the operating point.
+
+Semiconductor Device Operating Points:
+                        --- Diodes ---
+Name:  d:u1:e_n:2  d:u1:e_n:1  d:u1:i_np:2  d:u1:i_np:1  d:u1:i_nn:2
+Model: u1:e_n:dvn  u1:e_n:dvn  u1:i_np:dvnf u1:i_np:dvnf u1:i_nn:dvnf
+Id:      1.00e-02    1.00e-02    1.00e-02     1.00e-02     1.00e-02
+Vd:      8.34e-01    8.34e-01    8.34e-01     8.34e-01     8.34e-01
+Req:     2.59e+00    2.59e+00    2.59e+00     2.59e+00     2.59e+00
+CAP:     0.00e+00    0.00e+00    0.00e+00     0.00e+00     0.00e+00
+
+Name:  d:u1:i_nn:1
+Model: u1:i_nn:dvnf
+Id:      1.00e-02
+Vd:      8.34e-01
+Req:     2.59e+00
+CAP:     0.00e+00
+
+
+
+Date: Wed Nov 13 14:32:06 2019
+Total elapsed time: 0.814 seconds.
+
+tnom = 27
+temp = 27
+method = trap
+totiter = 1337
+traniter = 0
+tranpoints = 0
+accept = 0
+rejected = 0
+matrix size = 138
+fillins = 155
+solver = Normal
+Matrix Compiler1: 15.70 KB object code size
+Matrix Compiler2: 13.96 KB object code size  9.0/22.7/[6.7]
+
