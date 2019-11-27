@@ -41,6 +41,11 @@ typedef enum
 	Prefix_PUENTE_H_H_ROTACION_HORARIO,
 	Prefix_PUENTE_H_CONFIGURAR,
 	Prefix_PUENTE_H_H_RETRACT,
+	Prefix_CONTROL_DE_TEMPERATURAS_TEMP_APAGADO,
+	Prefix_CONTROL_DE_TEMPERATURAS_TEMP_CALENTAR,
+	Prefix_CONTROL_DE_TEMPERATURAS_TEMP_CALENTAR_EJECUTAR_CONTROL_TEMP_CONTROL,
+	Prefix_CONTROL_DE_TEMPERATURAS_TEMP_CALENTAR_ENVIAR_DATOS_TEMP_ENVIAR_UART,
+	Prefix_CONTROL_DE_TEMPERATURAS_TEMP_CONF,
 	Prefix_last_state
 } PrefixStates;
 
@@ -55,7 +60,8 @@ typedef struct
 	sc_boolean evPuente_h_alto_raised;
 	sc_boolean evPuente_h_horario_raised;
 	sc_boolean evPuente_h_antihorario_raised;
-	sc_boolean evConf_Ready_raised;
+	sc_boolean evConf_Ready_Puente_H_raised;
+	sc_boolean evConf_Ready_temp_raised;
 } PrefixIface;
 
 /* Declaration of constants for scope PrefixIface. */
@@ -92,17 +98,23 @@ typedef struct
 	sc_boolean siStop_puente_h_raised;
 	sc_boolean siStart_puente_h_raised;
 	sc_boolean siRetract_puente_h_raised;
+	sc_boolean siTemp_start_raised;
+	sc_boolean siTemp_stop_raised;
+	sc_integer viActual_temp;
+	sc_integer viRef_temp;
 } PrefixInternal;
 
 /*! Type definition of the data structure for the PrefixTimeEvents interface scope. */
 typedef struct
 {
 	sc_boolean prefix_BOTON_DEL_ENCODER_DEBOUNCE_tev0_raised;
+	sc_boolean prefix_CONTROL_DE_TEMPERATURAS_TEMP_CALENTAR_EJECUTAR_CONTROL_TEMP_CONTROL_tev0_raised;
+	sc_boolean prefix_CONTROL_DE_TEMPERATURAS_TEMP_CALENTAR_ENVIAR_DATOS_TEMP_ENVIAR_UART_tev0_raised;
 } PrefixTimeEvents;
 
 
 /*! Define dimension of the state configuration vector for orthogonal states. */
-#define PREFIX_MAX_ORTHOGONAL_STATES 4
+#define PREFIX_MAX_ORTHOGONAL_STATES 6
 
 /*! 
  * Type definition of the data structure for the Prefix state machine.
@@ -165,8 +177,8 @@ extern void prefixIface_raise_evPuente_h_horario(Prefix* handle);
 /*! Raises the in event 'evPuente_h_antihorario' that is defined in the default interface scope. */ 
 extern void prefixIface_raise_evPuente_h_antihorario(Prefix* handle);
 
-/*! Raises the in event 'evConf_Ready' that is defined in the default interface scope. */ 
-extern void prefixIface_raise_evConf_Ready(Prefix* handle);
+/*! Raises the in event 'evConf_Ready_Puente_H' that is defined in the default interface scope. */ 
+extern void prefixIface_raise_evConf_Ready_Puente_H(Prefix* handle);
 
 /*! Gets the value of the variable 'horario' that is defined in the default interface scope. */ 
 extern const sc_boolean prefixIface_get_horario(const Prefix* handle);
@@ -196,6 +208,9 @@ extern const sc_string prefixIface_get_msj_menu_setear_temp(const Prefix* handle
 extern const sc_string prefixIface_get_msj_menu_enfriar(const Prefix* handle);
 /*! Gets the value of the variable 'Msj_menu_set_temp' that is defined in the default interface scope. */ 
 extern const sc_string prefixIface_get_msj_menu_set_temp(const Prefix* handle);
+/*! Raises the in event 'evConf_Ready_temp' that is defined in the default interface scope. */ 
+extern void prefixIface_raise_evConf_Ready_temp(Prefix* handle);
+
 
 /*!
  * Checks whether the state machine is active (until 2.4.1 this method was used for states).

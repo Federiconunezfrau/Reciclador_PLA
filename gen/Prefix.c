@@ -60,6 +60,11 @@ static sc_boolean prefix_check_PUENTE_H_H_ROTACION_HORARIO_tr1_tr1(const Prefix*
 static sc_boolean prefix_check_PUENTE_H_CONFIGURAR_tr0_tr0(const Prefix* handle);
 static sc_boolean prefix_check_PUENTE_H_H_RETRACT_tr0_tr0(const Prefix* handle);
 static sc_boolean prefix_check_PUENTE_H_H_RETRACT_tr1_tr1(const Prefix* handle);
+static sc_boolean prefix_check_CONTROL_DE_TEMPERATURAS_TEMP_APAGADO_tr0_tr0(const Prefix* handle);
+static sc_boolean prefix_check_CONTROL_DE_TEMPERATURAS_TEMP_CALENTAR_tr0_tr0(const Prefix* handle);
+static sc_boolean prefix_check_CONTROL_DE_TEMPERATURAS_TEMP_CALENTAR_EJECUTAR_CONTROL_TEMP_CONTROL_tr0_tr0(const Prefix* handle);
+static sc_boolean prefix_check_CONTROL_DE_TEMPERATURAS_TEMP_CALENTAR_ENVIAR_DATOS_TEMP_ENVIAR_UART_tr0_tr0(const Prefix* handle);
+static sc_boolean prefix_check_CONTROL_DE_TEMPERATURAS_TEMP_CONF_tr0_tr0(const Prefix* handle);
 static void prefix_effect_BOTON_DEL_ENCODER_DEBOUNCE_tr0(Prefix* handle);
 static void prefix_effect_BOTON_DEL_ENCODER_NO_OPRIMIDO_tr0(Prefix* handle);
 static void prefix_effect_BOTON_DEL_ENCODER_OPRIMIDO_tr0(Prefix* handle);
@@ -112,6 +117,11 @@ static void prefix_effect_PUENTE_H_H_ROTACION_HORARIO_tr1(Prefix* handle);
 static void prefix_effect_PUENTE_H_CONFIGURAR_tr0(Prefix* handle);
 static void prefix_effect_PUENTE_H_H_RETRACT_tr0(Prefix* handle);
 static void prefix_effect_PUENTE_H_H_RETRACT_tr1(Prefix* handle);
+static void prefix_effect_CONTROL_DE_TEMPERATURAS_TEMP_APAGADO_tr0(Prefix* handle);
+static void prefix_effect_CONTROL_DE_TEMPERATURAS_TEMP_CALENTAR_tr0(Prefix* handle);
+static void prefix_effect_CONTROL_DE_TEMPERATURAS_TEMP_CALENTAR_EJECUTAR_CONTROL_TEMP_CONTROL_tr0(Prefix* handle);
+static void prefix_effect_CONTROL_DE_TEMPERATURAS_TEMP_CALENTAR_ENVIAR_DATOS_TEMP_ENVIAR_UART_tr0(Prefix* handle);
+static void prefix_effect_CONTROL_DE_TEMPERATURAS_TEMP_CONF_tr0(Prefix* handle);
 static void prefix_enact_BOTON_DEL_ENCODER_DEBOUNCE(Prefix* handle);
 static void prefix_enact_BOTON_DEL_ENCODER_OPRIMIDO(Prefix* handle);
 static void prefix_enact_ENCODER_REPOSO(Prefix* handle);
@@ -137,7 +147,14 @@ static void prefix_enact_PUENTE_H_STOP(Prefix* handle);
 static void prefix_enact_PUENTE_H_H_ROTACION_HORARIO(Prefix* handle);
 static void prefix_enact_PUENTE_H_CONFIGURAR(Prefix* handle);
 static void prefix_enact_PUENTE_H_H_RETRACT(Prefix* handle);
+static void prefix_enact_CONTROL_DE_TEMPERATURAS_TEMP_APAGADO(Prefix* handle);
+static void prefix_enact_CONTROL_DE_TEMPERATURAS_TEMP_CALENTAR(Prefix* handle);
+static void prefix_enact_CONTROL_DE_TEMPERATURAS_TEMP_CALENTAR_EJECUTAR_CONTROL_TEMP_CONTROL(Prefix* handle);
+static void prefix_enact_CONTROL_DE_TEMPERATURAS_TEMP_CALENTAR_ENVIAR_DATOS_TEMP_ENVIAR_UART(Prefix* handle);
+static void prefix_enact_CONTROL_DE_TEMPERATURAS_TEMP_CONF(Prefix* handle);
 static void prefix_exact_BOTON_DEL_ENCODER_DEBOUNCE(Prefix* handle);
+static void prefix_exact_CONTROL_DE_TEMPERATURAS_TEMP_CALENTAR_EJECUTAR_CONTROL_TEMP_CONTROL(Prefix* handle);
+static void prefix_exact_CONTROL_DE_TEMPERATURAS_TEMP_CALENTAR_ENVIAR_DATOS_TEMP_ENVIAR_UART(Prefix* handle);
 static void prefix_enseq_BOTON_DEL_ENCODER_DEBOUNCE_default(Prefix* handle);
 static void prefix_enseq_BOTON_DEL_ENCODER_NO_OPRIMIDO_default(Prefix* handle);
 static void prefix_enseq_BOTON_DEL_ENCODER_OPRIMIDO_default(Prefix* handle);
@@ -165,6 +182,11 @@ static void prefix_enseq_PUENTE_H_STOP_default(Prefix* handle);
 static void prefix_enseq_PUENTE_H_H_ROTACION_HORARIO_default(Prefix* handle);
 static void prefix_enseq_PUENTE_H_CONFIGURAR_default(Prefix* handle);
 static void prefix_enseq_PUENTE_H_H_RETRACT_default(Prefix* handle);
+static void prefix_enseq_CONTROL_DE_TEMPERATURAS_TEMP_APAGADO_default(Prefix* handle);
+static void prefix_enseq_CONTROL_DE_TEMPERATURAS_TEMP_CALENTAR_default(Prefix* handle);
+static void prefix_enseq_CONTROL_DE_TEMPERATURAS_TEMP_CALENTAR_EJECUTAR_CONTROL_TEMP_CONTROL_default(Prefix* handle);
+static void prefix_enseq_CONTROL_DE_TEMPERATURAS_TEMP_CALENTAR_ENVIAR_DATOS_TEMP_ENVIAR_UART_default(Prefix* handle);
+static void prefix_enseq_CONTROL_DE_TEMPERATURAS_TEMP_CONF_default(Prefix* handle);
 static void prefix_enseq_BOTON_DEL_ENCODER_default(Prefix* handle);
 static void prefix_enseq_ENCODER_default(Prefix* handle);
 static void prefix_enseq_LCD_default(Prefix* handle);
@@ -173,6 +195,9 @@ static void prefix_enseq_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEM
 static void prefix_enseq_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_default(Prefix* handle);
 static void prefix_enseq_LCD_MENU_SET_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_SET_TEMP_default(Prefix* handle);
 static void prefix_enseq_PUENTE_H_default(Prefix* handle);
+static void prefix_enseq_CONTROL_DE_TEMPERATURAS_default(Prefix* handle);
+static void prefix_enseq_CONTROL_DE_TEMPERATURAS_TEMP_CALENTAR_EJECUTAR_CONTROL_default(Prefix* handle);
+static void prefix_enseq_CONTROL_DE_TEMPERATURAS_TEMP_CALENTAR_ENVIAR_DATOS_default(Prefix* handle);
 static void prefix_exseq_BOTON_DEL_ENCODER_DEBOUNCE(Prefix* handle);
 static void prefix_exseq_BOTON_DEL_ENCODER_NO_OPRIMIDO(Prefix* handle);
 static void prefix_exseq_BOTON_DEL_ENCODER_OPRIMIDO(Prefix* handle);
@@ -200,6 +225,11 @@ static void prefix_exseq_PUENTE_H_STOP(Prefix* handle);
 static void prefix_exseq_PUENTE_H_H_ROTACION_HORARIO(Prefix* handle);
 static void prefix_exseq_PUENTE_H_CONFIGURAR(Prefix* handle);
 static void prefix_exseq_PUENTE_H_H_RETRACT(Prefix* handle);
+static void prefix_exseq_CONTROL_DE_TEMPERATURAS_TEMP_APAGADO(Prefix* handle);
+static void prefix_exseq_CONTROL_DE_TEMPERATURAS_TEMP_CALENTAR(Prefix* handle);
+static void prefix_exseq_CONTROL_DE_TEMPERATURAS_TEMP_CALENTAR_EJECUTAR_CONTROL_TEMP_CONTROL(Prefix* handle);
+static void prefix_exseq_CONTROL_DE_TEMPERATURAS_TEMP_CALENTAR_ENVIAR_DATOS_TEMP_ENVIAR_UART(Prefix* handle);
+static void prefix_exseq_CONTROL_DE_TEMPERATURAS_TEMP_CONF(Prefix* handle);
 static void prefix_exseq_BOTON_DEL_ENCODER(Prefix* handle);
 static void prefix_exseq_ENCODER(Prefix* handle);
 static void prefix_exseq_LCD(Prefix* handle);
@@ -208,6 +238,9 @@ static void prefix_exseq_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEM
 static void prefix_exseq_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES(Prefix* handle);
 static void prefix_exseq_LCD_MENU_SET_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_SET_TEMP(Prefix* handle);
 static void prefix_exseq_PUENTE_H(Prefix* handle);
+static void prefix_exseq_CONTROL_DE_TEMPERATURAS(Prefix* handle);
+static void prefix_exseq_CONTROL_DE_TEMPERATURAS_TEMP_CALENTAR_EJECUTAR_CONTROL(Prefix* handle);
+static void prefix_exseq_CONTROL_DE_TEMPERATURAS_TEMP_CALENTAR_ENVIAR_DATOS(Prefix* handle);
 static void prefix_react_BOTON_DEL_ENCODER_DEBOUNCE(Prefix* handle);
 static void prefix_react_BOTON_DEL_ENCODER_NO_OPRIMIDO(Prefix* handle);
 static void prefix_react_BOTON_DEL_ENCODER_OPRIMIDO(Prefix* handle);
@@ -231,6 +264,10 @@ static void prefix_react_PUENTE_H_STOP(Prefix* handle);
 static void prefix_react_PUENTE_H_H_ROTACION_HORARIO(Prefix* handle);
 static void prefix_react_PUENTE_H_CONFIGURAR(Prefix* handle);
 static void prefix_react_PUENTE_H_H_RETRACT(Prefix* handle);
+static void prefix_react_CONTROL_DE_TEMPERATURAS_TEMP_APAGADO(Prefix* handle);
+static void prefix_react_CONTROL_DE_TEMPERATURAS_TEMP_CALENTAR_EJECUTAR_CONTROL_TEMP_CONTROL(Prefix* handle);
+static void prefix_react_CONTROL_DE_TEMPERATURAS_TEMP_CALENTAR_ENVIAR_DATOS_TEMP_ENVIAR_UART(Prefix* handle);
+static void prefix_react_CONTROL_DE_TEMPERATURAS_TEMP_CONF(Prefix* handle);
 static void prefix_react_BOTON_DEL_ENCODER__entry_Default(Prefix* handle);
 static void prefix_react_ENCODER__entry_Default(Prefix* handle);
 static void prefix_react_LCD__entry_Default(Prefix* handle);
@@ -239,6 +276,9 @@ static void prefix_react_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEM
 static void prefix_react_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES__entry_Default(Prefix* handle);
 static void prefix_react_LCD_MENU_SET_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_SET_TEMP__entry_Default(Prefix* handle);
 static void prefix_react_PUENTE_H__entry_Default(Prefix* handle);
+static void prefix_react_CONTROL_DE_TEMPERATURAS__entry_Default(Prefix* handle);
+static void prefix_react_CONTROL_DE_TEMPERATURAS_TEMP_CALENTAR_EJECUTAR_CONTROL__entry_Default(Prefix* handle);
+static void prefix_react_CONTROL_DE_TEMPERATURAS_TEMP_CALENTAR_ENVIAR_DATOS__entry_Default(Prefix* handle);
 static void prefix_clearInEvents(Prefix* handle);
 static void prefix_clearOutEvents(Prefix* handle);
 
@@ -282,6 +322,8 @@ void prefix_init(Prefix* handle)
 	handle->internal.viEnc_volver = 0;
 	handle->internal.viTecla = 0;
 	handle->internal.viSet_temp_lcd = 0;
+	handle->internal.viActual_temp = 0;
+	handle->internal.viRef_temp = 0;
 
 }
 
@@ -292,6 +334,7 @@ void prefix_enter(Prefix* handle)
 	prefix_enseq_ENCODER_default(handle);
 	prefix_enseq_LCD_default(handle);
 	prefix_enseq_PUENTE_H_default(handle);
+	prefix_enseq_CONTROL_DE_TEMPERATURAS_default(handle);
 }
 
 void prefix_exit(Prefix* handle)
@@ -301,12 +344,13 @@ void prefix_exit(Prefix* handle)
 	prefix_exseq_ENCODER(handle);
 	prefix_exseq_LCD(handle);
 	prefix_exseq_PUENTE_H(handle);
+	prefix_exseq_CONTROL_DE_TEMPERATURAS(handle);
 }
 
 sc_boolean prefix_isActive(const Prefix* handle)
 {
 	sc_boolean result;
-	if (handle->stateConfVector[0] != Prefix_last_state || handle->stateConfVector[1] != Prefix_last_state || handle->stateConfVector[2] != Prefix_last_state || handle->stateConfVector[3] != Prefix_last_state)
+	if (handle->stateConfVector[0] != Prefix_last_state || handle->stateConfVector[1] != Prefix_last_state || handle->stateConfVector[2] != Prefix_last_state || handle->stateConfVector[3] != Prefix_last_state || handle->stateConfVector[4] != Prefix_last_state || handle->stateConfVector[5] != Prefix_last_state)
 	{
 		result =  bool_true;
 	}
@@ -335,14 +379,19 @@ static void prefix_clearInEvents(Prefix* handle)
 	handle->iface.evPuente_h_alto_raised = bool_false;
 	handle->iface.evPuente_h_horario_raised = bool_false;
 	handle->iface.evPuente_h_antihorario_raised = bool_false;
-	handle->iface.evConf_Ready_raised = bool_false;
+	handle->iface.evConf_Ready_Puente_H_raised = bool_false;
+	handle->iface.evConf_Ready_temp_raised = bool_false;
 	handle->internal.siDespl_derecha_raised = bool_false;
 	handle->internal.siDespl_izquierda_raised = bool_false;
 	handle->internal.siEntrar_raised = bool_false;
 	handle->internal.siStop_puente_h_raised = bool_false;
 	handle->internal.siStart_puente_h_raised = bool_false;
 	handle->internal.siRetract_puente_h_raised = bool_false;
+	handle->internal.siTemp_start_raised = bool_false;
+	handle->internal.siTemp_stop_raised = bool_false;
 	handle->timeEvents.prefix_BOTON_DEL_ENCODER_DEBOUNCE_tev0_raised = bool_false;
+	handle->timeEvents.prefix_CONTROL_DE_TEMPERATURAS_TEMP_CALENTAR_EJECUTAR_CONTROL_TEMP_CONTROL_tev0_raised = bool_false;
+	handle->timeEvents.prefix_CONTROL_DE_TEMPERATURAS_TEMP_CALENTAR_ENVIAR_DATOS_TEMP_ENVIAR_UART_tev0_raised = bool_false;
 }
 
 static void prefix_clearOutEvents(Prefix* handle)
@@ -476,6 +525,26 @@ void prefix_runCycle(Prefix* handle)
 			prefix_react_PUENTE_H_H_RETRACT(handle);
 			break;
 		}
+		case Prefix_CONTROL_DE_TEMPERATURAS_TEMP_APAGADO :
+		{
+			prefix_react_CONTROL_DE_TEMPERATURAS_TEMP_APAGADO(handle);
+			break;
+		}
+		case Prefix_CONTROL_DE_TEMPERATURAS_TEMP_CALENTAR_EJECUTAR_CONTROL_TEMP_CONTROL :
+		{
+			prefix_react_CONTROL_DE_TEMPERATURAS_TEMP_CALENTAR_EJECUTAR_CONTROL_TEMP_CONTROL(handle);
+			break;
+		}
+		case Prefix_CONTROL_DE_TEMPERATURAS_TEMP_CALENTAR_ENVIAR_DATOS_TEMP_ENVIAR_UART :
+		{
+			prefix_react_CONTROL_DE_TEMPERATURAS_TEMP_CALENTAR_ENVIAR_DATOS_TEMP_ENVIAR_UART(handle);
+			break;
+		}
+		case Prefix_CONTROL_DE_TEMPERATURAS_TEMP_CONF :
+		{
+			prefix_react_CONTROL_DE_TEMPERATURAS_TEMP_CONF(handle);
+			break;
+		}
 		default:
 			break;
 		}
@@ -606,6 +675,26 @@ sc_boolean prefix_isStateActive(const Prefix* handle, PrefixStates state)
 			result = (sc_boolean) (handle->stateConfVector[3] == Prefix_PUENTE_H_H_RETRACT
 			);
 			break;
+		case Prefix_CONTROL_DE_TEMPERATURAS_TEMP_APAGADO :
+			result = (sc_boolean) (handle->stateConfVector[4] == Prefix_CONTROL_DE_TEMPERATURAS_TEMP_APAGADO
+			);
+			break;
+		case Prefix_CONTROL_DE_TEMPERATURAS_TEMP_CALENTAR :
+			result = (sc_boolean) (handle->stateConfVector[4] >= Prefix_CONTROL_DE_TEMPERATURAS_TEMP_CALENTAR
+				&& handle->stateConfVector[4] <= Prefix_CONTROL_DE_TEMPERATURAS_TEMP_CALENTAR_ENVIAR_DATOS_TEMP_ENVIAR_UART);
+			break;
+		case Prefix_CONTROL_DE_TEMPERATURAS_TEMP_CALENTAR_EJECUTAR_CONTROL_TEMP_CONTROL :
+			result = (sc_boolean) (handle->stateConfVector[4] == Prefix_CONTROL_DE_TEMPERATURAS_TEMP_CALENTAR_EJECUTAR_CONTROL_TEMP_CONTROL
+			);
+			break;
+		case Prefix_CONTROL_DE_TEMPERATURAS_TEMP_CALENTAR_ENVIAR_DATOS_TEMP_ENVIAR_UART :
+			result = (sc_boolean) (handle->stateConfVector[5] == Prefix_CONTROL_DE_TEMPERATURAS_TEMP_CALENTAR_ENVIAR_DATOS_TEMP_ENVIAR_UART
+			);
+			break;
+		case Prefix_CONTROL_DE_TEMPERATURAS_TEMP_CONF :
+			result = (sc_boolean) (handle->stateConfVector[4] == Prefix_CONTROL_DE_TEMPERATURAS_TEMP_CONF
+			);
+			break;
 		default:
 			result = bool_false;
 			break;
@@ -645,9 +734,13 @@ void prefixIface_raise_evPuente_h_antihorario(Prefix* handle)
 {
 	handle->iface.evPuente_h_antihorario_raised = bool_true;
 }
-void prefixIface_raise_evConf_Ready(Prefix* handle)
+void prefixIface_raise_evConf_Ready_Puente_H(Prefix* handle)
 {
-	handle->iface.evConf_Ready_raised = bool_true;
+	handle->iface.evConf_Ready_Puente_H_raised = bool_true;
+}
+void prefixIface_raise_evConf_Ready_temp(Prefix* handle)
+{
+	handle->iface.evConf_Ready_temp_raised = bool_true;
 }
 
 
@@ -943,7 +1036,7 @@ static sc_boolean prefix_check_LCD_MENU_SET_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_SET
 
 static sc_boolean prefix_check_LCD_MENU_SET_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_SET_TEMP_SELEC_TEMP_tr1_tr1(const Prefix* handle)
 {
-	return ((handle->internal.siDespl_izquierda_raised) && (handle->internal.viSet_temp_lcd > 0)) ? bool_true : bool_false;
+	return ((handle->internal.siDespl_izquierda_raised) && (handle->internal.viSet_temp_lcd > 150)) ? bool_true : bool_false;
 }
 
 static sc_boolean prefix_check_LCD_MENU_SET_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_SET_TEMP_SELEC_TEMP_tr2_tr2(const Prefix* handle)
@@ -973,7 +1066,7 @@ static sc_boolean prefix_check_PUENTE_H_H_ROTACION_HORARIO_tr1_tr1(const Prefix*
 
 static sc_boolean prefix_check_PUENTE_H_CONFIGURAR_tr0_tr0(const Prefix* handle)
 {
-	return handle->iface.evConf_Ready_raised;
+	return handle->iface.evConf_Ready_Puente_H_raised;
 }
 
 static sc_boolean prefix_check_PUENTE_H_H_RETRACT_tr0_tr0(const Prefix* handle)
@@ -984,6 +1077,31 @@ static sc_boolean prefix_check_PUENTE_H_H_RETRACT_tr0_tr0(const Prefix* handle)
 static sc_boolean prefix_check_PUENTE_H_H_RETRACT_tr1_tr1(const Prefix* handle)
 {
 	return handle->internal.siStop_puente_h_raised;
+}
+
+static sc_boolean prefix_check_CONTROL_DE_TEMPERATURAS_TEMP_APAGADO_tr0_tr0(const Prefix* handle)
+{
+	return handle->internal.siTemp_start_raised;
+}
+
+static sc_boolean prefix_check_CONTROL_DE_TEMPERATURAS_TEMP_CALENTAR_tr0_tr0(const Prefix* handle)
+{
+	return handle->internal.siTemp_stop_raised;
+}
+
+static sc_boolean prefix_check_CONTROL_DE_TEMPERATURAS_TEMP_CALENTAR_EJECUTAR_CONTROL_TEMP_CONTROL_tr0_tr0(const Prefix* handle)
+{
+	return handle->timeEvents.prefix_CONTROL_DE_TEMPERATURAS_TEMP_CALENTAR_EJECUTAR_CONTROL_TEMP_CONTROL_tev0_raised;
+}
+
+static sc_boolean prefix_check_CONTROL_DE_TEMPERATURAS_TEMP_CALENTAR_ENVIAR_DATOS_TEMP_ENVIAR_UART_tr0_tr0(const Prefix* handle)
+{
+	return handle->timeEvents.prefix_CONTROL_DE_TEMPERATURAS_TEMP_CALENTAR_ENVIAR_DATOS_TEMP_ENVIAR_UART_tev0_raised;
+}
+
+static sc_boolean prefix_check_CONTROL_DE_TEMPERATURAS_TEMP_CONF_tr0_tr0(const Prefix* handle)
+{
+	return handle->iface.evConf_Ready_temp_raised;
 }
 
 static void prefix_effect_BOTON_DEL_ENCODER_DEBOUNCE_tr0(Prefix* handle)
@@ -1149,6 +1267,7 @@ static void prefix_effect_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TE
 static void prefix_effect_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_SETEAR_TEMP_tr2(Prefix* handle)
 {
 	prefix_exseq_LCD_MENU_CONF_TEMP(handle);
+	handle->internal.viSet_temp_lcd = 150;
 	prefix_enseq_LCD_MENU_SET_TEMP_default(handle);
 }
 
@@ -1167,6 +1286,7 @@ static void prefix_effect_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TE
 static void prefix_effect_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_ENFRIAR_tr2(Prefix* handle)
 {
 	prefix_exseq_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_ENFRIAR(handle);
+	handle->internal.siTemp_stop_raised = bool_true;
 	prefix_enseq_LCD_MENU_CONF_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_TEMP_ENFRIAR_default(handle);
 }
 
@@ -1262,6 +1382,7 @@ static void prefix_effect_LCD_MENU_SET_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_SET_TEMP
 static void prefix_effect_LCD_MENU_SET_TEMP_MENSAJE_MOSTRADO_EN_DISPLAY_SET_TEMP_SELEC_TEMP_tr2(Prefix* handle)
 {
 	prefix_exseq_LCD_MENU_SET_TEMP(handle);
+	handle->internal.siTemp_start_raised = bool_true;
 	prefix_enseq_LCD_MENU_CONF_TEMP_default(handle);
 }
 
@@ -1307,6 +1428,36 @@ static void prefix_effect_PUENTE_H_H_RETRACT_tr1(Prefix* handle)
 {
 	prefix_exseq_PUENTE_H_H_RETRACT(handle);
 	prefix_enseq_PUENTE_H_STOP_default(handle);
+}
+
+static void prefix_effect_CONTROL_DE_TEMPERATURAS_TEMP_APAGADO_tr0(Prefix* handle)
+{
+	prefix_exseq_CONTROL_DE_TEMPERATURAS_TEMP_APAGADO(handle);
+	prefix_enseq_CONTROL_DE_TEMPERATURAS_TEMP_CALENTAR_default(handle);
+}
+
+static void prefix_effect_CONTROL_DE_TEMPERATURAS_TEMP_CALENTAR_tr0(Prefix* handle)
+{
+	prefix_exseq_CONTROL_DE_TEMPERATURAS_TEMP_CALENTAR(handle);
+	prefix_enseq_CONTROL_DE_TEMPERATURAS_TEMP_APAGADO_default(handle);
+}
+
+static void prefix_effect_CONTROL_DE_TEMPERATURAS_TEMP_CALENTAR_EJECUTAR_CONTROL_TEMP_CONTROL_tr0(Prefix* handle)
+{
+	prefix_exseq_CONTROL_DE_TEMPERATURAS_TEMP_CALENTAR_EJECUTAR_CONTROL_TEMP_CONTROL(handle);
+	prefix_enseq_CONTROL_DE_TEMPERATURAS_TEMP_CALENTAR_EJECUTAR_CONTROL_TEMP_CONTROL_default(handle);
+}
+
+static void prefix_effect_CONTROL_DE_TEMPERATURAS_TEMP_CALENTAR_ENVIAR_DATOS_TEMP_ENVIAR_UART_tr0(Prefix* handle)
+{
+	prefix_exseq_CONTROL_DE_TEMPERATURAS_TEMP_CALENTAR_ENVIAR_DATOS_TEMP_ENVIAR_UART(handle);
+	prefix_enseq_CONTROL_DE_TEMPERATURAS_TEMP_CALENTAR_ENVIAR_DATOS_TEMP_ENVIAR_UART_default(handle);
+}
+
+static void prefix_effect_CONTROL_DE_TEMPERATURAS_TEMP_CONF_tr0(Prefix* handle)
+{
+	prefix_exseq_CONTROL_DE_TEMPERATURAS_TEMP_CONF(handle);
+	prefix_enseq_CONTROL_DE_TEMPERATURAS_TEMP_APAGADO_default(handle);
 }
 
 /* Entry action for state 'DEBOUNCE'. */
@@ -1481,7 +1632,7 @@ static void prefix_enact_PUENTE_H_CONFIGURAR(Prefix* handle)
 {
 	/* Entry action for state 'CONFIGURAR'. */
 	prefixIface_opConfig_puente_h(handle);
-	handle->iface.evConf_Ready_raised = bool_true;
+	handle->iface.evConf_Ready_Puente_H_raised = bool_true;
 }
 
 /* Entry action for state 'H_RETRACT'. */
@@ -1491,11 +1642,63 @@ static void prefix_enact_PUENTE_H_H_RETRACT(Prefix* handle)
 	prefixIface_opRetract_puente_h(handle);
 }
 
+/* Entry action for state 'TEMP_APAGADO'. */
+static void prefix_enact_CONTROL_DE_TEMPERATURAS_TEMP_APAGADO(Prefix* handle)
+{
+	/* Entry action for state 'TEMP_APAGADO'. */
+	prefixIface_opApagar_control_temp(handle);
+}
+
+/* Entry action for state 'TEMP_CALENTAR'. */
+static void prefix_enact_CONTROL_DE_TEMPERATURAS_TEMP_CALENTAR(Prefix* handle)
+{
+	/* Entry action for state 'TEMP_CALENTAR'. */
+	handle->internal.viRef_temp = handle->internal.viSet_temp_lcd;
+}
+
+/* Entry action for state 'TEMP_CONTROL'. */
+static void prefix_enact_CONTROL_DE_TEMPERATURAS_TEMP_CALENTAR_EJECUTAR_CONTROL_TEMP_CONTROL(Prefix* handle)
+{
+	/* Entry action for state 'TEMP_CONTROL'. */
+	prefix_setTimer(handle, (sc_eventid) &(handle->timeEvents.prefix_CONTROL_DE_TEMPERATURAS_TEMP_CALENTAR_EJECUTAR_CONTROL_TEMP_CONTROL_tev0_raised) , 500, bool_false);
+	handle->internal.viActual_temp = prefixIface_opControlar_temp(handle, handle->internal.viRef_temp);
+}
+
+/* Entry action for state 'TEMP_ENVIAR_UART'. */
+static void prefix_enact_CONTROL_DE_TEMPERATURAS_TEMP_CALENTAR_ENVIAR_DATOS_TEMP_ENVIAR_UART(Prefix* handle)
+{
+	/* Entry action for state 'TEMP_ENVIAR_UART'. */
+	prefix_setTimer(handle, (sc_eventid) &(handle->timeEvents.prefix_CONTROL_DE_TEMPERATURAS_TEMP_CALENTAR_ENVIAR_DATOS_TEMP_ENVIAR_UART_tev0_raised) , 1 * 1000, bool_false);
+	prefixIface_opEnviar_UART(handle, handle->internal.viActual_temp);
+}
+
+/* Entry action for state 'TEMP_CONF'. */
+static void prefix_enact_CONTROL_DE_TEMPERATURAS_TEMP_CONF(Prefix* handle)
+{
+	/* Entry action for state 'TEMP_CONF'. */
+	prefixIface_opConfig_control_temp(handle);
+	handle->iface.evConf_Ready_temp_raised = bool_true;
+}
+
 /* Exit action for state 'DEBOUNCE'. */
 static void prefix_exact_BOTON_DEL_ENCODER_DEBOUNCE(Prefix* handle)
 {
 	/* Exit action for state 'DEBOUNCE'. */
 	prefix_unsetTimer(handle, (sc_eventid) &(handle->timeEvents.prefix_BOTON_DEL_ENCODER_DEBOUNCE_tev0_raised) );		
+}
+
+/* Exit action for state 'TEMP_CONTROL'. */
+static void prefix_exact_CONTROL_DE_TEMPERATURAS_TEMP_CALENTAR_EJECUTAR_CONTROL_TEMP_CONTROL(Prefix* handle)
+{
+	/* Exit action for state 'TEMP_CONTROL'. */
+	prefix_unsetTimer(handle, (sc_eventid) &(handle->timeEvents.prefix_CONTROL_DE_TEMPERATURAS_TEMP_CALENTAR_EJECUTAR_CONTROL_TEMP_CONTROL_tev0_raised) );		
+}
+
+/* Exit action for state 'TEMP_ENVIAR_UART'. */
+static void prefix_exact_CONTROL_DE_TEMPERATURAS_TEMP_CALENTAR_ENVIAR_DATOS_TEMP_ENVIAR_UART(Prefix* handle)
+{
+	/* Exit action for state 'TEMP_ENVIAR_UART'. */
+	prefix_unsetTimer(handle, (sc_eventid) &(handle->timeEvents.prefix_CONTROL_DE_TEMPERATURAS_TEMP_CALENTAR_ENVIAR_DATOS_TEMP_ENVIAR_UART_tev0_raised) );		
 }
 
 /* 'default' enter sequence for state DEBOUNCE */
@@ -1735,6 +1938,51 @@ static void prefix_enseq_PUENTE_H_H_RETRACT_default(Prefix* handle)
 	handle->stateConfVectorPosition = 3;
 }
 
+/* 'default' enter sequence for state TEMP_APAGADO */
+static void prefix_enseq_CONTROL_DE_TEMPERATURAS_TEMP_APAGADO_default(Prefix* handle)
+{
+	/* 'default' enter sequence for state TEMP_APAGADO */
+	prefix_enact_CONTROL_DE_TEMPERATURAS_TEMP_APAGADO(handle);
+	handle->stateConfVector[4] = Prefix_CONTROL_DE_TEMPERATURAS_TEMP_APAGADO;
+	handle->stateConfVectorPosition = 4;
+}
+
+/* 'default' enter sequence for state TEMP_CALENTAR */
+static void prefix_enseq_CONTROL_DE_TEMPERATURAS_TEMP_CALENTAR_default(Prefix* handle)
+{
+	/* 'default' enter sequence for state TEMP_CALENTAR */
+	prefix_enact_CONTROL_DE_TEMPERATURAS_TEMP_CALENTAR(handle);
+	prefix_enseq_CONTROL_DE_TEMPERATURAS_TEMP_CALENTAR_EJECUTAR_CONTROL_default(handle);
+	prefix_enseq_CONTROL_DE_TEMPERATURAS_TEMP_CALENTAR_ENVIAR_DATOS_default(handle);
+}
+
+/* 'default' enter sequence for state TEMP_CONTROL */
+static void prefix_enseq_CONTROL_DE_TEMPERATURAS_TEMP_CALENTAR_EJECUTAR_CONTROL_TEMP_CONTROL_default(Prefix* handle)
+{
+	/* 'default' enter sequence for state TEMP_CONTROL */
+	prefix_enact_CONTROL_DE_TEMPERATURAS_TEMP_CALENTAR_EJECUTAR_CONTROL_TEMP_CONTROL(handle);
+	handle->stateConfVector[4] = Prefix_CONTROL_DE_TEMPERATURAS_TEMP_CALENTAR_EJECUTAR_CONTROL_TEMP_CONTROL;
+	handle->stateConfVectorPosition = 4;
+}
+
+/* 'default' enter sequence for state TEMP_ENVIAR_UART */
+static void prefix_enseq_CONTROL_DE_TEMPERATURAS_TEMP_CALENTAR_ENVIAR_DATOS_TEMP_ENVIAR_UART_default(Prefix* handle)
+{
+	/* 'default' enter sequence for state TEMP_ENVIAR_UART */
+	prefix_enact_CONTROL_DE_TEMPERATURAS_TEMP_CALENTAR_ENVIAR_DATOS_TEMP_ENVIAR_UART(handle);
+	handle->stateConfVector[5] = Prefix_CONTROL_DE_TEMPERATURAS_TEMP_CALENTAR_ENVIAR_DATOS_TEMP_ENVIAR_UART;
+	handle->stateConfVectorPosition = 5;
+}
+
+/* 'default' enter sequence for state TEMP_CONF */
+static void prefix_enseq_CONTROL_DE_TEMPERATURAS_TEMP_CONF_default(Prefix* handle)
+{
+	/* 'default' enter sequence for state TEMP_CONF */
+	prefix_enact_CONTROL_DE_TEMPERATURAS_TEMP_CONF(handle);
+	handle->stateConfVector[4] = Prefix_CONTROL_DE_TEMPERATURAS_TEMP_CONF;
+	handle->stateConfVectorPosition = 4;
+}
+
 /* 'default' enter sequence for region BOTON_DEL_ENCODER */
 static void prefix_enseq_BOTON_DEL_ENCODER_default(Prefix* handle)
 {
@@ -1789,6 +2037,27 @@ static void prefix_enseq_PUENTE_H_default(Prefix* handle)
 {
 	/* 'default' enter sequence for region PUENTE_H */
 	prefix_react_PUENTE_H__entry_Default(handle);
+}
+
+/* 'default' enter sequence for region CONTROL_DE_TEMPERATURAS */
+static void prefix_enseq_CONTROL_DE_TEMPERATURAS_default(Prefix* handle)
+{
+	/* 'default' enter sequence for region CONTROL_DE_TEMPERATURAS */
+	prefix_react_CONTROL_DE_TEMPERATURAS__entry_Default(handle);
+}
+
+/* 'default' enter sequence for region EJECUTAR_CONTROL */
+static void prefix_enseq_CONTROL_DE_TEMPERATURAS_TEMP_CALENTAR_EJECUTAR_CONTROL_default(Prefix* handle)
+{
+	/* 'default' enter sequence for region EJECUTAR_CONTROL */
+	prefix_react_CONTROL_DE_TEMPERATURAS_TEMP_CALENTAR_EJECUTAR_CONTROL__entry_Default(handle);
+}
+
+/* 'default' enter sequence for region ENVIAR_DATOS */
+static void prefix_enseq_CONTROL_DE_TEMPERATURAS_TEMP_CALENTAR_ENVIAR_DATOS_default(Prefix* handle)
+{
+	/* 'default' enter sequence for region ENVIAR_DATOS */
+	prefix_react_CONTROL_DE_TEMPERATURAS_TEMP_CALENTAR_ENVIAR_DATOS__entry_Default(handle);
 }
 
 /* Default exit sequence for state DEBOUNCE */
@@ -2002,6 +2271,48 @@ static void prefix_exseq_PUENTE_H_H_RETRACT(Prefix* handle)
 	/* Default exit sequence for state H_RETRACT */
 	handle->stateConfVector[3] = Prefix_last_state;
 	handle->stateConfVectorPosition = 3;
+}
+
+/* Default exit sequence for state TEMP_APAGADO */
+static void prefix_exseq_CONTROL_DE_TEMPERATURAS_TEMP_APAGADO(Prefix* handle)
+{
+	/* Default exit sequence for state TEMP_APAGADO */
+	handle->stateConfVector[4] = Prefix_last_state;
+	handle->stateConfVectorPosition = 4;
+}
+
+/* Default exit sequence for state TEMP_CALENTAR */
+static void prefix_exseq_CONTROL_DE_TEMPERATURAS_TEMP_CALENTAR(Prefix* handle)
+{
+	/* Default exit sequence for state TEMP_CALENTAR */
+	prefix_exseq_CONTROL_DE_TEMPERATURAS_TEMP_CALENTAR_EJECUTAR_CONTROL(handle);
+	prefix_exseq_CONTROL_DE_TEMPERATURAS_TEMP_CALENTAR_ENVIAR_DATOS(handle);
+}
+
+/* Default exit sequence for state TEMP_CONTROL */
+static void prefix_exseq_CONTROL_DE_TEMPERATURAS_TEMP_CALENTAR_EJECUTAR_CONTROL_TEMP_CONTROL(Prefix* handle)
+{
+	/* Default exit sequence for state TEMP_CONTROL */
+	handle->stateConfVector[4] = Prefix_last_state;
+	handle->stateConfVectorPosition = 4;
+	prefix_exact_CONTROL_DE_TEMPERATURAS_TEMP_CALENTAR_EJECUTAR_CONTROL_TEMP_CONTROL(handle);
+}
+
+/* Default exit sequence for state TEMP_ENVIAR_UART */
+static void prefix_exseq_CONTROL_DE_TEMPERATURAS_TEMP_CALENTAR_ENVIAR_DATOS_TEMP_ENVIAR_UART(Prefix* handle)
+{
+	/* Default exit sequence for state TEMP_ENVIAR_UART */
+	handle->stateConfVector[5] = Prefix_last_state;
+	handle->stateConfVectorPosition = 5;
+	prefix_exact_CONTROL_DE_TEMPERATURAS_TEMP_CALENTAR_ENVIAR_DATOS_TEMP_ENVIAR_UART(handle);
+}
+
+/* Default exit sequence for state TEMP_CONF */
+static void prefix_exseq_CONTROL_DE_TEMPERATURAS_TEMP_CONF(Prefix* handle)
+{
+	/* Default exit sequence for state TEMP_CONF */
+	handle->stateConfVector[4] = Prefix_last_state;
+	handle->stateConfVectorPosition = 4;
 }
 
 /* Default exit sequence for region BOTON_DEL_ENCODER */
@@ -2261,6 +2572,74 @@ static void prefix_exseq_PUENTE_H(Prefix* handle)
 		case Prefix_PUENTE_H_H_RETRACT :
 		{
 			prefix_exseq_PUENTE_H_H_RETRACT(handle);
+			break;
+		}
+		default: break;
+	}
+}
+
+/* Default exit sequence for region CONTROL_DE_TEMPERATURAS */
+static void prefix_exseq_CONTROL_DE_TEMPERATURAS(Prefix* handle)
+{
+	/* Default exit sequence for region CONTROL_DE_TEMPERATURAS */
+	/* Handle exit of all possible states (of prefix.CONTROL_DE_TEMPERATURAS) at position 4... */
+	switch(handle->stateConfVector[ 4 ])
+	{
+		case Prefix_CONTROL_DE_TEMPERATURAS_TEMP_APAGADO :
+		{
+			prefix_exseq_CONTROL_DE_TEMPERATURAS_TEMP_APAGADO(handle);
+			break;
+		}
+		case Prefix_CONTROL_DE_TEMPERATURAS_TEMP_CALENTAR_EJECUTAR_CONTROL_TEMP_CONTROL :
+		{
+			prefix_exseq_CONTROL_DE_TEMPERATURAS_TEMP_CALENTAR_EJECUTAR_CONTROL_TEMP_CONTROL(handle);
+			break;
+		}
+		case Prefix_CONTROL_DE_TEMPERATURAS_TEMP_CONF :
+		{
+			prefix_exseq_CONTROL_DE_TEMPERATURAS_TEMP_CONF(handle);
+			break;
+		}
+		default: break;
+	}
+	/* Handle exit of all possible states (of prefix.CONTROL_DE_TEMPERATURAS) at position 5... */
+	switch(handle->stateConfVector[ 5 ])
+	{
+		case Prefix_CONTROL_DE_TEMPERATURAS_TEMP_CALENTAR_ENVIAR_DATOS_TEMP_ENVIAR_UART :
+		{
+			prefix_exseq_CONTROL_DE_TEMPERATURAS_TEMP_CALENTAR_ENVIAR_DATOS_TEMP_ENVIAR_UART(handle);
+			break;
+		}
+		default: break;
+	}
+}
+
+/* Default exit sequence for region EJECUTAR_CONTROL */
+static void prefix_exseq_CONTROL_DE_TEMPERATURAS_TEMP_CALENTAR_EJECUTAR_CONTROL(Prefix* handle)
+{
+	/* Default exit sequence for region EJECUTAR_CONTROL */
+	/* Handle exit of all possible states (of prefix.CONTROL_DE_TEMPERATURAS.TEMP_CALENTAR.EJECUTAR_CONTROL) at position 4... */
+	switch(handle->stateConfVector[ 4 ])
+	{
+		case Prefix_CONTROL_DE_TEMPERATURAS_TEMP_CALENTAR_EJECUTAR_CONTROL_TEMP_CONTROL :
+		{
+			prefix_exseq_CONTROL_DE_TEMPERATURAS_TEMP_CALENTAR_EJECUTAR_CONTROL_TEMP_CONTROL(handle);
+			break;
+		}
+		default: break;
+	}
+}
+
+/* Default exit sequence for region ENVIAR_DATOS */
+static void prefix_exseq_CONTROL_DE_TEMPERATURAS_TEMP_CALENTAR_ENVIAR_DATOS(Prefix* handle)
+{
+	/* Default exit sequence for region ENVIAR_DATOS */
+	/* Handle exit of all possible states (of prefix.CONTROL_DE_TEMPERATURAS.TEMP_CALENTAR.ENVIAR_DATOS) at position 5... */
+	switch(handle->stateConfVector[ 5 ])
+	{
+		case Prefix_CONTROL_DE_TEMPERATURAS_TEMP_CALENTAR_ENVIAR_DATOS_TEMP_ENVIAR_UART :
+		{
+			prefix_exseq_CONTROL_DE_TEMPERATURAS_TEMP_CALENTAR_ENVIAR_DATOS_TEMP_ENVIAR_UART(handle);
 			break;
 		}
 		default: break;
@@ -2671,6 +3050,52 @@ static void prefix_react_PUENTE_H_H_RETRACT(Prefix* handle)
 	}
 }
 
+/* The reactions of state TEMP_APAGADO. */
+static void prefix_react_CONTROL_DE_TEMPERATURAS_TEMP_APAGADO(Prefix* handle)
+{
+	/* The reactions of state TEMP_APAGADO. */
+	if (prefix_check_CONTROL_DE_TEMPERATURAS_TEMP_APAGADO_tr0_tr0(handle) == bool_true)
+	{ 
+		prefix_effect_CONTROL_DE_TEMPERATURAS_TEMP_APAGADO_tr0(handle);
+	} 
+}
+
+/* The reactions of state TEMP_CONTROL. */
+static void prefix_react_CONTROL_DE_TEMPERATURAS_TEMP_CALENTAR_EJECUTAR_CONTROL_TEMP_CONTROL(Prefix* handle)
+{
+	/* The reactions of state TEMP_CONTROL. */
+	if (prefix_check_CONTROL_DE_TEMPERATURAS_TEMP_CALENTAR_tr0_tr0(handle) == bool_true)
+	{ 
+		prefix_effect_CONTROL_DE_TEMPERATURAS_TEMP_CALENTAR_tr0(handle);
+	}  else
+	{
+		if (prefix_check_CONTROL_DE_TEMPERATURAS_TEMP_CALENTAR_EJECUTAR_CONTROL_TEMP_CONTROL_tr0_tr0(handle) == bool_true)
+		{ 
+			prefix_effect_CONTROL_DE_TEMPERATURAS_TEMP_CALENTAR_EJECUTAR_CONTROL_TEMP_CONTROL_tr0(handle);
+		} 
+	}
+}
+
+/* The reactions of state TEMP_ENVIAR_UART. */
+static void prefix_react_CONTROL_DE_TEMPERATURAS_TEMP_CALENTAR_ENVIAR_DATOS_TEMP_ENVIAR_UART(Prefix* handle)
+{
+	/* The reactions of state TEMP_ENVIAR_UART. */
+	if (prefix_check_CONTROL_DE_TEMPERATURAS_TEMP_CALENTAR_ENVIAR_DATOS_TEMP_ENVIAR_UART_tr0_tr0(handle) == bool_true)
+	{ 
+		prefix_effect_CONTROL_DE_TEMPERATURAS_TEMP_CALENTAR_ENVIAR_DATOS_TEMP_ENVIAR_UART_tr0(handle);
+	} 
+}
+
+/* The reactions of state TEMP_CONF. */
+static void prefix_react_CONTROL_DE_TEMPERATURAS_TEMP_CONF(Prefix* handle)
+{
+	/* The reactions of state TEMP_CONF. */
+	if (prefix_check_CONTROL_DE_TEMPERATURAS_TEMP_CONF_tr0_tr0(handle) == bool_true)
+	{ 
+		prefix_effect_CONTROL_DE_TEMPERATURAS_TEMP_CONF_tr0(handle);
+	} 
+}
+
 /* Default react sequence for initial entry  */
 static void prefix_react_BOTON_DEL_ENCODER__entry_Default(Prefix* handle)
 {
@@ -2725,6 +3150,27 @@ static void prefix_react_PUENTE_H__entry_Default(Prefix* handle)
 {
 	/* Default react sequence for initial entry  */
 	prefix_enseq_PUENTE_H_CONFIGURAR_default(handle);
+}
+
+/* Default react sequence for initial entry  */
+static void prefix_react_CONTROL_DE_TEMPERATURAS__entry_Default(Prefix* handle)
+{
+	/* Default react sequence for initial entry  */
+	prefix_enseq_CONTROL_DE_TEMPERATURAS_TEMP_CONF_default(handle);
+}
+
+/* Default react sequence for initial entry  */
+static void prefix_react_CONTROL_DE_TEMPERATURAS_TEMP_CALENTAR_EJECUTAR_CONTROL__entry_Default(Prefix* handle)
+{
+	/* Default react sequence for initial entry  */
+	prefix_enseq_CONTROL_DE_TEMPERATURAS_TEMP_CALENTAR_EJECUTAR_CONTROL_TEMP_CONTROL_default(handle);
+}
+
+/* Default react sequence for initial entry  */
+static void prefix_react_CONTROL_DE_TEMPERATURAS_TEMP_CALENTAR_ENVIAR_DATOS__entry_Default(Prefix* handle)
+{
+	/* Default react sequence for initial entry  */
+	prefix_enseq_CONTROL_DE_TEMPERATURAS_TEMP_CALENTAR_ENVIAR_DATOS_TEMP_ENVIAR_UART_default(handle);
 }
 
 

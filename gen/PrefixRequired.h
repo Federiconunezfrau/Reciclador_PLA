@@ -24,6 +24,10 @@ This state machine makes use of operations declared in the state machines interf
 	- prefixIface_opRetract_puente_h
 	- prefixIface_opMostrar_msj
 	- prefixIface_opMostrar_num
+	- prefixIface_opConfig_control_temp
+	- prefixIface_opApagar_control_temp
+	- prefixIface_opControlar_temp
+	- prefixIface_opEnviar_UART
 are defined.
 
 These functions will be called during a 'run to completion step' (runCycle) of the statechart. 
@@ -38,6 +42,10 @@ extern void prefixIface_opConfig_puente_h(const Prefix* handle);
 extern void prefixIface_opRetract_puente_h(const Prefix* handle);
 extern void prefixIface_opMostrar_msj(const Prefix* handle, const sc_string Mensaje, const sc_integer fil, const sc_integer col);
 extern void prefixIface_opMostrar_num(const Prefix* handle, const sc_integer Numero, const sc_integer fil, const sc_integer col);
+extern void prefixIface_opConfig_control_temp(const Prefix* handle);
+extern void prefixIface_opApagar_control_temp(const Prefix* handle);
+extern sc_integer prefixIface_opControlar_temp(const Prefix* handle, const sc_integer ref);
+extern void prefixIface_opEnviar_UART(const Prefix* handle, const sc_integer num);
 
 
 

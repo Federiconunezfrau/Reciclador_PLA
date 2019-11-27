@@ -1,4 +1,4 @@
-Circuit: * C:\users\federico\Mis Documentos\UBA\Sistemas_Embebidos\TP_FINAL\Termistor.asc
+Circuit: * C:\users\federico\Mis Documentos\UBA\Sistemas_Embebidos\TP_FINAL\Placa_de_temperatura\Termistor.asc
 
 WARNING: Less than two connections to node VREF.  This node is used by V2.
 Direct Newton iteration failed to find .op point.  (Use ".option noopiter" to skip.)
@@ -12,49 +12,66 @@ Gmin = 0.000142725
 vernier = 0.5
 vernier = 0.25
 vernier = 0.125
+Gmin = 3.74144e-005
 vernier = 0.0625
 vernier = 0.03125
-Gmin = 0.000158583
 vernier = 0.015625
 vernier = 0.0078125
-Gmin = 0.000155826
-vernier = 0.0104167
-vernier = 0.0138889
-Gmin = 0.000151301
-vernier = 0.0185185
-vernier = 0.0246913
-Gmin = 0.000144361
-vernier = 0.0329218
-Gmin = 0.000134091
-vernier = 0.0438957
-vernier = 0.0585276
-Gmin = 0.000118502
-vernier = 0.0780367
-vernier = 0.104049
-Gmin = 9.73774e-005
-vernier = 0.138732
-Gmin = 7.1615e-005
-vernier = 0.184976
-vernier = 0.246634
-Gmin = 4.298e-005
-vernier = 0.328846
-vernier = 0.438461
-Gmin = 1.92788e-005
-vernier = 0.584614
-Gmin = 5.60961e-006
-vernier = 0.779486
-vernier = 1
-Gmin = 7.89525e-007
-Gmin = 8.47746e-008
-Gmin = 9.1026e-009
-Gmin = 9.77385e-010
-Gmin = 1.04946e-010
-Gmin = 1.12685e-011
-Gmin = 1.20994e-012
-Gmin = 1.29917e-013
+vernier = 0.00390625
+vernier = 0.00195313
+vernier = 0.000976563
+vernier = 0.000488281
 Gmin = 0
-Gmin stepping succeeded in finding the operating point.
+Gmin stepping failed
 
+Starting source stepping with srcstepmethod=0
+Source Step = 3.0303%
+Source Step = 33.3333%
+Source Step = 63.6364%
+Source Step = 88.6364%
+vernier = 0.0625
+Source Step = 87.8995%
+Source Step = 87.9291%
+Source Step = 87.9587%
+Source Step = 87.9883%
+Source Step = 88.0179%
+Source Step = 88.0475%
+vernier = 0.00146484
+Source Step = 88.0919%
+Source Step = 88.1362%
+Source Step = 88.1806%
+Source Step = 88.225%
+Source Step = 88.2694%
+vernier = 0.00219727
+Source Step = 88.3338%
+Source Step = 88.4004%
+Source Step = 88.4669%
+Source Step = 88.5335%
+Source Step = 88.6001%
+vernier = 0.0032959
+Source Step = 88.6933%
+Source Step = 88.7932%
+Source Step = 88.8931%
+Source Step = 88.993%
+Source Step = 89.0928%
+vernier = 0.00494385
+Source Step = 89.2277%
+Source Step = 89.3775%
+Source Step = 89.5273%
+Source Step = 89.6771%
+Source Step = 89.8269%
+vernier = 0.00741577
+Source Step = 90.0217%
+Source Step = 90.1228%
+Starting source stepping with srcstepmethod=1
+Source Step = 3.0303%
+Source Step = 33.3333%
+Source Step = 63.6364%
+Source Step = 88.6364%
+vernier = 0.0625
+Source stepping failed
+
+Pseudo Transient succeeded in finding the operating point at 299.561 ms.
 Semiconductor Device Operating Points:
                         --- Diodes ---
 Name:  d:u1:e_n:2  d:u1:e_n:1  d:u1:i_np:2  d:u1:i_np:1  d:u1:i_nn:2
@@ -73,20 +90,21 @@ CAP:     0.00e+00
 
 
 
-Date: Wed Nov 13 14:32:06 2019
-Total elapsed time: 0.814 seconds.
+Date: Thu Nov 14 08:11:04 2019
+Total elapsed time: 4.797 seconds.
 
 tnom = 27
 temp = 27
 method = trap
-totiter = 1337
+totiter = 9338
 traniter = 0
 tranpoints = 0
 accept = 0
-rejected = 0
+rejected = 9
 matrix size = 138
-fillins = 155
+fillins = 166
 solver = Normal
-Matrix Compiler1: 15.70 KB object code size
-Matrix Compiler2: 13.96 KB object code size  9.0/22.7/[6.7]
+Thread vector: 54.2/36.4[2] 0.0/0.0[2] 22.7/15.1[2] 6.6/13.5[1]  2592/500
+Matrix Compiler1: off  [24.7]/44.1/44.9
+Matrix Compiler2: 14.16 KB object code size  8.9/10.0/[6.6]
 

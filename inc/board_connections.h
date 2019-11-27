@@ -18,11 +18,16 @@
 //=================================================================
 //Puente H l298n
 
-#define PIN_PUENTE_1 (GPIO3)
-#define PIN_PUENTE_2 (GPIO4)
+#define PIN_PUENTE_1 (GPIO7)
+#define PIN_PUENTE_2 (GPIO8)
 #define PIN_PUENTE_VELOCIDAD (T_FIL1)	//<-- Salida PWM
 
+//=================================================================
+//Control de temperaturas
 
+#define PIN_PWM_ACTUADOR (PWM1)			//<-- Salida PWM (El PWM1 corresponde al pin T_C2 de la EDU-CIAA
+
+#define PIN_LECTURA_TEMP (CH1)			//<--Entrada ADC
 
 
 #endif
