@@ -18,7 +18,8 @@
 #include "encoder_events.h"			//Funciones que leen el encoder y levantan eventos en el statechart
 #include "lcd_operations.h"			//Operaciones del statechart del LCD
 #include "puente_h_operations.h"	//Operaciones del statechart del puente h
-
+#include "uart.h"
+#include <string.h>
 
 
 //=================================================================
@@ -32,10 +33,6 @@
 //Macros asociadas al uso de la uart
 //Agrego esto de la UART solo porque en los ejemplos de yakindu lo dejan, aunque no
 //lo usemos.
-
-#define UART_SELECTED UART_USB		//Se envía por puerto serie a través del cable USB
-
-CONSOLE_PRINT_ENABLE				//Macro necesaria para usar la UART
 
 /* VARIABLES Y FUNCIONES DE YAKINDU *****************************************************/
 //=================================================================
@@ -119,9 +116,78 @@ void myTickHook( void *ptr )
 /****************************************************************************************/
 
 //=================================================================
+// Variables de la UART y funciones
+char strbuffer[30] = "";
+char IP[30] = "0.0.0.0"; 	//variable para almacenar IP
+bool_t isStringComplete = FALSE;
+
+void processRequest(char * req) {
+	// LEER LOS PRIMEROS 3 CARACTERES (INDICAN EL COMANDO). LOS ULTIMOS 3 SON EL VALOR
+	size_t i=0;
+	char command[4]="";
+	char value[4]="";
+	int val;
+	for (i=0; i<strlen(req); i++) {
+		if (req[i] != '\n') {
+			if (i<3) {
+				command[i] = req[i];
+			}
+			else {
+				value[i-3] = req[i];
+			}
+		}
+	}
+
+//	uartWriteString( UART_USB, command);
+//	uartWriteString( UART_USB, "\r\n");
+//	uartWriteString( UART_USB, value);
+//	uartWriteString( UART_USB, "\r\n");
+	val = atoi(value);  //convertir string value a int val
+	if (!strcmp(command, "SSP")) {
+		uartWriteString( UART_USB, "NUEVO VALOR DE SET POINT: ");
+		uartWriteString( UART_USB, value);
+		uartWriteString( UART_USB, "\r\n");
+		(&statechart)->internal.viSetPoint = val;
+	}
+
+	if (!strcmp(command, "SST")) {
+		uartWriteString( UART_USB, "NUEVO VALOR DE Status: ");
+		uartWriteString( UART_USB, value);
+		uartWriteString( UART_USB, "\r\n");
+		(&statechart)->internal.viStatus = val;
+	}
+
+}
+
+void UART_onRx_ISR() {
+	uint8_t c;								//Para ir leyendo byte a byte
+	if ( uartReadByte(UART_USB, &c) ) {		//Leo el byte que llego. Por estar en la rutina de interrupcion, claramente llego un dato, así que el bool_t que devuelve uartReadByte siempre va a ser true acá
+		if (c == '\n') {
+			isStringComplete = TRUE;
+		}
+		appendchar(strbuffer, c);
+	}
+	if (isStringComplete) {				//SI LLEGO UN STRING POR LA UART
+		//uartWriteString( UART_USB, strbuffer);	//imprimo el string
+		if (strbuffer[0] == '?') {				//EL ? INDICA QUE EL DATO PROVENIENTE ES PARA SETEAR ALGUNA VARIABLE (SET-POINT, ESTADO, ETC.)
+			processRequest(strbuffer+1);		//PROCESO EL STRING (eliminando el ? poniendo +1)
+		}
+		else {									//CASO CONTRARIO, ES UNA RESPUESTA A UN PEDIDO (IP DEL WIFI POR EJ.)
+			myStrCpy(IP, strbuffer);
+		}
+
+		clearstring(strbuffer);
+		isStringComplete = FALSE;
+	}
+}
+
+
+//=================================================================
 //Programa principal
 int main(void)
 {
+
+	NVIC_SetPriority(SysTick_IRQn, 2);
 	//Configuración inicial de la placa
 	boardConfig();
 
@@ -146,6 +212,11 @@ int main(void)
 	//Función que limpia la pantalla del LCD
 	lcdClear();
 
+	//Para la UART
+   uartConfig( UART_USB, 115200 );
+   uartRxInterruptCallbackSet(UART_USB, UART_onRx_ISR);
+   uartRxInterruptSet(UART_USB, TRUE);
+
 	InitTimerTicks(ticks, NOF_TIMERS);
 
 	//Inicializo el statechart para su uso
@@ -154,13 +225,14 @@ int main(void)
 	//Comienza a funcionar el statechart
 	prefix_enter(&statechart);
 
+	(&statechart)->internal.viIP = IP;  //QUIERO QUE viIP apunte a IP. Cualquier cambio en IP deberia verse reflejado en viIP
 	//Bucle principal
 	while(1)
 	{
 		/* Me quedo esperando por la interrupción de ticks, que se ejecuta cada 1ms.
 		 * Es decir que el statechart se procesa cada 1ms aprox.*/
 
-		__WFI();	//<-- Wait For Interruption
+		//__WFI();	//<-- Wait For Interruption
 
 		if (SysTick_Time_Flag == true)
 		{
@@ -186,4 +258,5 @@ int main(void)
 		}
 	}
 }
+
 

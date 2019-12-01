@@ -1,4 +1,6 @@
 #include "uart.h"
+extern bool_t isStringComplete;
+extern char strbuffer[];
 
 extern void prefixInternal_opSend_Status(const Prefix* handle, const sc_integer st, const sc_integer temp, const sc_integer setpoint) {
 	char T[10];			//Variable donde se guarda el dato convertido a string
@@ -17,3 +19,7 @@ extern void prefixInternal_opSend_Status(const Prefix* handle, const sc_integer 
 	uartWriteString( UART_USB, SP );
 	uartWriteString( UART_USB, "\r\n" );
 }
+
+
+
+

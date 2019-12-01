@@ -154,6 +154,7 @@ typedef struct
 	sc_integer viTemp;
 	sc_integer viSetPoint;
 	sc_integer viStatus;
+	sc_string viIP;
 } PrefixInternal;
 
 

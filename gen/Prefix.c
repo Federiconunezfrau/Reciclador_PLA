@@ -227,6 +227,7 @@ void prefix_init(Prefix* handle)
 	handle->internal.viTemp = 0;
 	handle->internal.viSetPoint = 0;
 	handle->internal.viStatus = 0;
+	handle->internal.viIP = "";
 }
 
 void prefix_enter(Prefix* handle)
