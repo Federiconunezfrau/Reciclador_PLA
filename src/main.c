@@ -147,7 +147,15 @@ void processRequest(char * req) {
 		uartWriteString( UART_USB, "NUEVO VALOR DE SET POINT: ");
 		uartWriteString( UART_USB, value);
 		uartWriteString( UART_USB, "\r\n");
-		(&statechart)->internal.viSetPoint = val;
+		//(&statechart)->internal.viSetPoint = val;
+		if(val == 0)
+		{
+			prefixIface_raise_evTemp_start(&statechart);
+		}
+		else
+		{
+			prefixIface_raise_evTemp_stop(&statechart);
+		}
 	}
 
 	if (!strcmp(command, "SST")) {
@@ -187,7 +195,6 @@ void UART_onRx_ISR() {
 int main(void)
 {
 
-	NVIC_SetPriority(SysTick_IRQn, 2);
 	//Configuración inicial de la placa
 	boardConfig();
 
@@ -213,9 +220,6 @@ int main(void)
 	lcdClear();
 
 	//Para la UART
-   uartConfig( UART_USB, 115200 );
-   uartRxInterruptCallbackSet(UART_USB, UART_onRx_ISR);
-   uartRxInterruptSet(UART_USB, TRUE);
 
 	InitTimerTicks(ticks, NOF_TIMERS);
 
@@ -224,6 +228,10 @@ int main(void)
 
 	//Comienza a funcionar el statechart
 	prefix_enter(&statechart);
+
+   uartConfig( UART_USB, 115200 );
+   uartRxInterruptCallbackSet(UART_USB, UART_onRx_ISR);
+   uartRxInterruptSet(UART_USB, TRUE);
 
 	(&statechart)->internal.viIP = IP;  //QUIERO QUE viIP apunte a IP. Cualquier cambio en IP deberia verse reflejado en viIP
 	//Bucle principal
