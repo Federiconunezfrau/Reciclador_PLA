@@ -10,7 +10,7 @@ const char MAIN_page[] PROGMEM = R"=====(
   <div class="column">
   	<h3 style="text-align:center;">Estado actual</h3>
     <div>
-      Estado actual: <span id="STATE">LOADING</span><br>
+      Estado actual: <span id="STATE">NA</span><br>
       Temperatura: <span id="TEMP">NA</span><br>
       Set-point: <span id="SP">NA</span>
     </div>
@@ -19,7 +19,7 @@ const char MAIN_page[] PROGMEM = R"=====(
   	<h3 style="text-align:center;">Controles</h3>
     <div class="row">
       <div class="column" style="text-align:center;">
-        Ajuste Set-Point : <span id="NewSP">200</span>
+        Ajuste Set-Point : <span id="NewSP">185</span>
       </div>
 	  <div class="column" style="text-align:center;">
       	<button type="button" onclick="updateSP(1)">+</button>
@@ -42,12 +42,12 @@ function updateSP (data) {
   var sp = document.getElementById("NewSP");
   var sp_value = parseInt(sp.innerHTML); 
   if (data == 1){
-    if (sp_value < 230) {
+    if (sp_value < 210) {
       sp.innerHTML = sp_value + 1;
     }
   }
   else if (data == 0) {
-    if (sp_value > 180) {
+    if (sp_value > 160) {
       sp.innerHTML = sp_value - 1;
     }
   }
@@ -70,7 +70,7 @@ function send_sp() {
       console.log("ENVIADO:" + this.responseText);
     }
   };
-  xhttp.open("GET", "send?value="+sp, true);
+  xhttp.open("GET", "sp?value="+sp, true);
   xhttp.send();
 }
 
@@ -78,7 +78,7 @@ function send_sp() {
 setInterval(function() {
   // Call a function repetatively with 2 Second interval
   getData();
-}, 500); //500mSeconds update rate
+}, 750); //500mSeconds update rate
 
 function getData() {
   var xhttp = new XMLHttpRequest();
@@ -91,17 +91,17 @@ function getData() {
         document.getElementById("TEMP").innerHTML = (response.split(',')[1]);
         document.getElementById("SP").innerHTML = (response.split(',')[2]);
         var ST = document.getElementById("STATE");
-        if (ST.innerHTML == "RUNNING") {
+        if (ST.innerHTML == "ON") {
           document.getElementById("start_btn").disabled = false;
-          document.getElementById("start_btn").innerHTML = "Stop";
+          document.getElementById("start_btn").innerHTML = "Detener";
         }
-        else if (ST.innerHTML == "STOPPED") {
+        else if (ST.innerHTML == "OFF") {
           document.getElementById("start_btn").disabled = false;
-          document.getElementById("start_btn").innerHTML = "Start";
+          document.getElementById("start_btn").innerHTML = "Comenzar";
         }
-        else if (ST.innerHTML == "LOADING") {
+        else if (ST.innerHTML == "NA") {
           document.getElementById("start_btn").disabled = true;
-          document.getElementById("start_btn").innerHTML = "Loading";
+          document.getElementById("start_btn").innerHTML = "Espere...";
         }
       }
     }
@@ -113,7 +113,7 @@ function getData() {
 function start() {
   var st_btn = document.getElementById("start_btn").innerHTML;
   var value = "0"
-  if (st_btn == "Start") {
+  if (st_btn == "Comenzar") {
     value = "1";
   }
   var xhttp = new XMLHttpRequest();

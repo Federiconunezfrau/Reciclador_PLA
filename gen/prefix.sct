@@ -187,7 +187,7 @@
         <outgoingTransitions xmi:id="_QwgDcBIlEeqysfJymneg5g" specification="" target="_KgnZwBIlEeqysfJymneg5g"/>
       </vertices>
       <vertices xsi:type="sgraph:State" xmi:id="_KgnZwBIlEeqysfJymneg5g" specification="entry / opSend_Status(viStatus, viActual_temp, viSetPoint)" name="UART_SEND_STATUS" incomingTransitions="_QwgDcBIlEeqysfJymneg5g _bhNM8BIlEeqysfJymneg5g">
-        <outgoingTransitions xmi:id="_bhNM8BIlEeqysfJymneg5g" specification="after 500 ms" target="_KgnZwBIlEeqysfJymneg5g"/>
+        <outgoingTransitions xmi:id="_bhNM8BIlEeqysfJymneg5g" specification="after 2000 ms" target="_KgnZwBIlEeqysfJymneg5g"/>
       </vertices>
     </regions>
   </sgraph:Statechart>

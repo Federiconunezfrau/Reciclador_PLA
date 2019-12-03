@@ -10,10 +10,10 @@
 #include "index.h" //Our HTML webpage contents with javascripts
 
 #define LED 2  //On board LED
-
+#define TIME_INTERVAL 1000
 //SSID and Password of your WiFi router
-const char* ssid = "redwifi2";
-const char* password = "66778866";
+const char* ssid = "Ema";
+const char* password = "perrosiberiano";
 
 ESP8266WebServer server(80); //Server on port 80
 
@@ -22,33 +22,41 @@ String SP = "";
 String TEMP = "";
 String Status = "";
 bool reading = false;
+unsigned long previousMillis = 0; 
 
 //===============================================================
-// This routine is executed when you open its IP in browser
+// RUTINAS DE MANEJO DE GET REQUESTS
 //===============================================================
-void handleRoot() {
+//PAGINA PRINCIPAL
+void handleRoot() {                                                           
  String r = MAIN_page; //Read HTML contents
  server.send(200, "text/html", r); //Send web page
 }
 
+//SET SP
 void handleSP() {
  String value = server.arg("value"); 
- Serial.println("SP="+value);
+ Serial.print("?SSP"+value);
+ Serial.print("\n");
  server.send(200, "text/plane", value); //Send web page
 }
 
+//ENVIO DE STATUS 
 void handleDATA() {
   while (reading) {}
   server.send(200, "text/plane", Status); //Send web page
 }
 
+//CONTROL DE START/STOP
 void handleSTART() {
   String value = server.arg("value"); 
   if (value.equals("1")) {
-    Serial.println("START");
+    Serial.print("?SST001");
+    Serial.print("\n");
   }
   else {
-    Serial.println("STOP");
+    Serial.print("?SST000");
+    Serial.print("\n");
   }
 }
 
@@ -59,44 +67,52 @@ void setup(void){
   Serial.begin(115200);
   
   WiFi.begin(ssid, password);     //Connect to your WiFi router
-  Serial.println("");
 
   //Onboard LED port Direction output
-  pinMode(LED,OUTPUT); 
-  
+  pinMode(LED, OUTPUT); 
+  digitalWrite(LED, HIGH);
   // Wait for connection
   while (WiFi.status() != WL_CONNECTED) {
     delay(500);
-    Serial.print(".");
   }
-
-  //If connection successful show IP address in serial monitor
-  Serial.println("");
-  Serial.print("Connected to ");
-  Serial.println(ssid);
-  Serial.print("IP address: ");
-  Serial.println(WiFi.localIP());  //IP address assigned to your ESP
  
   server.on("/", handleRoot);      //Which routine to handle at root location. This is display page
-  server.on("/send", handleSP);   // handles new set point
+  server.on("/sp", handleSP);   // handles new set point
   server.on("/read", handleDATA);
   server.on("/start", handleSTART);
   
-
+  digitalWrite(LED, LOW);
   server.begin();                  //Start server
-  Serial.println("HTTP server started");
 }
 //==============================================================
 //                     LOOP
 //==============================================================
 void loop(void){
   server.handleClient();          //Handle client requests
+  
   if (Serial.available()) {
     serialEvent();
   }
+  
+  if (millis() - previousMillis >= 1000) {
+    // save the last time you blinked the LED
+    previousMillis = millis();
+    if (WiFi.status() != WL_CONNECTED) {
+      Serial.print("0.0.0.0");  //IP address assigned to your ESP
+      Serial.print("\n");  //IP address assigned to your ESP
+      digitalWrite(LED, HIGH);
+    }
+    else {
+      Serial.print(WiFi.localIP().toString());  //IP address assigned to your ESP
+      Serial.print("\n");  //IP address assigned to your ESP
+      digitalWrite(LED, LOW);
+    }
+  }
+  
 }
 
 void serialEvent() {
+  //char c;
   reading = true;
   Status = Serial.readString();
   reading = false;

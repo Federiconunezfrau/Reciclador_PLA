@@ -19,6 +19,7 @@
 #include "lcd_operations.h"			//Operaciones del statechart del LCD
 #include "puente_h_operations.h"	//Operaciones del statechart del puente h
 #include "uart.h"
+#include "utils.h"
 #include <string.h>
 
 
@@ -117,9 +118,9 @@ void myTickHook( void *ptr )
 
 //=================================================================
 // Variables de la UART y funciones
-char strbuffer[30] = "";
-char IP[30] = "0.0.0.0"; 	//variable para almacenar IP
 bool_t isStringComplete = FALSE;
+char strbuffer[30] = "";
+char IP[30] = "0.0.0.0";
 
 void processRequest(char * req) {
 	// LEER LOS PRIMEROS 3 CARACTERES (INDICAN EL COMANDO). LOS ULTIMOS 3 SON EL VALOR
@@ -138,25 +139,19 @@ void processRequest(char * req) {
 		}
 	}
 
-//	uartWriteString( UART_USB, command);
-//	uartWriteString( UART_USB, "\r\n");
-//	uartWriteString( UART_USB, value);
-//	uartWriteString( UART_USB, "\r\n");
 	val = atoi(value);  //convertir string value a int val
 	if (!strcmp(command, "SSP")) {
 		uartWriteString( UART_USB, "NUEVO VALOR DE SET POINT: ");
 		uartWriteString( UART_USB, value);
 		uartWriteString( UART_USB, "\r\n");
 		(&statechart)->internal.viSetPoint = val;
-
 	}
 
 	if (!strcmp(command, "SST")) {
 		uartWriteString( UART_USB, "NUEVO VALOR DE Status: ");
 		uartWriteString( UART_USB, value);
 		uartWriteString( UART_USB, "\r\n");
-		//(&statechart)->internal.viStatus = val;
-		if(val == 0)
+		if(val == 1)
 		{
 			prefixIface_raise_evTemp_start(&statechart);
 		}
@@ -170,18 +165,36 @@ void processRequest(char * req) {
 
 void UART_onRx_ISR() {
 	uint8_t c;								//Para ir leyendo byte a byte
-	if ( uartReadByte(UART_USB, &c) ) {		//Leo el byte que llego. Por estar en la rutina de interrupcion, claramente llego un dato, así que el bool_t que devuelve uartReadByte siempre va a ser true acá
+//	if ( uartReadByte(UART_USB, &c) ) {		//Leo el byte que llego. Por estar en la rutina de interrupcion, claramente llego un dato, así que el bool_t que devuelve uartReadByte siempre va a ser true acá
+//		if (c == '\n') {
+//			isStringComplete = TRUE;
+//		}
+//		appendchar(strbuffer, c);
+//	}
+//	if (isStringComplete) {				//SI LLEGO UN STRING POR LA UART
+//		if (strbuffer[0] == '?') {				//EL ? INDICA QUE EL DATO PROVENIENTE ES PARA SETEAR ALGUNA VARIABLE (SET-POINT, ESTADO, ETC.)
+//			processRequest(strbuffer+1);		//PROCESO EL STRING (eliminando el ? poniendo +1)
+//		}
+//		else if (strbuffer[0] == '!'){									//CASO CONTRARIO, ES UNA RESPUESTA A UN PEDIDO (IP DEL WIFI POR EJ.)
+//			myStrCpy(IP, strbuffer+1);
+//		}
+//
+//		clearstring(strbuffer);
+//		isStringComplete = FALSE;
+//	}
+
+	if ( uartReadByte(UART_232, &c) ) {		//Leo el byte que llego. Por estar en la rutina de interrupcion, claramente llego un dato, así que el bool_t que devuelve uartReadByte siempre va a ser true acá
 		if (c == '\n') {
 			isStringComplete = TRUE;
 		}
 		appendchar(strbuffer, c);
 	}
 	if (isStringComplete) {				//SI LLEGO UN STRING POR LA UART
-		//uartWriteString( UART_USB, strbuffer);	//imprimo el string
 		if (strbuffer[0] == '?') {				//EL ? INDICA QUE EL DATO PROVENIENTE ES PARA SETEAR ALGUNA VARIABLE (SET-POINT, ESTADO, ETC.)
 			processRequest(strbuffer+1);		//PROCESO EL STRING (eliminando el ? poniendo +1)
 		}
-		else {									//CASO CONTRARIO, ES UNA RESPUESTA A UN PEDIDO (IP DEL WIFI POR EJ.)
+		else { //CASO CONTRARIO, ES UNA RESPUESTA A UN PEDIDO (IP DEL WIFI POR EJ.)
+			clearstring(IP);
 			myStrCpy(IP, strbuffer);
 		}
 
@@ -189,6 +202,7 @@ void UART_onRx_ISR() {
 		isStringComplete = FALSE;
 	}
 }
+
 
 
 //=================================================================
@@ -230,9 +244,13 @@ int main(void)
 	//Comienza a funcionar el statechart
 	prefix_enter(&statechart);
 
-   uartConfig( UART_USB, 115200 );
-   uartRxInterruptCallbackSet(UART_USB, UART_onRx_ISR);
-   uartRxInterruptSet(UART_USB, TRUE);
+    uartConfig( UART_USB, 115200 );
+//    uartRxInterruptCallbackSet(UART_USB, UART_onRx_ISR);
+//    uartRxInterruptSet(UART_USB, TRUE);
+
+    uartConfig( UART_232, 115200 );
+    uartRxInterruptCallbackSet(UART_232, UART_onRx_ISR);
+    uartRxInterruptSet(UART_232, TRUE);
 
 	(&statechart)->internal.viIP = IP;  //QUIERO QUE viIP apunte a IP. Cualquier cambio en IP deberia verse reflejado en viIP
 	//Bucle principal

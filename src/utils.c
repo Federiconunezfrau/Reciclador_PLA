@@ -1,5 +1,6 @@
 #include "utils.h"
 #include <string.h>
+
 char* itoa(int value, char* result, int base) {
    // check that the base if valid
    if (base < 2 || base > 36) { *result = '\0'; return result; }
@@ -61,3 +62,4 @@ void myStrCpy(char * dest, char * src) {
 		}
 	}
 }
+
