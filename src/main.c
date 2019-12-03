@@ -147,7 +147,15 @@ void processRequest(char * req) {
 		uartWriteString( UART_USB, "NUEVO VALOR DE SET POINT: ");
 		uartWriteString( UART_USB, value);
 		uartWriteString( UART_USB, "\r\n");
-		//(&statechart)->internal.viSetPoint = val;
+		(&statechart)->internal.viSetPoint = val;
+
+	}
+
+	if (!strcmp(command, "SST")) {
+		uartWriteString( UART_USB, "NUEVO VALOR DE Status: ");
+		uartWriteString( UART_USB, value);
+		uartWriteString( UART_USB, "\r\n");
+		//(&statechart)->internal.viStatus = val;
 		if(val == 0)
 		{
 			prefixIface_raise_evTemp_start(&statechart);
@@ -156,13 +164,6 @@ void processRequest(char * req) {
 		{
 			prefixIface_raise_evTemp_stop(&statechart);
 		}
-	}
-
-	if (!strcmp(command, "SST")) {
-		uartWriteString( UART_USB, "NUEVO VALOR DE Status: ");
-		uartWriteString( UART_USB, value);
-		uartWriteString( UART_USB, "\r\n");
-		(&statechart)->internal.viStatus = val;
 	}
 
 }
@@ -240,7 +241,7 @@ int main(void)
 		/* Me quedo esperando por la interrupción de ticks, que se ejecuta cada 1ms.
 		 * Es decir que el statechart se procesa cada 1ms aprox.*/
 
-		//__WFI();	//<-- Wait For Interruption
+		__WFI();	//<-- Wait For Interruption
 
 		if (SysTick_Time_Flag == true)
 		{

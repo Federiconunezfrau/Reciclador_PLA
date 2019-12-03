@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:sgraph="http://www.yakindu.org/sct/sgraph/2.0.0">
-  <sgraph:Statechart xmi:id="_IPEiAI_CEeaE_NItBGtDFQ" specification="/* MAQUINA DE ESTADOS RECICLADOR PLA EDU-CIA-NXP */&#xD;&#xA;&#xD;&#xA;interface:&#xD;&#xA;&#xD;&#xA;//======================&#xD;&#xA;//Wi-Fi&#xD;&#xA;&#xD;&#xA;in event evActualizar_setpoint&#xD;&#xA;&#xD;&#xA;//======================&#xD;&#xA;//ENCODER&#xD;&#xA;&#xD;&#xA;//Rotación del encoder&#xD;&#xA;&#xD;&#xA;in event evEnc_rot_derecha&#xD;&#xA;in event evEnc_rot_izquierda&#xD;&#xA;in event evEnc_boton&#xD;&#xA;&#xD;&#xA;//Botón del encoder&#xD;&#xA;in event evTECXNoOprimido&#xD;&#xA;in event evTECXOprimido&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;//Constantes de cuenta del encoder&#xD;&#xA;&#xD;&#xA;const MAX_DER_COUNT: integer = 3&#xD;&#xA;const MAX_IZQ_COUNT: integer = 3&#xD;&#xA;&#xD;&#xA;const TRUE: integer = 0&#xD;&#xA;const FALSE: integer = 1&#xD;&#xA;&#xD;&#xA;//========================&#xD;&#xA;//PUENTE H&#xD;&#xA;&#xD;&#xA;//Movimiento del motor&#xD;&#xA;in event evPuente_h_alto&#xD;&#xA;in event evPuente_h_horario&#xD;&#xA;in event evPuente_h_antihorario&#xD;&#xA;in event evConf_Ready_Puente_H&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;//Constantes del puente h&#xD;&#xA;const horario: boolean = true&#xD;&#xA;const antihorario: boolean = false&#xD;&#xA;&#xD;&#xA;//Operaciones del puente h&#xD;&#xA;operation opStart_puente_h(): void&#xD;&#xA;operation opStop_puente_h(): void&#xD;&#xA;operation opConfig_puente_h(): void&#xD;&#xA;operation opRetract_puente_h(): void&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;//========================&#xD;&#xA;//LCD&#xD;&#xA;&#xD;&#xA;//Constantes del LCD&#xD;&#xA;&#xD;&#xA;//Menú principal&#xD;&#xA;&#xD;&#xA;const Msj_menu_principal:string = &quot;Menu principal&quot;&#xD;&#xA;&#xD;&#xA;const Msj_menu_conf_motores:string = &quot;Conf motores&quot;&#xD;&#xA;&#xD;&#xA;const Msj_menu_conf_Wi_Fi: string = &quot;Conf Wi-Fi&quot;&#xD;&#xA;&#xD;&#xA;const Msj_menu_extruir: string = &quot;Extrusion&quot;&#xD;&#xA;&#xD;&#xA;const Msj_menu_conf_temp: string = &quot;Conf temp&quot;&#xD;&#xA;&#xD;&#xA;const Msj_menu_cancelar: string = &quot;Cancelar&quot;&#xD;&#xA;&#xD;&#xA;//Menú control motor&#xD;&#xA;&#xD;&#xA;const Msj_menu_motor_extrusion: string = &quot;Start extrusión&quot;&#xD;&#xA;&#xD;&#xA;const Msj_menu_motor_extrusion_stop: string = &quot;Stop extrusion/retract&quot;&#xD;&#xA;&#xD;&#xA;const Msj_menu_motor_extrusion_retract: string = &quot;Start retract&quot;&#xD;&#xA;&#xD;&#xA;//Menú conf temp&#xD;&#xA;const Msj_menu_setear_temp:string = &quot;Set temp&quot;&#xD;&#xA;&#xD;&#xA;const Msj_menu_enfriar:string = &quot;Off temp&quot;&#xD;&#xA;&#xD;&#xA;//Menu set temp&#xD;&#xA;&#xD;&#xA;const Msj_menu_set_temp:string = &quot;Temperature ? [°C]&quot;&#xD;&#xA;&#xD;&#xA;//Operaciones del LCD&#xD;&#xA;&#xD;&#xA;operation opMostrar_msj(Mensaje:string,fil: integer,col: integer) :void&#xD;&#xA;&#xD;&#xA;operation opMostrar_num(Numero:integer,fil: integer,col: integer) :void&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;//========================&#xD;&#xA;//Control de temperaturas&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;//Eventos del control de temperaturas&#xD;&#xA;in event evConf_Ready_temp&#xD;&#xA;&#xD;&#xA;in event evTemp_start&#xD;&#xA;in event evTemp_stop&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;//Operaciones del control de temperaturas&#xD;&#xA;operation opConfig_control_temp(): void&#xD;&#xA;operation opApagar_control_temp(): void&#xD;&#xA;operation opControlar_temp(ref:integer): integer&#xD;&#xA;&#xD;&#xA;//========================&#xD;&#xA;//UART&#xD;&#xA;&#xD;&#xA;//Operaciones de la UART&#xD;&#xA;operation opEnviar_UART(num:integer): void&#xD;&#xA;&#xD;&#xA;internal:&#xD;&#xA;//========================&#xD;&#xA;//ENCODER&#xD;&#xA;&#xD;&#xA;//Variables del encoder&#xD;&#xA;var viEnc_count_der: integer&#xD;&#xA;var viEnc_count_izq: integer&#xD;&#xA;&#xD;&#xA;var viEnc_volver: integer&#xD;&#xA;&#xD;&#xA;var viTecla: integer&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;//========================&#xD;&#xA;//LCD&#xD;&#xA;&#xD;&#xA;//Señales del LCD&#xD;&#xA;event siDespl_derecha&#xD;&#xA;event siDespl_izquierda&#xD;&#xA;event siEntrar&#xD;&#xA;&#xD;&#xA;//Variables del LCD&#xD;&#xA;var viSet_temp_lcd: integer&#xD;&#xA;&#xD;&#xA;//========================&#xD;&#xA;//Puente h&#xD;&#xA;&#xD;&#xA;//Señales del puente h&#xD;&#xA;&#xD;&#xA;event siStop_puente_h&#xD;&#xA;event siStart_puente_h&#xD;&#xA;event siRetract_puente_h&#xD;&#xA;&#xD;&#xA;//========================&#xD;&#xA;//Control temperaturas&#xD;&#xA;&#xD;&#xA;//Señales del control de temperaturas&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;//Variables del control de temperaturas&#xD;&#xA;var viActual_temp: integer&#xD;&#xA;var viRef_temp: integer&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// =======================&#xD;&#xA;// UART&#xD;&#xA;&#xD;&#xA;var viTemp: integer&#xD;&#xA;var viSetPoint: integer&#xD;&#xA;var viStatus: integer   //1 = on, 0=off&#xD;&#xA;var viIP: string&#xD;&#xA;&#xD;&#xA;operation opSend_Status(st:integer, temp:integer, setpoint:integer) : void" name="prefix">
+  <sgraph:Statechart xmi:id="_IPEiAI_CEeaE_NItBGtDFQ" specification="/* MAQUINA DE ESTADOS RECICLADOR PLA EDU-CIA-NXP */&#xD;&#xA;&#xD;&#xA;interface:&#xD;&#xA;&#xD;&#xA;//======================&#xD;&#xA;//Wi-Fi&#xD;&#xA;&#xD;&#xA;in event evActualizar_setpoint&#xD;&#xA;&#xD;&#xA;//======================&#xD;&#xA;//ENCODER&#xD;&#xA;&#xD;&#xA;//Rotación del encoder&#xD;&#xA;&#xD;&#xA;in event evEnc_rot_derecha&#xD;&#xA;in event evEnc_rot_izquierda&#xD;&#xA;in event evEnc_boton&#xD;&#xA;&#xD;&#xA;//Botón del encoder&#xD;&#xA;in event evTECXNoOprimido&#xD;&#xA;in event evTECXOprimido&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;//Constantes de cuenta del encoder&#xD;&#xA;&#xD;&#xA;const MAX_DER_COUNT: integer = 3&#xD;&#xA;const MAX_IZQ_COUNT: integer = 3&#xD;&#xA;&#xD;&#xA;const TRUE: integer = 0&#xD;&#xA;const FALSE: integer = 1&#xD;&#xA;&#xD;&#xA;//========================&#xD;&#xA;//PUENTE H&#xD;&#xA;&#xD;&#xA;//Movimiento del motor&#xD;&#xA;in event evPuente_h_alto&#xD;&#xA;in event evPuente_h_horario&#xD;&#xA;in event evPuente_h_antihorario&#xD;&#xA;in event evConf_Ready_Puente_H&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;//Constantes del puente h&#xD;&#xA;const horario: boolean = true&#xD;&#xA;const antihorario: boolean = false&#xD;&#xA;&#xD;&#xA;//Operaciones del puente h&#xD;&#xA;operation opStart_puente_h(): void&#xD;&#xA;operation opStop_puente_h(): void&#xD;&#xA;operation opConfig_puente_h(): void&#xD;&#xA;operation opRetract_puente_h(): void&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;//========================&#xD;&#xA;//LCD&#xD;&#xA;&#xD;&#xA;//Constantes del LCD&#xD;&#xA;&#xD;&#xA;//Menú principal&#xD;&#xA;&#xD;&#xA;const Msj_menu_principal:string = &quot;Menu principal&quot;&#xD;&#xA;&#xD;&#xA;const Msj_menu_conf_motores:string = &quot;Conf motores&quot;&#xD;&#xA;&#xD;&#xA;const Msj_menu_conf_Wi_Fi: string = &quot;Conf Wi-Fi&quot;&#xD;&#xA;&#xD;&#xA;const Msj_menu_extruir: string = &quot;Extrusion&quot;&#xD;&#xA;&#xD;&#xA;const Msj_menu_conf_temp: string = &quot;Conf temp&quot;&#xD;&#xA;&#xD;&#xA;const Msj_menu_cancelar: string = &quot;Cancelar&quot;&#xD;&#xA;&#xD;&#xA;//Menú control motor&#xD;&#xA;&#xD;&#xA;const Msj_menu_motor_extrusion: string = &quot;Start extrusión&quot;&#xD;&#xA;&#xD;&#xA;const Msj_menu_motor_extrusion_stop: string = &quot;Stop extrusion/retract&quot;&#xD;&#xA;&#xD;&#xA;const Msj_menu_motor_extrusion_retract: string = &quot;Start retract&quot;&#xD;&#xA;&#xD;&#xA;//Menú conf temp&#xD;&#xA;const Msj_menu_setear_temp:string = &quot;Set temp&quot;&#xD;&#xA;&#xD;&#xA;const Msj_menu_enfriar:string = &quot;Off temp&quot;&#xD;&#xA;&#xD;&#xA;//Menu set temp&#xD;&#xA;&#xD;&#xA;const Msj_menu_set_temp:string = &quot;Temperature ? [°C]&quot;&#xD;&#xA;&#xD;&#xA;//Menu wifi&#xD;&#xA;const Msj_menu_wifi:string = &quot;IP&quot;&#xD;&#xA;&#xD;&#xA;//Operaciones del LCD&#xD;&#xA;&#xD;&#xA;operation opMostrar_msj(Mensaje:string,fil: integer,col: integer) :void&#xD;&#xA;&#xD;&#xA;operation opMostrar_num(Numero:integer,fil: integer,col: integer) :void&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;//========================&#xD;&#xA;//Control de temperaturas&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;//Eventos del control de temperaturas&#xD;&#xA;in event evConf_Ready_temp&#xD;&#xA;&#xD;&#xA;in event evTemp_start&#xD;&#xA;in event evTemp_stop&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;//Operaciones del control de temperaturas&#xD;&#xA;operation opConfig_control_temp(): void&#xD;&#xA;operation opApagar_control_temp(): void&#xD;&#xA;operation opControlar_temp(ref:integer): integer&#xD;&#xA;&#xD;&#xA;//========================&#xD;&#xA;//UART&#xD;&#xA;&#xD;&#xA;//Operaciones de la UART&#xD;&#xA;operation opEnviar_UART(num:integer): void&#xD;&#xA;&#xD;&#xA;internal:&#xD;&#xA;//========================&#xD;&#xA;//ENCODER&#xD;&#xA;&#xD;&#xA;//Variables del encoder&#xD;&#xA;var viEnc_count_der: integer&#xD;&#xA;var viEnc_count_izq: integer&#xD;&#xA;&#xD;&#xA;var viEnc_volver: integer&#xD;&#xA;&#xD;&#xA;var viTecla: integer&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;//========================&#xD;&#xA;//LCD&#xD;&#xA;&#xD;&#xA;//Señales del LCD&#xD;&#xA;event siDespl_derecha&#xD;&#xA;event siDespl_izquierda&#xD;&#xA;event siEntrar&#xD;&#xA;&#xD;&#xA;//Variables del LCD&#xD;&#xA;var viSet_temp_lcd: integer&#xD;&#xA;&#xD;&#xA;//========================&#xD;&#xA;//Puente h&#xD;&#xA;&#xD;&#xA;//Señales del puente h&#xD;&#xA;&#xD;&#xA;event siStop_puente_h&#xD;&#xA;event siStart_puente_h&#xD;&#xA;event siRetract_puente_h&#xD;&#xA;&#xD;&#xA;//========================&#xD;&#xA;//Control temperaturas&#xD;&#xA;&#xD;&#xA;//Señales del control de temperaturas&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;//Variables del control de temperaturas&#xD;&#xA;var viActual_temp: integer&#xD;&#xA;var viRef_temp: integer&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// =======================&#xD;&#xA;// UART&#xD;&#xA;&#xD;&#xA;var viTemp: integer&#xD;&#xA;var viSetPoint: integer&#xD;&#xA;var viStatus: integer   //1 = on, 0=off&#xD;&#xA;var viIP: string&#xD;&#xA;&#xD;&#xA;operation opSend_Status(st:integer, temp:integer, setpoint:integer) : void" name="prefix">
     <regions xmi:id="_DqwIoPdfEemNrskzsQFwJg" name="BOTON_DEL_ENCODER">
       <vertices xsi:type="sgraph:State" xmi:id="_DqwIofdfEemNrskzsQFwJg" specification="" name="DEBOUNCE" incomingTransitions="_DqzzAfdfEemNrskzsQFwJg">
         <outgoingTransitions xmi:id="_DqxWwfdfEemNrskzsQFwJg" specification="after 50 ms" target="_Dq4EcPdfEemNrskzsQFwJg"/>
@@ -40,7 +40,7 @@
       <vertices xsi:type="sgraph:Entry" xmi:id="_06XAIPXiEem8Rt4b5cjO8Q">
         <outgoingTransitions xmi:id="_sdgdsPXkEem8Rt4b5cjO8Q" specification="" target="_qybb8PXkEem8Rt4b5cjO8Q"/>
       </vertices>
-      <vertices xsi:type="sgraph:State" xmi:id="_qybb8PXkEem8Rt4b5cjO8Q" specification="entry / opMostrar_msj(Msj_menu_principal,1,1)" name="MENU_PRINCIPAL" incomingTransitions="_sdgdsPXkEem8Rt4b5cjO8Q _8Mu88PZjEem8Rt4b5cjO8Q _3BRNEAF5EeqMl8DAbGzI5g">
+      <vertices xsi:type="sgraph:State" xmi:id="_qybb8PXkEem8Rt4b5cjO8Q" specification="entry / opMostrar_msj(Msj_menu_principal,1,1)" name="MENU_PRINCIPAL" incomingTransitions="_sdgdsPXkEem8Rt4b5cjO8Q _8Mu88PZjEem8Rt4b5cjO8Q _3BRNEAF5EeqMl8DAbGzI5g _TAOpIBVAEeq3_8gyktlnwA">
         <regions xmi:id="_qyiwsPXkEem8Rt4b5cjO8Q" name="MEMSAJE_MOSTRADO_EN_DISPLAY_MENU_PRINCIPAL">
           <vertices xsi:type="sgraph:State" xmi:id="_5OUdwPXkEem8Rt4b5cjO8Q" specification="entry / opMostrar_msj(Msj_menu_conf_motores,1,2)" name="CONF_MOTORES" incomingTransitions="_FWZC0PXlEem8Rt4b5cjO8Q _LDxcYPXlEem8Rt4b5cjO8Q">
             <outgoingTransitions xmi:id="_D5WdEPXlEem8Rt4b5cjO8Q" specification="siDespl_derecha" target="_61B84PXkEem8Rt4b5cjO8Q"/>
@@ -55,10 +55,12 @@
           <vertices xsi:type="sgraph:State" xmi:id="_8IX0EPXkEem8Rt4b5cjO8Q" specification="entry / opMostrar_msj(Msj_menu_conf_Wi_Fi,1,2)" name="CONF_WI_FI" incomingTransitions="_E8QEgPXlEem8Rt4b5cjO8Q _MXpfEPXlEem8Rt4b5cjO8Q">
             <outgoingTransitions xmi:id="_FWZC0PXlEem8Rt4b5cjO8Q" specification="siDespl_derecha" target="_5OUdwPXkEem8Rt4b5cjO8Q"/>
             <outgoingTransitions xmi:id="_GLmMgPXlEem8Rt4b5cjO8Q" specification="siDespl_izquierda" target="_9GykIPXkEem8Rt4b5cjO8Q"/>
+            <outgoingTransitions xmi:id="_Ge2eIBU-Eeq3_8gyktlnwA" specification="siEntrar" target="_CyLYEBU-Eeq3_8gyktlnwA"/>
           </vertices>
-          <vertices xsi:type="sgraph:State" xmi:id="_9GykIPXkEem8Rt4b5cjO8Q" specification="entry / opMostrar_msj(Msj_menu_extruir,1,2)" name="EXTRUSION" incomingTransitions="_Eesl0PXlEem8Rt4b5cjO8Q _GLmMgPXlEem8Rt4b5cjO8Q">
+          <vertices xsi:type="sgraph:State" xmi:id="_9GykIPXkEem8Rt4b5cjO8Q" specification="entry / opMostrar_msj(Msj_menu_extruir,1,2)" name="EXTRUSION" incomingTransitions="_Eesl0PXlEem8Rt4b5cjO8Q _GLmMgPXlEem8Rt4b5cjO8Q _mlm0oBU9Eeq3_8gyktlnwA">
             <outgoingTransitions xmi:id="_E8QEgPXlEem8Rt4b5cjO8Q" specification="siDespl_derecha" target="_8IX0EPXkEem8Rt4b5cjO8Q"/>
             <outgoingTransitions xmi:id="_NsVaEPXlEem8Rt4b5cjO8Q" specification="siDespl_izquierda" target="_61B84PXkEem8Rt4b5cjO8Q"/>
+            <outgoingTransitions xmi:id="_mlm0oBU9Eeq3_8gyktlnwA" specification="siEntrar / raise evTemp_start" target="_9GykIPXkEem8Rt4b5cjO8Q"/>
           </vertices>
           <vertices xsi:type="sgraph:Entry" xmi:id="_dpLRQPXlEem8Rt4b5cjO8Q">
             <outgoingTransitions xmi:id="_emRLoPXlEem8Rt4b5cjO8Q" specification="" target="_61B84PXkEem8Rt4b5cjO8Q"/>
@@ -83,7 +85,7 @@
           <vertices xsi:type="sgraph:State" xmi:id="_fsLggAPrEeqp8KUV90Sgvg" specification="entry / opMostrar_msj(Msj_menu_enfriar,1,2)" name="ENFRIAR" incomingTransitions="_rNxUYAPrEeqp8KUV90Sgvg _5E-UwAPrEeqp8KUV90Sgvg _HAMScAPsEeqp8KUV90Sgvg _LkjU0AP0Eeqp8KUV90Sgvg">
             <outgoingTransitions xmi:id="_sYgpMAPrEeqp8KUV90Sgvg" specification="siDespl_izquierda" target="_6EwMMAPqEeqp8KUV90Sgvg"/>
             <outgoingTransitions xmi:id="_DcBoIAPsEeqp8KUV90Sgvg" specification="siDespl_derecha" target="_ZeDXYPZjEem8Rt4b5cjO8Q"/>
-            <outgoingTransitions xmi:id="_LkjU0AP0Eeqp8KUV90Sgvg" specification="siEntrar / raise siTemp_stop" target="_fsLggAPrEeqp8KUV90Sgvg"/>
+            <outgoingTransitions xmi:id="_LkjU0AP0Eeqp8KUV90Sgvg" specification="siEntrar / raise evTemp_stop" target="_fsLggAPrEeqp8KUV90Sgvg"/>
           </vertices>
         </regions>
       </vertices>
@@ -119,12 +121,15 @@
           <vertices xsi:type="sgraph:State" xmi:id="_GtPvAAPxEeqp8KUV90Sgvg" specification="entry / opMostrar_num(viSet_temp_lcd,1,2)" name="SELEC_TEMP" incomingTransitions="_QhM8YAPxEeqp8KUV90Sgvg _RAeAYAPzEeqp8KUV90Sgvg _X-vaEAPzEeqp8KUV90Sgvg">
             <outgoingTransitions xmi:id="_RAeAYAPzEeqp8KUV90Sgvg" specification="siDespl_derecha &#xA;/ viSet_temp_lcd+=1" target="_GtPvAAPxEeqp8KUV90Sgvg"/>
             <outgoingTransitions xmi:id="_X-vaEAPzEeqp8KUV90Sgvg" specification="siDespl_izquierda[viSet_temp_lcd>150]&#xA; / viSet_temp_lcd-=1" target="_GtPvAAPxEeqp8KUV90Sgvg"/>
-            <outgoingTransitions xmi:id="_8TtoAAPzEeqp8KUV90Sgvg" specification="siEntrar / raise evActualizar_setpoint" target="_Zd4_UPZjEem8Rt4b5cjO8Q"/>
+            <outgoingTransitions xmi:id="_8TtoAAPzEeqp8KUV90Sgvg" specification="siEntrar / raise evActualizar_setpoint ; viSetPoint = viSet_temp_lcd" target="_Zd4_UPZjEem8Rt4b5cjO8Q"/>
           </vertices>
           <vertices xsi:type="sgraph:Entry" xmi:id="_PnV8MAPxEeqp8KUV90Sgvg">
             <outgoingTransitions xmi:id="_QhM8YAPxEeqp8KUV90Sgvg" specification="" target="_GtPvAAPxEeqp8KUV90Sgvg"/>
           </vertices>
         </regions>
+      </vertices>
+      <vertices xsi:type="sgraph:State" xmi:id="_CyLYEBU-Eeq3_8gyktlnwA" specification="entry/ opMostrar_msj(Msj_menu_wifi,1,1) ; opMostrar_msj(viIP,1,2)" name="MENU_WIFI" incomingTransitions="_Ge2eIBU-Eeq3_8gyktlnwA">
+        <outgoingTransitions xmi:id="_TAOpIBVAEeq3_8gyktlnwA" specification="siEntrar" target="_qybb8PXkEem8Rt4b5cjO8Q"/>
       </vertices>
     </regions>
     <regions xmi:id="_stCuwAF6EeqMl8DAbGzI5g" name="PUENTE_H">
@@ -154,7 +159,7 @@
       <vertices xsi:type="sgraph:State" xmi:id="_42NcYAbSEeqYhprOp37WDQ" specification="entry / opApagar_control_temp()" name="TEMP_APAGADO" incomingTransitions="_g1JlMAbUEeqYhprOp37WDQ _2NAosAbWEeqYhprOp37WDQ">
         <outgoingTransitions xmi:id="_UwVvgAbUEeqYhprOp37WDQ" specification="evTemp_start / viStatus = 1" target="_T_gvgAbUEeqYhprOp37WDQ"/>
       </vertices>
-      <vertices xsi:type="sgraph:State" xmi:id="_T_gvgAbUEeqYhprOp37WDQ" specification="entry / viRef_temp = viSet_temp_lcd" name="TEMP_CALENTAR" incomingTransitions="_UwVvgAbUEeqYhprOp37WDQ">
+      <vertices xsi:type="sgraph:State" xmi:id="_T_gvgAbUEeqYhprOp37WDQ" specification="entry / viRef_temp = viSetPoint" name="TEMP_CALENTAR" incomingTransitions="_UwVvgAbUEeqYhprOp37WDQ">
         <outgoingTransitions xmi:id="_g1JlMAbUEeqYhprOp37WDQ" specification="evTemp_stop / viStatus = 0" target="_42NcYAbSEeqYhprOp37WDQ"/>
         <regions xmi:id="_T_lA8AbUEeqYhprOp37WDQ" name="EJECUTAR_CONTROL">
           <vertices xsi:type="sgraph:Entry" xmi:id="_n3fmkAbUEeqYhprOp37WDQ">
@@ -168,7 +173,7 @@
           <vertices xsi:type="sgraph:Entry" xmi:id="_oUUFcAbUEeqYhprOp37WDQ">
             <outgoingTransitions xmi:id="_Juv04AbVEeqYhprOp37WDQ" specification="" target="_Ao98IAbVEeqYhprOp37WDQ"/>
           </vertices>
-          <vertices xsi:type="sgraph:State" xmi:id="_Ao98IAbVEeqYhprOp37WDQ" specification="entry / opEnviar_UART(viActual_temp)" name="TEMP_ENVIAR_UART" incomingTransitions="_Juv04AbVEeqYhprOp37WDQ _VC0xMAbVEeqYhprOp37WDQ">
+          <vertices xsi:type="sgraph:State" xmi:id="_Ao98IAbVEeqYhprOp37WDQ" specification="//entry / opEnviar_UART(viActual_temp)" name="TEMP_ENVIAR_UART" incomingTransitions="_Juv04AbVEeqYhprOp37WDQ _VC0xMAbVEeqYhprOp37WDQ">
             <outgoingTransitions xmi:id="_VC0xMAbVEeqYhprOp37WDQ" specification="after 1 s" target="_Ao98IAbVEeqYhprOp37WDQ"/>
           </vertices>
         </regions>
@@ -181,9 +186,8 @@
       <vertices xsi:type="sgraph:Entry" xmi:id="_pghc8BIkEeqysfJymneg5g">
         <outgoingTransitions xmi:id="_QwgDcBIlEeqysfJymneg5g" specification="" target="_KgnZwBIlEeqysfJymneg5g"/>
       </vertices>
-      <vertices xsi:type="sgraph:State" xmi:id="_KgnZwBIlEeqysfJymneg5g" specification="entry / opSend_Status(viStatus, viTemp, viSetPoint)" name="UART_SEND_STATUS" incomingTransitions="_QwgDcBIlEeqysfJymneg5g _bhNM8BIlEeqysfJymneg5g _jGOn4BU2EeqpleaGy0ZiXw">
+      <vertices xsi:type="sgraph:State" xmi:id="_KgnZwBIlEeqysfJymneg5g" specification="entry / opSend_Status(viStatus, viActual_temp, viSetPoint)" name="UART_SEND_STATUS" incomingTransitions="_QwgDcBIlEeqysfJymneg5g _bhNM8BIlEeqysfJymneg5g">
         <outgoingTransitions xmi:id="_bhNM8BIlEeqysfJymneg5g" specification="after 500 ms" target="_KgnZwBIlEeqysfJymneg5g"/>
-        <outgoingTransitions xmi:id="_jGOn4BU2EeqpleaGy0ZiXw" specification="i" target="_KgnZwBIlEeqysfJymneg5g"/>
       </vertices>
     </regions>
   </sgraph:Statechart>
@@ -573,10 +577,26 @@
           <styles xsi:type="notation:BooleanValueStyle" xmi:id="_MWr5PAPwEeqp8KUV90Sgvg" name="isHorizontal" booleanValue="true"/>
           <layoutConstraint xsi:type="notation:Bounds" xmi:id="_MWr5PQPwEeqp8KUV90Sgvg" x="628" y="407" width="500" height="308"/>
         </children>
+        <children xmi:id="_CySs0BU-Eeq3_8gyktlnwA" type="State" element="_CyLYEBU-Eeq3_8gyktlnwA">
+          <children xsi:type="notation:DecorationNode" xmi:id="_CyWXMBU-Eeq3_8gyktlnwA" type="StateName">
+            <styles xsi:type="notation:ShapeStyle" xmi:id="_CyWXMRU-Eeq3_8gyktlnwA"/>
+            <layoutConstraint xsi:type="notation:Location" xmi:id="_CyWXMhU-Eeq3_8gyktlnwA"/>
+          </children>
+          <children xsi:type="notation:Compartment" xmi:id="_CyYzcBU-Eeq3_8gyktlnwA" type="StateTextCompartment">
+            <children xsi:type="notation:Shape" xmi:id="_CyZagBU-Eeq3_8gyktlnwA" type="StateTextCompartmentExpression" fontName="Verdana" lineColor="4210752">
+              <layoutConstraint xsi:type="notation:Bounds" xmi:id="_CyZagRU-Eeq3_8gyktlnwA"/>
+            </children>
+          </children>
+          <children xsi:type="notation:Compartment" xmi:id="_CybPsBU-Eeq3_8gyktlnwA" type="StateFigureCompartment"/>
+          <styles xsi:type="notation:ShapeStyle" xmi:id="_CyTT4BU-Eeq3_8gyktlnwA" fontName="Verdana" fillColor="15981773" lineColor="12632256"/>
+          <styles xsi:type="notation:FontStyle" xmi:id="_CyTT4RU-Eeq3_8gyktlnwA"/>
+          <styles xsi:type="notation:BooleanValueStyle" xmi:id="_Cyb2wBU-Eeq3_8gyktlnwA" name="isHorizontal" booleanValue="true"/>
+          <layoutConstraint xsi:type="notation:Bounds" xmi:id="_CyTT4hU-Eeq3_8gyktlnwA" x="44" y="863" width="630" height="182"/>
+        </children>
         <layoutConstraint xsi:type="notation:Bounds" xmi:id="_ydU9AfXiEem8Rt4b5cjO8Q"/>
       </children>
       <styles xsi:type="notation:ShapeStyle" xmi:id="_ydTu4PXiEem8Rt4b5cjO8Q" fontName="Verdana" fillColor="15790320" lineColor="12632256"/>
-      <layoutConstraint xsi:type="notation:Bounds" xmi:id="_ydTu4fXiEem8Rt4b5cjO8Q" x="304" y="-12" width="1172" height="896"/>
+      <layoutConstraint xsi:type="notation:Bounds" xmi:id="_ydTu4fXiEem8Rt4b5cjO8Q" x="304" y="-12" width="1172" height="1268"/>
     </children>
     <children xmi:id="_QtgY0PdVEemEGJ3b3uJgkQ" type="Region" element="_QqlAoPdVEemEGJ3b3uJgkQ">
       <children xsi:type="notation:DecorationNode" xmi:id="_Qtl4YPdVEemEGJ3b3uJgkQ" type="RegionName">
@@ -1017,7 +1037,7 @@
         <layoutConstraint xsi:type="notation:Bounds" xmi:id="_nKXd5xIkEeqysfJymneg5g"/>
       </children>
       <styles xsi:type="notation:ShapeStyle" xmi:id="_nKXd4RIkEeqysfJymneg5g" fontName="Verdana" fillColor="15790320" lineColor="12632256"/>
-      <layoutConstraint xsi:type="notation:Bounds" xmi:id="_nKXd4hIkEeqysfJymneg5g" x="348" y="912" width="980" height="532"/>
+      <layoutConstraint xsi:type="notation:Bounds" xmi:id="_nKXd4hIkEeqysfJymneg5g" x="320" y="1270" width="980" height="532"/>
     </children>
     <styles xsi:type="notation:DiagramStyle" xmi:id="_IPEiAo_CEeaE_NItBGtDFQ"/>
     <edges xmi:id="_sdkIEPXkEem8Rt4b5cjO8Q" type="Transition" element="_sdgdsPXkEem8Rt4b5cjO8Q" source="_06aDcPXiEem8Rt4b5cjO8Q" target="_qykl4PXkEem8Rt4b5cjO8Q">
@@ -1639,7 +1659,7 @@
     <edges xmi:id="_8TzHkAPzEeqp8KUV90Sgvg" type="Transition" element="_8TtoAAPzEeqp8KUV90Sgvg" source="_GtUAcAPxEeqp8KUV90Sgvg" target="_Zd1U8PZjEem8Rt4b5cjO8Q">
       <children xsi:type="notation:DecorationNode" xmi:id="_8T0VsAPzEeqp8KUV90Sgvg" type="TransitionExpression">
         <styles xsi:type="notation:ShapeStyle" xmi:id="_8T0VsQPzEeqp8KUV90Sgvg"/>
-        <layoutConstraint xsi:type="notation:Location" xmi:id="_8T0VsgPzEeqp8KUV90Sgvg" x="89" y="-124"/>
+        <layoutConstraint xsi:type="notation:Location" xmi:id="_8T0VsgPzEeqp8KUV90Sgvg" x="91" y="-125"/>
       </children>
       <styles xsi:type="notation:ConnectorStyle" xmi:id="_8TzHkQPzEeqp8KUV90Sgvg" routing="Rectilinear" lineColor="4210752"/>
       <styles xsi:type="notation:FontStyle" xmi:id="_8TzuoAPzEeqp8KUV90Sgvg" fontName="Verdana"/>
@@ -1764,16 +1784,36 @@
       <sourceAnchor xsi:type="notation:IdentityAnchor" xmi:id="_bhObEBIlEeqysfJymneg5g" id="(1.0,0.6)"/>
       <targetAnchor xsi:type="notation:IdentityAnchor" xmi:id="_bhObERIlEeqysfJymneg5g" id="(0.7136929460580913,0.9151515151515152)"/>
     </edges>
-    <edges xmi:id="_jGRrMBU2EeqpleaGy0ZiXw" type="Transition" element="_jGOn4BU2EeqpleaGy0ZiXw" source="_KgnZwxIlEeqysfJymneg5g" target="_KgnZwxIlEeqysfJymneg5g">
-      <children xsi:type="notation:DecorationNode" xmi:id="_jGSSQRU2EeqpleaGy0ZiXw" type="TransitionExpression">
-        <styles xsi:type="notation:ShapeStyle" xmi:id="_jGSSQhU2EeqpleaGy0ZiXw"/>
-        <layoutConstraint xsi:type="notation:Location" xmi:id="_jGS5UBU2EeqpleaGy0ZiXw" x="43" y="287"/>
+    <edges xmi:id="_mluwcBU9Eeq3_8gyktlnwA" type="Transition" element="_mlm0oBU9Eeq3_8gyktlnwA" source="_uBeVcvXlEem8Rt4b5cjO8Q" target="_uBeVcvXlEem8Rt4b5cjO8Q">
+      <children xsi:type="notation:DecorationNode" xmi:id="_mlzB4BU9Eeq3_8gyktlnwA" type="TransitionExpression">
+        <styles xsi:type="notation:ShapeStyle" xmi:id="_mlzB4RU9Eeq3_8gyktlnwA"/>
+        <layoutConstraint xsi:type="notation:Location" xmi:id="_mlzB4hU9Eeq3_8gyktlnwA" y="10"/>
       </children>
-      <styles xsi:type="notation:ConnectorStyle" xmi:id="_jGRrMRU2EeqpleaGy0ZiXw" routing="Rectilinear" lineColor="4210752"/>
-      <styles xsi:type="notation:FontStyle" xmi:id="_jGSSQBU2EeqpleaGy0ZiXw" fontName="Verdana"/>
-      <bendpoints xsi:type="notation:RelativeBendpoints" xmi:id="_jGRrMhU2EeqpleaGy0ZiXw" points="[112, -96, 112, -96]$[321, -96, 321, -96]$[321, 168, 321, 168]$[-3, 168, -3, 168]$[-3, 4, -3, 4]"/>
-      <sourceAnchor xsi:type="notation:IdentityAnchor" xmi:id="_jHFjgBU2EeqpleaGy0ZiXw" id="(0.5269709543568465,0.9757575757575757)"/>
-      <targetAnchor xsi:type="notation:IdentityAnchor" xmi:id="_jHFjgRU2EeqpleaGy0ZiXw" id="(0.5269709543568465,0.9757575757575757)"/>
+      <styles xsi:type="notation:ConnectorStyle" xmi:id="_mluwcRU9Eeq3_8gyktlnwA" routing="Rectilinear" lineColor="4210752"/>
+      <styles xsi:type="notation:FontStyle" xmi:id="_mlv-kBU9Eeq3_8gyktlnwA" fontName="Verdana"/>
+      <bendpoints xsi:type="notation:RelativeBendpoints" xmi:id="_mluwchU9Eeq3_8gyktlnwA" points="[-49, 7, -49, 7]$[-49, 7, -49, 7]"/>
+    </edges>
+    <edges xmi:id="_Ge8kwBU-Eeq3_8gyktlnwA" type="Transition" element="_Ge2eIBU-Eeq3_8gyktlnwA" source="_uBeVZvXlEem8Rt4b5cjO8Q" target="_CySs0BU-Eeq3_8gyktlnwA">
+      <children xsi:type="notation:DecorationNode" xmi:id="_Ge9L0RU-Eeq3_8gyktlnwA" type="TransitionExpression">
+        <styles xsi:type="notation:ShapeStyle" xmi:id="_Ge9L0hU-Eeq3_8gyktlnwA"/>
+        <layoutConstraint xsi:type="notation:Location" xmi:id="_Ge9L0xU-Eeq3_8gyktlnwA" y="10"/>
+      </children>
+      <styles xsi:type="notation:ConnectorStyle" xmi:id="_Ge8kwRU-Eeq3_8gyktlnwA" routing="Rectilinear" lineColor="4210752"/>
+      <styles xsi:type="notation:FontStyle" xmi:id="_Ge9L0BU-Eeq3_8gyktlnwA" fontName="Verdana"/>
+      <bendpoints xsi:type="notation:RelativeBendpoints" xmi:id="_Ge8kwhU-Eeq3_8gyktlnwA" points="[-21, -3, 2, -601]$[-114, -3, -91, -601]$[-114, 685, -91, 87]$[-48, 685, -25, 87]"/>
+      <sourceAnchor xsi:type="notation:IdentityAnchor" xmi:id="_GfBdQBU-Eeq3_8gyktlnwA" id="(0.22115384615384615,0.5652173913043478)"/>
+      <targetAnchor xsi:type="notation:IdentityAnchor" xmi:id="_GfCEUBU-Eeq3_8gyktlnwA" id="(0.04126984126984127,0.03296703296703297)"/>
+    </edges>
+    <edges xmi:id="_TAYaIBVAEeq3_8gyktlnwA" type="Transition" element="_TAOpIBVAEeq3_8gyktlnwA" source="_CySs0BU-Eeq3_8gyktlnwA" target="_qykl4PXkEem8Rt4b5cjO8Q">
+      <children xsi:type="notation:DecorationNode" xmi:id="_TAZoQRVAEeq3_8gyktlnwA" type="TransitionExpression">
+        <styles xsi:type="notation:ShapeStyle" xmi:id="_TAZoQhVAEeq3_8gyktlnwA"/>
+        <layoutConstraint xsi:type="notation:Location" xmi:id="_TAaPUBVAEeq3_8gyktlnwA" y="10"/>
+      </children>
+      <styles xsi:type="notation:ConnectorStyle" xmi:id="_TAZBMBVAEeq3_8gyktlnwA" routing="Rectilinear" lineColor="4210752"/>
+      <styles xsi:type="notation:FontStyle" xmi:id="_TAZoQBVAEeq3_8gyktlnwA" fontName="Verdana"/>
+      <bendpoints xsi:type="notation:RelativeBendpoints" xmi:id="_TAZBMRVAEeq3_8gyktlnwA" points="[-75, 40, -51, 651]$[-161, 40, -137, 651]$[-161, -746, -137, -135]$[-66, -746, -42, -135]"/>
+      <sourceAnchor xsi:type="notation:IdentityAnchor" xmi:id="_TAd5sBVAEeq3_8gyktlnwA" id="(0.12063492063492064,0.3956043956043956)"/>
+      <targetAnchor xsi:type="notation:IdentityAnchor" xmi:id="_TAd5sRVAEeq3_8gyktlnwA" id="(0.08811475409836066,0.9761904761904762)"/>
     </edges>
   </notation:Diagram>
 </xmi:XMI>
