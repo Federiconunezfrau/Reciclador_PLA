@@ -161,6 +161,20 @@ void processRequest(char * req) {
 		}
 	}
 
+	if (!strcmp(command, "SEX")) {
+		uartWriteString( UART_USB, "NUEVO VALOR DE Status: ");
+		uartWriteString( UART_USB, value);
+		uartWriteString( UART_USB, "\r\n");
+		if(val == 1)
+		{
+			prefixIface_raise_evTemp_start(&statechart);
+		}
+		else
+		{
+			prefixIface_raise_evTemp_stop(&statechart);
+		}
+	}
+
 }
 
 void UART_onRx_ISR() {
