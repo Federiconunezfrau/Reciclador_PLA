@@ -102,11 +102,11 @@
           <vertices xsi:type="sgraph:State" xmi:id="_gZyp4AF5EeqMl8DAbGzI5g" specification="entry / opMostrar_msj(Msj_menu_motor_extrusion,1,2)" name="START_EXTRUSION" incomingTransitions="_7VVDQAF5EeqMl8DAbGzI5g _U2LnUAF6EeqMl8DAbGzI5g _GRJlsAF8EeqMl8DAbGzI5g">
             <outgoingTransitions xmi:id="_8VKIkAF5EeqMl8DAbGzI5g" specification="siDespl_izquierda" target="_A4j3zAF5EeqMl8DAbGzI5g"/>
             <outgoingTransitions xmi:id="_TxVfIAF6EeqMl8DAbGzI5g" specification="siDespl_derecha" target="_FmmewAF6EeqMl8DAbGzI5g"/>
-            <outgoingTransitions xmi:id="_GRJlsAF8EeqMl8DAbGzI5g" specification="siEntrar / raise evStart_puente_h; viExtr_status = 1" target="_gZyp4AF5EeqMl8DAbGzI5g"/>
+            <outgoingTransitions xmi:id="_GRJlsAF8EeqMl8DAbGzI5g" specification="siEntrar / raise evStart_puente_h" target="_gZyp4AF5EeqMl8DAbGzI5g"/>
           </vertices>
           <vertices xsi:type="sgraph:State" xmi:id="_FmmewAF6EeqMl8DAbGzI5g" specification="entry / opMostrar_msj(Msj_menu_motor_extrusion_stop,1,2)" name="STOP_EXTRUSION" incomingTransitions="_TxVfIAF6EeqMl8DAbGzI5g _A4m7EQF5EeqMl8DAbGzI5g _ig1kAAF7EeqMl8DAbGzI5g _ZH9ScAPTEeqp8KUV90Sgvg">
             <outgoingTransitions xmi:id="_U2LnUAF6EeqMl8DAbGzI5g" specification="siDespl_izquierda" target="_gZyp4AF5EeqMl8DAbGzI5g"/>
-            <outgoingTransitions xmi:id="_ig1kAAF7EeqMl8DAbGzI5g" specification="siEntrar / raise evStop_puente_h; viExtr_status = 0" target="_FmmewAF6EeqMl8DAbGzI5g"/>
+            <outgoingTransitions xmi:id="_ig1kAAF7EeqMl8DAbGzI5g" specification="siEntrar / raise evStop_puente_h" target="_FmmewAF6EeqMl8DAbGzI5g"/>
             <outgoingTransitions xmi:id="_YOc3kAPTEeqp8KUV90Sgvg" specification="siDespl_derecha" target="_UbF6sAPTEeqp8KUV90Sgvg"/>
           </vertices>
           <vertices xsi:type="sgraph:State" xmi:id="_UbF6sAPTEeqp8KUV90Sgvg" specification="entry / opMostrar_msj(Msj_menu_motor_extrusion_retract,1,2)" name="START_RETRACT" incomingTransitions="_YOc3kAPTEeqp8KUV90Sgvg _cwSrEAPTEeqp8KUV90Sgvg _7AXXUAPTEeqp8KUV90Sgvg">
@@ -137,11 +137,11 @@
         <outgoingTransitions xmi:id="_0iTa0AF6EeqMl8DAbGzI5g" specification="" target="_dvJYkAIpEeqVR6JbrZzmyQ"/>
       </vertices>
       <vertices xsi:type="sgraph:State" xmi:id="_yxin0AF6EeqMl8DAbGzI5g" specification="entry / opStop_puente_h()" name="STOP" incomingTransitions="_Y-C_IAF7EeqMl8DAbGzI5g _nu8CgAIpEeqVR6JbrZzmyQ _tKunwAPUEeqp8KUV90Sgvg">
-        <outgoingTransitions xmi:id="_VXpgMAF7EeqMl8DAbGzI5g" specification="evStart_puente_h" target="_PQHhQAF7EeqMl8DAbGzI5g"/>
+        <outgoingTransitions xmi:id="_VXpgMAF7EeqMl8DAbGzI5g" specification="evStart_puente_h / viExtr_status = 1" target="_PQHhQAF7EeqMl8DAbGzI5g"/>
         <outgoingTransitions xmi:id="_wQrsEAPUEeqp8KUV90Sgvg" specification="evRetract_puente_h" target="_BgqbkAPUEeqp8KUV90Sgvg"/>
       </vertices>
       <vertices xsi:type="sgraph:State" xmi:id="_PQHhQAF7EeqMl8DAbGzI5g" specification="entry / opStart_puente_h()" name="H_ROTACION_HORARIO" incomingTransitions="_VXpgMAF7EeqMl8DAbGzI5g _PULOwAPUEeqp8KUV90Sgvg">
-        <outgoingTransitions xmi:id="_Y-C_IAF7EeqMl8DAbGzI5g" specification="evStop_puente_h" target="_yxin0AF6EeqMl8DAbGzI5g"/>
+        <outgoingTransitions xmi:id="_Y-C_IAF7EeqMl8DAbGzI5g" specification="evStop_puente_h / viExtr_status = 0" target="_yxin0AF6EeqMl8DAbGzI5g"/>
         <outgoingTransitions xmi:id="_OS8bQAPUEeqp8KUV90Sgvg" specification="evRetract_puente_h / &#xA;opStop_puente_h()" target="_BgqbkAPUEeqp8KUV90Sgvg"/>
       </vertices>
       <vertices xsi:type="sgraph:State" xmi:id="_dvJYkAIpEeqVR6JbrZzmyQ" specification="entry / opConfig_puente_h(); raise evConf_Ready_Puente_H" name="CONFIGURAR" incomingTransitions="_0iTa0AF6EeqMl8DAbGzI5g">
@@ -149,7 +149,7 @@
       </vertices>
       <vertices xsi:type="sgraph:State" xmi:id="_BgqbkAPUEeqp8KUV90Sgvg" specification="entry / opRetract_puente_h()" name="H_RETRACT" incomingTransitions="_OS8bQAPUEeqp8KUV90Sgvg _wQrsEAPUEeqp8KUV90Sgvg">
         <outgoingTransitions xmi:id="_PULOwAPUEeqp8KUV90Sgvg" specification="evStart_puente_h / &#xA;opStop_puente_h()" target="_PQHhQAF7EeqMl8DAbGzI5g"/>
-        <outgoingTransitions xmi:id="_tKunwAPUEeqp8KUV90Sgvg" specification="evStop_puente_h" target="_yxin0AF6EeqMl8DAbGzI5g"/>
+        <outgoingTransitions xmi:id="_tKunwAPUEeqp8KUV90Sgvg" specification="evStop_puente_h /  viExtr_status = 0" target="_yxin0AF6EeqMl8DAbGzI5g"/>
       </vertices>
     </regions>
     <regions xmi:id="_WJsowAbMEeqYhprOp37WDQ" name="x">

@@ -23,18 +23,23 @@ extern void prefixInternal_opSend_Status(const Prefix* handle, const sc_integer 
 		STATUS = "ON";
 	}
 
+	if(extr_st == 1)
+	{
+		EXTR = "ON";
+	}
+
 	clearstring(mander);
 	strcat(mander, STATUS);
 	strcat(mander, ",");
 	strcat(mander, T);
 	strcat(mander, ",");
 	strcat(mander, SP);
+	strcat(mander, ",");
+	strcat(mander, EXTR);
 	strcat(mander, "\n");
 
-	if(extr_st == 1)
-	{
-		EXTR = "ON";
-	}
+
+
 
 //	uartWriteString( UART_232, STATUS );
 //	uartWriteString( UART_232, "," );
