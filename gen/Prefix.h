@@ -110,6 +110,7 @@ typedef struct
 	sc_integer viSetPoint;
 	sc_integer viStatus;
 	sc_string viIP;
+	sc_integer viExtr_status;
 } PrefixInternal;
 
 /*! Type definition of the data structure for the PrefixTimeEvents interface scope. */

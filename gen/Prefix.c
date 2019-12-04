@@ -349,6 +349,7 @@ void prefix_init(Prefix* handle)
 	handle->internal.viSetPoint = 0;
 	handle->internal.viStatus = 0;
 	handle->internal.viIP = "";
+	handle->internal.viExtr_status = 0;
 
 }
 
@@ -1432,6 +1433,7 @@ static void prefix_effect_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF
 {
 	prefix_exseq_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_START_EXTRUSION(handle);
 	handle->iface.evStart_puente_h_raised = bool_true;
+	handle->internal.viExtr_status = 1;
 	prefix_enseq_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_START_EXTRUSION_default(handle);
 }
 
@@ -1445,6 +1447,7 @@ static void prefix_effect_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF
 {
 	prefix_exseq_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_STOP_EXTRUSION(handle);
 	handle->iface.evStop_puente_h_raised = bool_true;
+	handle->internal.viExtr_status = 0;
 	prefix_enseq_LCD_MENU_CONF_MOTORES_MENSAJE_MOSTRADO_EN_DISPLAY_CONF_MOTORES_STOP_EXTRUSION_default(handle);
 }
 
@@ -1815,7 +1818,7 @@ static void prefix_enact_UART_UART_SEND_STATUS(Prefix* handle)
 {
 	/* Entry action for state 'UART_SEND_STATUS'. */
 	prefix_setTimer(handle, (sc_eventid) &(handle->timeEvents.prefix_UART_UART_SEND_STATUS_tev0_raised) , 2000, bool_false);
-	prefixInternal_opSend_Status(handle, handle->internal.viStatus, handle->internal.viActual_temp, handle->internal.viSetPoint);
+	prefixInternal_opSend_Status(handle, handle->internal.viStatus, handle->internal.viActual_temp, handle->internal.viSetPoint, handle->internal.viExtr_status);
 }
 
 /* Exit action for state 'DEBOUNCE'. */

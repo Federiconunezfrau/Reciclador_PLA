@@ -48,7 +48,7 @@ extern void prefixIface_opApagar_control_temp(const Prefix* handle);
 extern sc_integer prefixIface_opControlar_temp(const Prefix* handle, const sc_integer ref);
 extern void prefixIface_opEnviar_UART(const Prefix* handle, const sc_integer num);
 
-extern void prefixInternal_opSend_Status(const Prefix* handle, const sc_integer st, const sc_integer temp, const sc_integer setpoint);
+extern void prefixInternal_opSend_Status(const Prefix* handle, const sc_integer st, const sc_integer temp, const sc_integer setpoint, const sc_integer extr_st);
 
 
 /*!
