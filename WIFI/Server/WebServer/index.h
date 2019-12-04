@@ -8,33 +8,40 @@ const char MAIN_page[] PROGMEM = R"=====(
 
 <div class="row">
   <div class="column">
-  	<h3 style="text-align:center;">Estado actual</h3>
+    <h3 style="text-align:center;">Estado actual</h3>
     <div>
-      Estado actual: <span id="STATE">NA</span><br>
+      Estado del calentador: <span id="STATE">NA</span><br>
       Temperatura: <span id="TEMP">NA</span><br>
-      Set-point: <span id="SP">NA</span>
+      Set-point: <span id="SP">NA</span><br>
+      Extrusion: <span id="EX">NA</span>
     </div>
   </div>
   <div class="column" id="controls">
-  	<h3 style="text-align:center;">Controles</h3>
+    <h3 style="text-align:center;">Controles</h3>
     <div class="row">
       <div class="column" style="text-align:center;">
         Ajuste Set-Point : <span id="NewSP">185</span>
       </div>
-	  <div class="column" style="text-align:center;">
-      	<button type="button" onclick="updateSP(1)">+</button>
-      	<button type="button" onclick="updateSP(0)">-</button>
+    <div class="column" style="text-align:center;">
+        <button type="button" onclick="updateSP(1)">+</button>
+        <button type="button" onclick="updateSP(0)">-</button>
+        <button type="button" id="send_sp_btn" onclick="send_sp()">Enviar</button>
       </div>
     </div>
     <br>
-    <div style="text-align:center;">
-    	<button type="button" id="send_sp_btn" onclick="send_sp()">Send</button>
+    <div class="row">
+      <div class="column" style="text-align:center;">
+        <button type="button" id="heat_btn" onclick="heat()" disabled>Cargando...</button>
+      </div>
+    <div class="column" style="text-align:center;">
+      <button type="button" id="extrude_btn" onclick="extrude()">Extruir</button>
+      <button type="button" id="stop_btn" onclick="stopextrude()">Detener</button>
+      <br><br>
+      <button type="button" id="change_net_btn" onclick="change_net()">Cambiar red</button>
+      </div>
     </div>
+
   </div>
-</div>
-<br><br>
-<div id="power" style="text-align:center;">
-	<button type="button" id="start_btn" onclick="start()" disabled>Loading</button>
 </div>
 
 <script>
@@ -50,15 +57,6 @@ function updateSP (data) {
     if (sp_value > 160) {
       sp.innerHTML = sp_value - 1;
     }
-  }
-  sp_value = parseInt(sp.innerHTML);
-  if (sp_value == parseInt(actual_sp.innerHTML)) {
-    sp.setAttribute("style", "color:black;");
-    ok_btn.disabled = true;
-  }
-  else {
-    sp.setAttribute("style", "color:red;");
-    ok_btn.disabled = false;
   }
 }
 
@@ -78,7 +76,7 @@ function send_sp() {
 setInterval(function() {
   // Call a function repetatively with 2 Second interval
   getData();
-}, 750); //500mSeconds update rate
+}, 500); //500mSeconds update rate
 
 function getData() {
   var xhttp = new XMLHttpRequest();
@@ -90,18 +88,20 @@ function getData() {
         document.getElementById("STATE").innerHTML = (response.split(',')[0]);
         document.getElementById("TEMP").innerHTML = (response.split(',')[1]);
         document.getElementById("SP").innerHTML = (response.split(',')[2]);
+        document.getElementById("EX").innerHTML = (response.split(',')[3]);
+        
         var ST = document.getElementById("STATE");
         if (ST.innerHTML == "ON") {
-          document.getElementById("start_btn").disabled = false;
-          document.getElementById("start_btn").innerHTML = "Detener";
+          document.getElementById("heat_btn").disabled = false;
+          document.getElementById("heat_btn").innerHTML = "Enfriar";
         }
         else if (ST.innerHTML == "OFF") {
-          document.getElementById("start_btn").disabled = false;
-          document.getElementById("start_btn").innerHTML = "Comenzar";
+          document.getElementById("heat_btn").disabled = false;
+          document.getElementById("heat_btn").innerHTML = "Calentar";
         }
         else if (ST.innerHTML == "NA") {
-          document.getElementById("start_btn").disabled = true;
-          document.getElementById("start_btn").innerHTML = "Espere...";
+          document.getElementById("heat_btn").disabled = true;
+          document.getElementById("heat_btn").innerHTML = "Cargando...";
         }
       }
     }
@@ -110,10 +110,10 @@ function getData() {
   xhttp.send(); 
 }
 
-function start() {
-  var st_btn = document.getElementById("start_btn").innerHTML;
-  var value = "0"
-  if (st_btn == "Comenzar") {
+function heat() {
+  var st_btn = document.getElementById("heat_btn").innerHTML;
+  var value = "0";
+  if (st_btn == "Calentar") {
     value = "1";
   }
   var xhttp = new XMLHttpRequest();
@@ -122,7 +122,40 @@ function start() {
       console.log("ENVIADO:" + this.responseText);
     }
   };
-  xhttp.open("GET", "start?value="+value, true);
+  xhttp.open("GET", "heat?value="+value, true);
+  xhttp.send();
+}
+
+function extrude() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      console.log("ENVIADO:" + this.responseText);
+    }
+  };
+  xhttp.open("GET", "extrude?value=1", true);
+  xhttp.send();
+}
+
+function stopextrude() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      console.log("ENVIADO:" + this.responseText);
+    }
+  };
+  xhttp.open("GET", "extrude?value=0", true);
+  xhttp.send();
+}
+
+function change_net() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      console.log("ENVIADO:" + this.responseText);
+    }
+  };
+  xhttp.open("GET", "disconnect?value=1", true);
   xhttp.send();
 }
 
@@ -154,8 +187,6 @@ function start() {
 .btn:hover {
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
-
-
 
 </style>
 </body>
