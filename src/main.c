@@ -162,16 +162,16 @@ void processRequest(char * req) {
 	}
 
 	if (!strcmp(command, "SEX")) {
-		uartWriteString( UART_USB, "NUEVO VALOR DE Status: ");
+		uartWriteString( UART_USB, "NUEVO VALOR DE Extrusion: ");
 		uartWriteString( UART_USB, value);
 		uartWriteString( UART_USB, "\r\n");
 		if(val == 1)
 		{
-			prefixIface_raise_evTemp_start(&statechart);
+			prefixIface_raise_evStart_puente_h(&statechart);
 		}
 		else
 		{
-			prefixIface_raise_evTemp_stop(&statechart);
+			prefixIface_raise_evStop_puente_h(&statechart);
 		}
 	}
 
